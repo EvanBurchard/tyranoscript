@@ -46,7 +46,7 @@ tyrano.plugin.kag ={};
             $.loadText("./tyrano/plugins/kag/"+array_script[i],function(text_str){
                 
                 var flag_tag = ""; //タグ解析中の場合
-                var flag_param =""; //パラメータ名
+                var flag_param =""; //Parameter Name
                 
                 var tmp_str ="";
                 
@@ -212,7 +212,7 @@ tyrano.plugin.kag ={};
                     html+=''
                     
                     +'            <table>'
-                    +'                    <tr><th>パラメータ名</th><th>必須 </th><th>説明 </th><tr>'
+                    +'                    <tr><th>Parameter Name</th><th>Needed? </th><th>Explanation </th><tr>'
                     +'';
                     
                     //繰り返し
@@ -227,7 +227,7 @@ tyrano.plugin.kag ={};
                     for(var k=0;k<array_param.length;k++){
                     
                      if(array_param[k]==""){
-                         html+='<tr ><td colspan="3">指定できるパラメータはありません</td></tr>';
+                         html+='<tr ><td colspan="3">No parameters are specified</td></tr>';
                      }else{
                          var tmp_array = array_param[k].split("=");
                          
@@ -271,7 +271,7 @@ tyrano.plugin.kag ={};
                      
                       html+=''           
                          +'           '
-                         +'           <p><span style="font-style:italic">サンプルコード</span><br />'
+                         +'           <p><span style="font-style:italic">Sample Code</span><br />'
                          +'               <code><br />'
                                             
                          +$.br($.escapeHTML(obj.sample))

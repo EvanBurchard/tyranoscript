@@ -2,7 +2,7 @@
 /*
 #[eval]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 式の評価
 :exp
@@ -45,7 +45,7 @@ tyrano.plugin.kag.tag.eval={
 /*
 #[clearvar]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 ゲーム変数の全消去
 :exp
@@ -75,7 +75,7 @@ tyrano.plugin.kag.tag.clearvar={
 /*
 #[clearsysvar]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 システム変数の全消去
 :exp
@@ -99,7 +99,7 @@ tyrano.plugin.kag.tag.clearsysvar = {
 /*
 #[close]
 :group
-システム操作
+System Settings
 :title
 ウィンドウを閉じる
 :exp
@@ -137,7 +137,7 @@ tyrano.plugin.kag.tag["close"] = {
 /*
 #[trace]
 :group
-その他
+Other
 :title
 コンソールへの値の出力
 :exp
@@ -177,7 +177,7 @@ tyrano.plugin.kag.tag["trace"] = {
 /*
 #[title]
 :group
-システム操作
+System Settings
 :title
 タイトル指定
 :exp
@@ -215,7 +215,7 @@ tyrano.plugin.kag.tag["title"] = {
 /*
 #[iscript]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 JavaScriptの記述
 :exp
@@ -250,7 +250,7 @@ tyrano.plugin.kag.tag.iscript = {
 /*
 #[endscript]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 JavaScriptの終了
 :exp
@@ -278,7 +278,7 @@ tyrano.plugin.kag.tag.endscript = {
 /*
 #[html]
 :group
-その他
+Other
 :title
 HTMLをレイヤ追加
 :exp
@@ -337,7 +337,7 @@ tyrano.plugin.kag.tag.html = {
 /*
 #[endhtml]
 :group
-その他
+Other
 :title
 HTMLの終了
 :exp
@@ -394,7 +394,7 @@ tyrano.plugin.kag.tag.endhtml = {
 /*
 #[emb]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 式評価結果の埋め込み
 :exp
@@ -432,7 +432,7 @@ tyrano.plugin.kag.tag.emb = {
 /*
 #[if]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 条件分岐
 :exp
@@ -524,7 +524,7 @@ tyrano.plugin.kag.tag["if"] = {
 /*
 #[elsif]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 それまでの if の中身が実行されていなかったときに、条件付きで実行 
 :exp
@@ -578,7 +578,7 @@ tyrano.plugin.kag.tag["elsif"] = {
 /*
 #[else]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 if の中身が実行されなかったときに実行
 :exp
@@ -629,7 +629,7 @@ tyrano.plugin.kag.tag["else"] = {
 /*
 #[endif]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 if文を終了します
 :exp
@@ -655,7 +655,7 @@ tyrano.plugin.kag.tag["endif"] = {
 /*
 #[call]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 サブルーチンの呼び出し 
 :exp
@@ -700,7 +700,7 @@ tyrano.plugin.kag.tag["call"] = {
 /*
 #[return]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 サブルーチンから戻る 
 :exp
@@ -732,7 +732,7 @@ tyrano.plugin.kag.tag["return"] = {
 /*
 #[macro]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 マクロの記述
 :exp
@@ -805,7 +805,7 @@ tyrano.plugin.kag.tag.macro = {
 /*
 #[endmacro]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 マクロを終了します
 :exp
@@ -855,7 +855,7 @@ tyrano.plugin.kag.tag.endmacro = {
 /*
 #[erasemacro]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 マクロの削除
 :exp
@@ -887,7 +887,7 @@ tyrano.plugin.kag.tag.erasemacro = {
 /*
 #[savesnap]
 :group
-システム操作
+System Settings
 :title
 セーブスナップの作成
 :exp
@@ -919,7 +919,7 @@ tyrano.plugin.kag.tag.savesnap = {
 /*
 #[ignore]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 条件によりシナリオを無視
 :exp
@@ -971,7 +971,7 @@ tyrano.plugin.kag.tag.ignore = {
 /*
 #[endignore]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 ignoreの終了
 :exp
@@ -996,7 +996,7 @@ tyrano.plugin.kag.tag.endignore ={
 /*
 #[edit]
 :group
-入力フォーム関連
+Forms
 :title
 テキストボックス
 :exp
@@ -1086,7 +1086,7 @@ tyrano.plugin.kag.tag.edit = {
 /*
 #[preload]
 :group
-システム操作
+System Settings
 :title
 画像ファイルの事前読み込み
 :exp
@@ -1176,7 +1176,7 @@ tyrano.plugin.kag.tag.preload = {
 /*
 #[clearfix]
 :group
-レイヤ関連
+Layer
 :title
 Fixレイヤーをクリアします。
 :exp
@@ -1221,7 +1221,7 @@ tyrano.plugin.kag.tag.clearfix ={
 /*
 #[commit]
 :group
-入力フォーム関連
+Forms
 :title
 フォームの確定
 :exp

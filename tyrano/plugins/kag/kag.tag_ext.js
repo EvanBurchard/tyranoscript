@@ -4,7 +4,7 @@
 /*
 #[loadjs]
 :group
-マクロ・変数・JS操作
+Macros, Variables, JavaScript Interface
 :title
 外部JavaScriptファイル読み込み
 :exp
@@ -42,7 +42,7 @@ tyrano.plugin.kag.tag.loadjs={
 /*
 #[movie]
 :group
-その他
+Other
 :title
 ムービーの再生
 :exp
@@ -144,7 +144,7 @@ tyrano.plugin.kag.tag.movie ={
 /*
 #[showsave]
 :group
-システム操作
+System Settings
 :title
 セーブ画面を表示します
 :exp
@@ -173,7 +173,7 @@ tyrano.plugin.kag.tag.showsave ={
 /*
 #[showload]
 :group
-システム操作
+System Settings
 :title
 ロード画面を表示します
 :exp
@@ -201,7 +201,7 @@ tyrano.plugin.kag.tag.showload ={
 /*
 #[showmenu]
 :group
-システム操作
+System Settings
 :title
 メニュー画面を表示します
 :exp
@@ -230,7 +230,7 @@ tyrano.plugin.kag.tag.showmenu ={
 /*
 #[showmenubutton]
 :group
-システム操作
+System Settings
 :title
 メニューボタンを表示
 :exp
@@ -259,7 +259,7 @@ tyrano.plugin.kag.tag.showmenubutton ={
 /*
 #[hidemenubutton]
 :group
-システム操作
+System Settings
 :title
 メニューボタンを非表示
 :exp
@@ -288,7 +288,7 @@ tyrano.plugin.kag.tag.hidemenubutton ={
 /*
 #[skipstart]
 :group
-システム操作
+System Settings
 :title
 スキップ開始
 :exp
@@ -316,7 +316,7 @@ tyrano.plugin.kag.tag.skipstart ={
 /*
 #[skipstop]
 :group
-システム操作
+System Settings
 :title
 スキップ停止
 :exp
@@ -344,7 +344,7 @@ tyrano.plugin.kag.tag.skipstop ={
 /*
 #[anim]
 :group
-アニメーション関連
+Animation
 :title
 アニメーション
 :exp
@@ -528,7 +528,7 @@ tyrano.plugin.kag.tag.anim ={
 /*
 #[wa]
 :group
-アニメーション関連
+Animation
 :title
 アニメーション終了待ち
 :exp
@@ -551,7 +551,7 @@ tyrano.plugin.kag.tag.wa={
 /*
 #[keyframe]
 :group
-アニメーション関連
+Animation
 :title
 キーフレームアニメーション定義
 :exp
@@ -596,7 +596,7 @@ tyrano.plugin.kag.tag.keyframe ={
 /*
 #[endkeyframe]
 :group
-アニメーション関連
+Animation
 :title
 キーフレームアニメーション定義を終了します
 :exp
@@ -623,7 +623,7 @@ tyrano.plugin.kag.tag.endkeyframe ={
 /*
 #[frame]
 :group
-アニメーション関連
+Animation
 :title
 キーフレームアニメーション定義
 :exp
@@ -731,7 +731,7 @@ tyrano.plugin.kag.tag.frame ={
 /*
 #[kanim]
 :group
-アニメーション関連
+Animation
 :title
 キーフレームアニメーションの実行
 :exp
@@ -881,7 +881,7 @@ tyrano.plugin.kag.tag.chara_ptext ={
 /*
 #[chara_config]
 :group
-キャラクター操作
+Character
 :title
 キャラクター操作タグの基本設定
 :exp
@@ -953,7 +953,7 @@ tyrano.plugin.kag.tag.chara_config ={
 /*
 #[chara_new]
 :group
-キャラクター操作
+Character
 :title
 キャラクターの定義
 :exp
@@ -1017,7 +1017,7 @@ tyrano.plugin.kag.tag.chara_new ={
 /*
 #[chara_show]
 :group
-キャラクター操作
+Character
 :title
 キャラクターの登場
 :exp
@@ -1196,7 +1196,7 @@ tyrano.plugin.kag.tag.chara_show ={
 /*
 #[chara_hide]
 :group
-キャラクター操作
+Character
 :title
 キャラクターの退場
 :exp
@@ -1327,7 +1327,7 @@ tyrano.plugin.kag.tag.chara_hide ={
 /*
 #[chara_delete]
 :group
-キャラクター操作
+Character
 :title
 キャラクター情報の削除
 :exp
@@ -1364,7 +1364,7 @@ tyrano.plugin.kag.tag.chara_delete ={
 /*
 #[chara_mod]
 :group
-キャラクター操作
+Character
 :title
 キャラクター画像変更
 :exp

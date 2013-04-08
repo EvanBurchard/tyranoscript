@@ -856,7 +856,7 @@ tyrano.plugin.kag.tag.label = {
 #[l]
 
 :group
-メッセージ関連
+Message
 :title
 クリック待ち
 
@@ -891,7 +891,7 @@ tyrano.plugin.kag.tag.l ={
 #[p]
 
 :group
-メッセージ関連
+Message
 :title
 改ページクリック待ち
 
@@ -930,7 +930,7 @@ tyrano.plugin.kag.tag.p ={
 /*
 #[graph]
 :group
-メッセージ関連
+Message
 :title
 インライン画像表示
 :exp
@@ -990,7 +990,7 @@ tyrano.plugin.kag.tag.graph = {
 
 #[jump]
 :group
-ラベル・ジャンプ操作
+Links
 :title
 シナリオのジャンプ
 :exp
@@ -1034,7 +1034,7 @@ tyrano.plugin.kag.tag.jump ={
 /*
 #[r]
 :group
-メッセージ関連
+Message
 :title
 改行する
 :exp
@@ -1065,7 +1065,7 @@ tyrano.plugin.kag.tag.r ={
 /*
 #[er]
 :group
-メッセージ関連
+Message
 :title
 メッセージレイヤの文字の消去
 :exp
@@ -1099,7 +1099,7 @@ tyrano.plugin.kag.tag.er ={
 /*
 #[cm]
 :group
-メッセージ関連
+Message
 :title
 すべてのメッセージレイヤをクリア
 :exp
@@ -1140,7 +1140,7 @@ tyrano.plugin.kag.tag.cm ={
 /*
 #[ct]
 :group
-メッセージ関連
+Message
 :title
 すべてのメッセージレイヤをリセット
 :exp
@@ -1186,7 +1186,7 @@ tyrano.plugin.kag.tag.ct ={
 /*
 #[current]
 :group
-メッセージ関連
+Message
 :title
 操作対象のメッセージレイヤの指定
 :exp
@@ -1234,7 +1234,7 @@ tyrano.plugin.kag.tag.current = {
 /*
 #[position]
 :group
-レイヤ関連
+Layer
 :title
 メッセージレイヤの属性変更
 :exp
@@ -1372,7 +1372,7 @@ tyrano.plugin.kag.tag.position = {
 /*
 #[image]
 :group
-レイヤ関連
+Layer
 :title
 画像を表示
 :exp
@@ -1558,7 +1558,7 @@ tyrano.plugin.kag.tag.image={
 /*
 #[freeimage]
 :group
-レイヤ関連
+Layer
 :title
 レイヤ画像の解放
 :exp
@@ -1619,7 +1619,7 @@ tyrano.plugin.kag.tag.freeimage = {
 /*
 #[ptext]
 :group
-レイヤ関連
+Layer
 :title
 レイヤにテキストを追加
 :exp
@@ -1740,7 +1740,7 @@ tyrano.plugin.kag.tag.ptext={
 /*
 #[backlay]
 :group
-レイヤ関連
+Layer
 :title
 レイヤ情報の表ページから裏ページへのコピー 
 :exp
@@ -1782,7 +1782,7 @@ tyrano.plugin.kag.tag.backlay={
 /*
 #[wt]
 :group
-レイヤ関連
+Layer
 :title
 トランジションの終了待ち
 :exp
@@ -1830,7 +1830,7 @@ tyrano.plugin.kag.tag.wq = {
 /*
 #[link]
 :group
-ラベル・ジャンプ操作
+Links
 :title
 ハイパーリンク（選択肢）
 :exp
@@ -1912,7 +1912,7 @@ tyrano.plugin.kag.tag.link={
 /*
 #[endlink]
 :group
-ラベル・ジャンプ操作
+Links
 :title
 ハイパーリンク（選択肢）の終了を示します
 :exp
@@ -1943,7 +1943,7 @@ tyrano.plugin.kag.tag.endlink={
 /*
 #[s]
 :group
-システム操作
+System Settings
 :title
 ゲームを停止する
 :exp
@@ -1974,7 +1974,7 @@ tyrano.plugin.kag.tag.s ={
 /*
 #[wait]
 :group
-システム操作
+System Settings
 :title
 ウェイトを入れる
 :exp
@@ -2018,7 +2018,7 @@ tyrano.plugin.kag.tag.wait = {
 /*
 #[hidemessage]
 :group
-レイヤ関連
+Layer
 :title
 メッセージを消す
 :exp
@@ -2050,7 +2050,7 @@ tyrano.plugin.kag.tag.hidemessage = {
 /*
 #[quake]
 :group
-システム操作
+System Settings
 :title
 画面を揺らす
 :exp
@@ -2120,7 +2120,7 @@ tyrano.plugin.kag.tag.quake = {
 /*
 #[font]
 :group
-システム操作
+System Settings
 :title
 フォント属性設定
 :exp
@@ -2181,7 +2181,7 @@ tyrano.plugin.kag.tag.font = {
 /*
 #[deffont]
 :group
-システム操作
+System Settings
 :title
 デフォルトの文字属性設定
 :exp
@@ -2237,7 +2237,7 @@ tyrano.plugin.kag.tag.deffont = {
 /*
 #[delay]
 :group
-システム操作
+System Settings
 :title
 文字の表示速度の設定 
 :exp
@@ -2270,7 +2270,7 @@ tyrano.plugin.kag.tag.delay = {
 /*
 #[nowait]
 :group
-システム操作
+System Settings
 :title
 文字表示の瞬間表示
 :exp
@@ -2299,7 +2299,7 @@ tyrano.plugin.kag.tag.nowait = {
 /*
 #[endnowait]
 :group
-システム操作
+System Settings
 :title
 テキストの瞬間表示を取り消します。
 :exp
@@ -2330,7 +2330,7 @@ tyrano.plugin.kag.tag.endnowait = {
 /*
 #[resetfont]
 :group
-システム操作
+System Settings
 :title
 フォント属性を元に戻す 
 :exp
@@ -2360,7 +2360,7 @@ tyrano.plugin.kag.tag.resetfont = {
 /*
 #[layopt]
 :group
-レイヤ関連
+Layer
 :title
 レイヤの属性設定 
 :exp
@@ -2459,7 +2459,7 @@ tyrano.plugin.kag.tag.layopt = {
 /*
 #[ruby]
 :group
-メッセージ関連
+Layer
 :title
 ルビを振る
 :exp
@@ -2499,7 +2499,7 @@ tyrano.plugin.kag.tag["ruby"] ={
 /*
 #[cancelskip]
 :group
-システム操作
+System Settings
 :title
 スキップ解除
 :exp
@@ -2523,7 +2523,7 @@ tyrano.plugin.kag.tag.cancelskip ={
 /*
 #[locate]
 :group
-システム操作
+System Settings
 :title
 表示位置の指定
 :exp
@@ -2569,7 +2569,7 @@ tyrano.plugin.kag.tag.locate ={
 /*
 #[button]
 :group
-ラベル・ジャンプ操作
+Links
 :title
 グラフィカルボタンの表示
 :exp
@@ -2746,7 +2746,7 @@ tyrano.plugin.kag.tag.button = {
 /*
 #[clickable]
 :group
-ラベル・ジャンプ操作
+Links
 :title
 クリック可能な領域を設定
 :exp
@@ -2880,7 +2880,7 @@ tyrano.plugin.kag.tag.clickable = {
 /*
 #[glyph]
 :group
-システム操作
+System Settings
 :title
 クリック待ち記号の指定
 :exp
@@ -2965,7 +2965,7 @@ tyrano.plugin.kag.tag["style"] = {
 /*
 #[trans]
 :group
-レイヤ関連
+Layer
 :title
 レイヤのトランジション 
 :exp

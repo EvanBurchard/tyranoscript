@@ -3,7 +3,7 @@
 /*
 #[playbgm]
 :group
-オーディオ関連
+Audio
 :title
 BGMの再生
 :exp
@@ -273,7 +273,7 @@ tyrano.plugin.kag.tag.playbgm = {
 /*
 #[stopbgm]
 :group
-オーディオ関連
+Audio
 :title
 BGMの停止
 :exp
@@ -436,7 +436,7 @@ tyrano.plugin.kag.tag.stopbgm = {
 /*
 #[fadeinbgm]
 :group
-オーディオ関連
+Audio
 :title
 BGMにフェードイン
 :exp
@@ -475,7 +475,7 @@ tyrano.plugin.kag.tag.fadeinbgm = {
 /*
 #[fadeoutbgm]
 :group
-オーディオ関連
+Audio
 :title
 BGMのフェードアウト
 :exp
@@ -508,7 +508,7 @@ tyrano.plugin.kag.tag.fadeoutbgm = {
 /*
 #[xchgbgm]
 :group
-オーディオ関連
+Audio
 :title
 BGMのクロスフェード（入れ替え）
 :exp
@@ -552,7 +552,7 @@ tyrano.plugin.kag.tag.xchgbgm = {
 /*
 #[playse]
 :group
-オーディオ関連
+Audio
 :title
 効果音の再生
 :exp
@@ -593,7 +593,7 @@ tyrano.plugin.kag.tag.playse = {
 /*
 #[stopse]
 :group
-オーディオ関連
+Audio
 :title
 効果音の停止
 :exp
@@ -622,7 +622,7 @@ tyrano.plugin.kag.tag.stopse = {
 /*
 #[fadeinse]
 :group
-オーディオ関連
+Audio
 :title
 効果音のフェードイン
 :exp
@@ -660,7 +660,7 @@ tyrano.plugin.kag.tag.fadeinse = {
 /*
 #[fadeoutse]
 :group
-オーディオ関連
+Audio
 :title
 効果音の再生
 :exp
@@ -692,7 +692,7 @@ tyrano.plugin.kag.tag.fadeoutse = {
 /*
 #[wb]
 :group
-オーディオ関連
+Audio
 :title
 BGMの再生完了を待ちます
 :exp
