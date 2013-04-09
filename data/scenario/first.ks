@@ -3,9 +3,9 @@
 @wait time = 200
 
 *start 
-[title name="ティラノスクリプト解説"]
+[title name="TyranoScript Explanation"]
 
-クリックしてスタート[l]
+Click to Start[l]
 [cm]
 
 @layopt layer=message0 visible=false
@@ -24,9 +24,9 @@
 @layopt layer=message0 visible=true
 @layopt layer=message1 visible=false
 
-ティラノ・スクリプトを試していただき、有難うございます。[l][r]
-このサンプルゲームをプレイするだけで、ティラノ・スクリプトの特徴を理解することができるようになっています。[l][r]
-ぜひ、最後までお付き合いください m(__)m[r]
+Thank you for trying out TyranoScript.[l][r]
+Through playing this Sample Game, you can learn about the features of TyranoScript.[l][r]
+By all means、最後までお付き合いください m(__)m[r]
 [l][cm]
 
 まず、大きな特徴としては
@@ -38,21 +38,21 @@
 
 [image layer=1 page=fore visible=true top=200 left=200  storage = html5.png]
 
-つまり、ティラノ・スクリプトで作られた作品は[r]
+つまり、TyranoScriptで作られた作品は[r]
 [l][cm]
-パソコン（Windows、MAC　両対応）[l][r]
-アイフォン、アイパッド[l][r]
-アンドロイド[l][r]
-ブラウザ機能のついたゲーム機（PSVITA・NINTENDO　DS）[l][r]
-などなど、幅広い環境に向けて作品を発表することが可能です[l][cm]
+Desktop（Windows、MAC　両対応）[l][r]
+iPhone, Ipad[l][r]
+Android[l][r]
+Game devices with browsers（PSVITA, NINTENDO　DS）[l][r]
+etc.  You can deploy your work in many places.[l][cm]
 
-さらに、アプリ化することも簡単に出来ますので、創作した作品をAppStoreやアンドロイドマーケットなどで販売することも容易です。[l][cm]
+Furthermore, it is simple to make applications, and get them on the AppStore or Android Marketplace.[l][cm]
 
 [freeimage page=fore layer=1 ]
 
 
-ティラノ・スクリプトのもう一つの大きな特徴として[l][r]
-「KAG3/吉里吉里」と親和性の高いスクリプトであることが挙げられます。[l][r]
+TyranoScript has one more important feature[l][r]
+「KAG3/吉里吉里(kirikiri)」と親和性の高いスクリプトであることが挙げられます。[l][r]
 
 [image layer=1 page=fore visible=true top=200 left=250  storage = kirikiri.png]
 
@@ -192,10 +192,10 @@
 ご提供いただける方を募集しております。[r][l]
 ファイルはKAG3/吉里吉里の互換性を高めるためだけに使用します[l][cm]
 それでは、お付き合いいただきありがとうございました！[l][cm]
-今後とも、ティラノ・スクリプトを何卒、よろしくお願いします。[l]
+今後とも、TyranoScriptを何卒、よろしくお願いします。[l]
 
 [l][cm]
-最初に戻ります.[l]
+Returning to the beginning.[l]
 [l][cm]
 @jump target="*start"
 

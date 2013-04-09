@@ -858,14 +858,14 @@ tyrano.plugin.kag.tag.label = {
 :group
 Message
 :title
-クリック待ち
+Wait for Click
 
 :exp
-このタグの位置でクリック待ちを行います。
+This tag allows waiting for a click.
 
 :sample
-テキスト表示[l]
-テキスト表示[l][r]
+show some text...[l]
+show some more text...[l][r]
 :param
 #[end]
 
@@ -1036,13 +1036,13 @@ tyrano.plugin.kag.tag.jump ={
 :group
 Message
 :title
-改行する
+New Line
 :exp
-改行します
+Puts a new line
 :sample
-テキスト表示[l]
-改行します[l][r]
-改行します[l][r]
+Show text[l]
+Put text on a new line[l][r]
+Put text on a new line[l][r]
 :param
 
 #[end]
@@ -1067,13 +1067,13 @@ tyrano.plugin.kag.tag.r ={
 :group
 Message
 :title
-メッセージレイヤの文字の消去
+Erase
 :exp
-現在の操作対象メッセージレイヤ(current指定)の文字を消去します。
+Erase the characters of the current layer
 :sample
-テキスト表示[l]
-メッセージをクリアします[l][er]
-改行します[l][r]
+Show some text[l]
+Clear the message[l][er]
+Put a new line[l][r]
 :param
 
 #[end]
@@ -1101,7 +1101,7 @@ tyrano.plugin.kag.tag.er ={
 :group
 Message
 :title
-すべてのメッセージレイヤをクリア
+Clear All Messages
 :exp
 すべてのメッセージレイヤをクリアします。
 また、フォントスタイルなどもデフォルトの設定に戻ります。
@@ -1109,9 +1109,9 @@ Message
 [ct]タグのように 操作対象のメッセージレイヤが表ページの message0 に指定されるようなことはありません。 このタグを実行後も操作対象のレイヤは同じです。
 
 :sample
-テキスト表示[l]
-画面クリアする[l][cm]
-もう一度画面クリアする[l][cm]
+Show some text[l]
+Clear screen[l][cm]
+Clear screen again[l][cm]
 :param
 
 #[end]
