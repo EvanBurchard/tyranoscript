@@ -101,9 +101,9 @@ tyrano.plugin.kag.tag.clearsysvar = {
 :group
 System Settings
 :title
-ウィンドウを閉じる
+Close Window
 :exp
-ウィンドウを閉じます。
+Close Window
 ブラウザから閲覧している場合は、ブラウザが終了します
 :sample
 :param
@@ -179,9 +179,9 @@ tyrano.plugin.kag.tag["trace"] = {
 :group
 System Settings
 :title
-タイトル指定
+Set Title
 :exp
-ゲームタイトルを指定します。
+Sets the title for the game
 例えば、章ごとにタイトルを変えるとプレイヤーからわかりやすくなります。
 吉里吉里の場合、アプリのウィンドウタイトル。
 ティラノスクリプトの場合、ブラウザタイトルが変わります

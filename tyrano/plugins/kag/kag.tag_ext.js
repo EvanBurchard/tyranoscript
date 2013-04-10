@@ -6,9 +6,9 @@
 :group
 Macros, Variables, JavaScript Interface
 :title
-外部JavaScriptファイル読み込み
+Load JavaScript File
 :exp
-外部JavaScriptファイルをロードします
+Read in external JavaScript File
 無制限な機能拡張が可能です
 JSファイルは/data/others フォルダ以下に格納してください
 :sample
@@ -883,9 +883,9 @@ tyrano.plugin.kag.tag.chara_ptext ={
 :group
 Character
 :title
-キャラクター操作タグの基本設定
+Character Settings
 :exp
-キャラクター操作タグの基本設定を変更できます
+Change Character Settings
 :sample
 :param
 pos_mode=true か false　を指定します。デフォルトはtrueです。trueの場合は、[chara_show]タグなどで追加した時の立ち位置を自動的に計算し、配置します。,

@@ -5,9 +5,9 @@
 :group
 Audio
 :title
-BGMの再生
+Play BGM
 :exp
-BGMを再生します。
+Play BGM
 mp3形式、ogg形式　等　HTML5標準をサポートします。
 再生するファイルはプロジェクトフォルダのbgmフォルダに格納してください。
 
@@ -275,9 +275,9 @@ tyrano.plugin.kag.tag.playbgm = {
 :group
 Audio
 :title
-BGMの停止
+Stop BGM
 :exp
-再生しているBGMの再生を停止します
+Stop BGM
 :sample
 [stopbgm ]
 :param
@@ -438,9 +438,9 @@ tyrano.plugin.kag.tag.stopbgm = {
 :group
 Audio
 :title
-BGMにフェードイン
+Fadein BGM
 :exp
-BGMを徐々に再生します。
+Gradually fade in BGM
 一部環境（Firefox、Sarafi等）においては対応していません。その場合、playbgmの動作となります。
 :sample
 [fadeinbgm storage=sample.mp3 loop=false time=3000]
@@ -477,14 +477,14 @@ tyrano.plugin.kag.tag.fadeinbgm = {
 :group
 Audio
 :title
-BGMのフェードアウト
+Fade Out BGM
 :exp
-再生中のBGMをフェードアウトしながら停止します。
+Fade Out BGM
 一部環境（Firefox、Sarafi等）においては対応していません。その場合、playbgmの動作となります。
 :sample
 [fadeoutbgm  time=3000]
 :param
-time=フェードアウトを行なっている時間をミリ秒で指定します。
+time=Time in miliseconds for fade out to occur
 #[end]
 */
 tyrano.plugin.kag.tag.fadeoutbgm = {
@@ -510,9 +510,9 @@ tyrano.plugin.kag.tag.fadeoutbgm = {
 :group
 Audio
 :title
-BGMのクロスフェード（入れ替え）
+Crossfade BGM
 :exp
-BGMを入れ替えます。
+Crossfade BGM
 音楽が交差して切り替わる演出に使用できます。
 一部環境（Firefox、Safari等）において対応していません。その場合、playbgmの動作となります。
 :sample
@@ -554,9 +554,9 @@ tyrano.plugin.kag.tag.xchgbgm = {
 :group
 Audio
 :title
-効果音の再生
+Play a sound effect
 :exp
-効果音を再生します
+Play a sound effect
 効果音ファイルはプロジェクトフォルダのsoundフォルダに入れてください
 :sample
 [playse storage=sound.mp3 loop=false ]
@@ -595,9 +595,9 @@ tyrano.plugin.kag.tag.playse = {
 :group
 Audio
 :title
-効果音の停止
+Stop a sound effect
 :exp
-効果音を再生を停止します
+Stop a sound effect
 :sample
 [stopse ]
 :param
@@ -624,9 +624,9 @@ tyrano.plugin.kag.tag.stopse = {
 :group
 Audio
 :title
-効果音のフェードイン
+Fade in a sound effect
 :exp
-効果音をフェードインしながら再生します
+Fade in a sound effect
 :sample
 [fadeinse storage=sound.mp3 loop=false time=2000 ]
 :param
@@ -662,13 +662,13 @@ tyrano.plugin.kag.tag.fadeinse = {
 :group
 Audio
 :title
-効果音の再生
+Sound Effect fadeout
 :exp
-効果音をフェードアウトします
+Sound Effect fadeout
 :sample
 [fadeoutse time=2000 ]
 :param
-time=フェードアウトを行なっている時間をミリ秒で指定します。
+time=fadeout in miliseconds
 #[end]
 */
 
@@ -694,9 +694,9 @@ tyrano.plugin.kag.tag.fadeoutse = {
 :group
 Audio
 :title
-BGMの再生完了を待ちます
+Pause BGM Playback
 :exp
-BGMの再生完了を待ちます
+Pause BGM Playback
 :sample
 :param
 #[end]
