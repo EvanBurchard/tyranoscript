@@ -64,7 +64,7 @@ tyrano.plugin.kag.menu ={
     
         layer_menu.find(".menu_skip").click(function(){
             
-            //スキップを開始する
+            //Skip the beginning
             layer_menu.html("");
             layer_menu.hide();
             $(".button_menu").show();
@@ -82,7 +82,7 @@ tyrano.plugin.kag.menu ={
         
         layer_menu.find(".menu_window_close").click(function(){
             
-            //ウィンドウ消去
+            //Hide window
             that.kag.layer.hideMessageLayers();
             
             layer_menu.hide();
@@ -102,7 +102,7 @@ tyrano.plugin.kag.menu ={
             
         });
         
-        //タイトルに戻る
+        //Return to Title Screen
         layer_menu.find(".menu_back_title").click(function(){
             
             /*
@@ -419,7 +419,7 @@ tyrano.plugin.kag.menu ={
             for(var i=0;i<5;i++){
             
                 var json ={};
-                json.title  = "まだ、保存されているデータがありません"; // ラストテキスト
+                json.title  = "There is no save data here yet"; // ラストテキスト
                 json.current_order_index = 0;
                 json.save_date = "　";
                 json.stat = {};

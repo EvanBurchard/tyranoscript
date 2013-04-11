@@ -1,10 +1,15 @@
 TyranoScript｜ティラノスクリプト　Ver2.60（C）ShikemokuMK
 http://tyrano.jp
 
+pssst.  Hey people who don't know Japanese.  This is the English fork.  
+
+Download this project, and open doc.html.  Not everything is translated yet, but it should help you get started on making awesome interactive fiction. 
+
+pssst.  Hey people who DO know Japanese, the state of translations is at the bottom. Please get in touch with me (@jsarcade or evan.burchard+tyranoscript@gmail.com if you want to collaborate on it.)
 
 ■主な特徴■
 
-①　HTMLとJavaScriptで動作します
+①　Runs with HTML and JavaScript
 
 iphone、ipad、アンドロイドなどの端末で動作させることが可能です。
 また、PhoneGapなどのツールを使うことでアプリ化して
@@ -13,24 +18,24 @@ AppStoreやアンドロイドマーケットで販売することができます
 もちろん、ブラウザゲームとして動作させたり
 拡張パックを使用することでウィンドウズアプリケーションとしても配布できます。
 
-②　KAG３/吉里吉里との高い親和性
+②　KAG３/吉里吉里(kirikiri) Compatible
 
 ティラノスクリプトはKAG3/吉里吉里と高い互換性を保つよう設計されています。
 そのため、過去のウィンドウズ用ゲームを容易にスマートフォンやWeb用へ移植することができます。
 
 
-③　JavaScriptとのスムーズな連携
+③　Smooth integration with JavaScript
 
 ティラノ・スクリプトでは、JavaScriptを自由に記述して拡張することが可能です。
 
 
-④　フリー。商用利用可
+④　Free for individuals or for businesses
 
 無料でご利用下さい。商用利用も可能です。
 また、本ソフトはオープンソースとして公開しております。
-MITライセンスの中でご活用ください。
+MIT License の中でご活用ください。
 
-■使い方■
+■How to Use■
 
 公式ページにチュートリアルとタグリファレンスがありますので参考にしてください
 
@@ -65,10 +70,9 @@ http://devdoc.kikyou.info/tvp/docs/kag3doc/contents/index.html
 発生した場合でも、一切の責任を負いません。
 
 
-
 ■連絡先■
 
-メール
+Email:
 shikemokumk@gmail.com
 
 Twitter
@@ -129,13 +133,20 @@ Ver1.00 　(2012 / 09 /24)
 その他、バグ修正
 
 Ver0.11
-すべての環境でMP3再生に対応（FLASH再生エンジン投入）
+すべての環境でMP3再生に対応（added FLASH playback engine）
 
 Ver0.10 (2012/09/10)
-ベータ版リリース
+Better release
 
 V0.01 (2012/08/21)
-実験版リリース！
+Initial release！
 
 ---------------------------------------------------------------------
+
+English Translations by Evan Burchard (hopefully others to come)
+
+State of the translations so far:
+1. Docs (doc.html) - Getting there.  Titles are done.  A good deal of other things are filled in.
+2. Demo (index.html) - Done except for the menu screen.  A few quirks here and there. 
+3. This readme (readme.txt) - barely started.
 
