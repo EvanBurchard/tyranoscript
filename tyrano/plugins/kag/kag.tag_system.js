@@ -4,26 +4,26 @@
 :group
 Macros, Variables, JavaScript Interface
 :title
-式の評価
+Evaluate Expression
 :exp
-expで示された式を評価します。変数への値の代入などに使用されます。
-exp には任意の TJS(JS) 式を指定できるので、TJS(JS) として有効な式であれば 何でも評価できます。
+exp allows evaluation of expressions。variables can be assigned to numbers, etc.
+exp allows for arbitrary TJS(JS) so, any valid TJS(JS) can be evaluated.
 :sample
 [eval exp="f.test=500"]
-;↑ゲーム変数 test に数値を代入している
-[eval exp="f.test2='文字列'"]
-;↑ゲーム変数 test2 に文字列を代入している
+;↑assign to game variable test to a number
+[eval exp="f.test2='Example String'"]
+;↑assign game variable test2 to Example String
 [eval exp="sf.test=400"]
-;↑システム変数 test に数値を代入している
+;↑assign system variable test to a number
 [eval exp="f.test2=f.test*3"]
-;↑ゲーム変数 test2 に ゲーム変数 test の 3 倍の数値を代入している
+;↑assign game variable test2 to 3x game variable test 
 :param
-exp=評価するTJS式を指定します。
+exp=TJS expression to be evaluated
 #[end]
 */
 
 
-//スクリプトの評価
+//script evaluation
 tyrano.plugin.kag.tag.eval={
     
     vital:["exp"],
@@ -47,28 +47,25 @@ tyrano.plugin.kag.tag.eval={
 :group
 Macros, Variables, JavaScript Interface
 :title
-ゲーム変数の全消去
+clear all game variables
 :exp
-ゲーム変数をすべて消去します
+clear all game variables
 :sample
 :param
 #[end]
 */
 
-//すべての編集を初期化
+//Reset all variables
 tyrano.plugin.kag.tag.clearvar={
   
-  //すべての変数を削除
+  //delete all variables
   pm:{
-      
   },
-  
   start:function(pm){
       this.kag.clearVariable();
       this.kag.ftag.nextOrder();
         
   }
-    
 };
 
 
@@ -77,19 +74,19 @@ tyrano.plugin.kag.tag.clearvar={
 :group
 Macros, Variables, JavaScript Interface
 :title
-システム変数の全消去
+clear all system variables
 :exp
-システム変数を全消去します
+clear all system variables
 :sample
 :param
 #[end]
 */
 
-//システム変数の初期化
+//reset system variables
 tyrano.plugin.kag.tag.clearsysvar = {
 
     start:function(){
-        this.kag.variable.sf ={}; //システム変数
+        this.kag.variable.sf ={}; //system variable
         this.kag.ftag.nextOrder();
     }
 
@@ -104,15 +101,14 @@ System Settings
 Close Window
 :exp
 Close Window
-ブラウザから閲覧している場合は、ブラウザが終了します
 :sample
 :param
-ask=true を指定すると、終了するかどうかの確認をします。false を 指定するとこの確認はありません。この属性を省略 すると、 true を指定したとみなされます。
+ask=if true is set a confirmation will be requested. If false is set no confirmation will occur. This attribute is set to true by default.
 #[end]
 */
 
 
-//ウィンドウを閉じる命令
+//Close window command
 tyrano.plugin.kag.tag["close"] = {
 
     pm:{
@@ -122,7 +118,7 @@ tyrano.plugin.kag.tag["close"] = {
     start:function(pm){
         
         if(pm.ask=="true"){
-            if(confirm("ウィンドウを閉じて終了します。よろしいですね？")){
+            if(confirm("You are about to close the window.  Are you sure you want to do this?")){
                 window.close();
             }
         }else{
@@ -139,22 +135,22 @@ tyrano.plugin.kag.tag["close"] = {
 :group
 Other
 :title
-コンソールへの値の出力
+console output
 :exp
-expで指定された式を評価し、結果をコンソールに出力します。
-【KAG3吉里吉里の場合】
-コンソールは Shift+F4 で表示されるほか、Config.tjs 内で logMode を設定することに より、ファイルに記録することもできます。
-【ティラノスクリプト　ブラウザの場合】
-ブラウザのウェブインスペクタからコンソールを確認してください
+outputs values to the console
+【In the case of KAG3 or 吉里吉里(kirikiri)】
+consoleは Shift+F4 でdisplayされるほか、Config.tjs 内で logMode を設定することに より、Fileに記録することもできます。
+【In the case of TyranoScript in a browser】
+Check in the web inspector console of the browser
 :sample
 [trace exp="f.test"]
-; ↑ ゲーム変数 test の内容を コンソール に出力する
+; ↑ game variable test's details are output to the console 
 :param
-exp=評価するTJS（JS）式を指定します
+exp=evaluationするTJS（JS）expressionを指定します
 #[end]
 */
 
-//変数をコンソールに出力
+//output a variable to console
 tyrano.plugin.kag.tag["trace"] = {
     
      pm:{
@@ -164,7 +160,7 @@ tyrano.plugin.kag.tag["trace"] = {
     start:function(pm){
     
         var val = this.kag.embScript(pm.exp);
-        //評価された値を代入
+        //evaluationされた値をsubstitute
         //this.kag.ftag.startTag("text",{"val":val});
         
         this.kag.log("trace出力："+val);
@@ -182,13 +178,13 @@ System Settings
 Set Title
 :exp
 Sets the title for the game
-例えば、章ごとにタイトルを変えるとプレイヤーからわかりやすくなります。
-吉里吉里の場合、アプリのウィンドウタイトル。
-ティラノスクリプトの場合、ブラウザタイトルが変わります
+For example、章ごとにTitleを変えるとPlayerからわかりやすくなります。
+吉里吉里の場合、Applicationのウィンドウタイトル。
+TyranoScriptの場合、browserTitleが変わります
 :sample
-[title name="変更後のタイトル"]
+[title name="変更後のTitle"]
 :param
-name=表示したいタイトルを指定してください
+name=The name you want for your title
 #[end]
 */
 
@@ -200,10 +196,10 @@ tyrano.plugin.kag.tag["title"] = {
         name:""
     },
 
-    //タイトルの設定
+    //Titleの設定
     start:function(pm){
         if(pm.name!=""){
-            //タイトルの設定
+            //Titleの設定
             this.kag.setTitle(pm.name);
             this.kag.ftag.nextOrder();
         }
@@ -217,10 +213,10 @@ tyrano.plugin.kag.tag["title"] = {
 :group
 Macros, Variables, JavaScript Interface
 :title
-JavaScriptの記述
+Enter JavaScript
 :exp
-[iscript]と[endscript]に囲まれた箇所にJavaScriptを記述することができます。
-TJSの式にも適応できますが、ティラノスクリプトとの動作互換はありません
+You can use JavaScript between [iscript] and [endscript].
+TJS can also be used, but TyranoScript variables are unavailable.
 :sample
 [iscript]
 
@@ -235,7 +231,7 @@ $("body").html();
 #[end]
 */
 
-//スクリプト開始
+//script開始
 tyrano.plugin.kag.tag.iscript = {
     start:function(pm){
         
@@ -252,19 +248,19 @@ tyrano.plugin.kag.tag.iscript = {
 :group
 Macros, Variables, JavaScript Interface
 :title
-JavaScriptの終了
+end JavaScript
 :exp
-JavaScriptの記述を終了します
+end JavaScript description
 :sample
 :param
 #[end]
 */
 
-//スクリプト終了
+//script end
 tyrano.plugin.kag.tag.endscript = {
     start:function(pm){
         
-        //スクリプトを実行する
+        //scriptを実行する
         this.kag.evalScript(this.kag.stat.buff_script);
         
         this.kag.stat.is_script = false;
@@ -280,20 +276,20 @@ tyrano.plugin.kag.tag.endscript = {
 :group
 Other
 :title
-HTMLをレイヤ追加
+add an HTML layer
 :exp
-[html]と[endhtml]の間に記述したHTMLを表示することができます。
-この機能は非常に強力です。もちろんJavaScriptタグ。Canvasなど次世代Web表現を全てサポートします。
-例えば、Youtubeのビデオプレイヤーを挿入したり、無数に公開されているWebAPIとの連携なども可能です。
-このタグで挿入した場合は最前面にHTML要素が挿入されます
-cmタグなどで画面をクリアしない限り、クリックしてもゲームが進みません。
-必ずグラフィックボタンなども配置して、ジャンプでゲームを進める状態にしておくことが必要です。
-タグの中に、ティラノスクリプトの変数を挿入することもできます。
-従来通りHTMLの中で[emb]タグを使用してください
+[html]と[endhtml]の間に記述したHTMLをdisplayすることができます。
+この機能は非常に強力です。もちろんJavaScripttag。Canvasなど次世代Web表現を全てサポートします。
+For example、YoutubeのビデオPlayerを挿入したり、無数に公開されているWebAPIとの連携なども可能です。
+このtagで挿入した場合は最前面にHTML要素が挿入されます
+cmtagなどで画面をクリアしない限り、clickしてもGameが進みません。
+必ずグラフィックボタンなども配置して、ジャンプでGameを進める状態にしておくことが必要です。
+tagの中に、TyranoScriptのvariableを挿入することもできます。
+従来通りHTMLの中で[emb]tagを使用してください
 :sample
 
-;youtubeのプレイヤーを指定した位置に挿入します
-;yoububeから埋め込み用タグを取得してきています
+;youtubeのPlayerを指定した位置に挿入します
+;youtubeから埋め込み用tagを取得してきています
 [html top=100 left=300]
 
 <object width="200" height="113">
@@ -306,12 +302,12 @@ cmタグなどで画面をクリアしない限り、クリックしてもゲー
 
 [endhtml]
 :param
-left=HTMLタグの左端位置を指定します。（ピクセル）,
-top=HTMLの上端位置を指定します。（ピクセル）,
-name=HTML領域に名前を指定することができます。この名前を使って、HTML領域に対してアニメーションなども実行できます。
+left=HTMLtagの左端位置を指定します。（pixels）,
+top=HTMLの上端位置を指定します。（pixels）,
+name=HTML領域に名前を指定することができます。この名前を使って、HTML領域に対してAnimationなども実行できます。
 #[end]
 */
-//htmlの表示、そして、格納だわな。
+//htmlのdisplay、そして、格納だわな。
 tyrano.plugin.kag.tag.html = {
     
     pm:{
@@ -339,14 +335,14 @@ tyrano.plugin.kag.tag.html = {
 :group
 Other
 :title
-HTMLの終了
+end HTML
 :exp
-HTMLの記述を終了します
+end HTML input
 :sample
 :param
 #[end]
 */
-//htmlの終了
+//html end
 tyrano.plugin.kag.tag.endhtml = {
     
     start:function(pm){
@@ -396,17 +392,17 @@ tyrano.plugin.kag.tag.endhtml = {
 :group
 Macros, Variables, JavaScript Interface
 :title
-式評価結果の埋め込み
+Embed expression
 :exp
-exp で示された式を評価(実行)し、その結果を埋め込みます。
-変数をシナリオ中に表示させたい場合に使います。
+exp で示された式をevaluation(実行)し、その結果を埋め込みます。
+variableをScenario中にdisplayさせたい場合に使います。
 :sample
-[eval exp="f.value1='変数の値だよ～ん'"]
+[eval exp="f.value1='variableの値だよ～ん'"]
 とどこかで書いておいて、
 [emb exp="f.value1"]
-と書くと、この emb タグが 変数の値だよ～ん という内容に置き換わります。
+と書くと、この emb tagが variableの値だよ～ん という内容に置き換わります。
 :param
-exp=評価するTJS（JS）式を指定します。ここで評価された式がembタグと置き換わります
+exp=evaluationするTJS（JS）式を指定します。ここでevaluationされた式がembtagと置き換わります
 #[end]
 */
 
@@ -421,7 +417,7 @@ tyrano.plugin.kag.tag.emb = {
     start:function(pm){
         
         var val = ""+this.kag.embScript(pm.exp);
-        //評価された値を代入
+        //evaluationされた値を代入
         this.kag.ftag.startTag("text",{"val":val});
         
     }
@@ -434,41 +430,41 @@ tyrano.plugin.kag.tag.emb = {
 :group
 Macros, Variables, JavaScript Interface
 :title
-条件分岐
+if
 :exp
-式を評価し、その結果が true ( または 0 以外 ) ならば、 elsif・else・endif のいずれかまでにある文章やタグを実行し、 そうでない場合は無視します。
+式をevaluationし、その結果が true ( または 0 以外 ) ならば、 elsif・else・endif のいずれかまでにある文章やtagを実行し、 そうでない場合は無視します。
 :sample
 ; 例1 [if exp="false"]
-ここは表示されない
+ここはdisplayされない
 [else]
-ここは表示される
+ここはdisplayされる
 [endif]
 
 ; 例2 [if exp="false"]
-ここは表示されない
+ここはdisplayされない
 [elsif exp="false"]
-ここは表示されない
+ここはdisplayされない
 [else]
-ここは表示される
+ここはdisplayされる
 [endif]
 
 ; 例3 [if exp="false"]
-ここは表示されない
+ここはdisplayされない
 [elsif exp="true"]
-ここは表示される
+ここはdisplayされる
 [else]
-ここは表示されない
+ここはdisplayされない
 [endif]
 
 ; 例4 [if exp="true"]
-ここは表示される
+ここはdisplayされる
 [elsif exp="true"]
-ここは表示されない
+ここはdisplayされない
 [else]
-ここは表示されない
+ここはdisplayされない
 [endif]
 :param
-exp=評価する TJS 式を指定します。この式の結果が false ( または 0 な らば、elsif・else・endif タグまでの文章やタグが無視されます。
+exp=evaluationする TJS 式を指定します。この式の結果が false ( または 0 な らば、elsif・else・endif tagまでの文章やtagが無視されます。
 #[end]
 */
 
@@ -526,13 +522,13 @@ tyrano.plugin.kag.tag["if"] = {
 :group
 Macros, Variables, JavaScript Interface
 :title
-それまでの if の中身が実行されていなかったときに、条件付きで実行 
+else if
 :exp
-if タグと endif タグの間で用いられます。 それまでの if タグまたは elsif タグの中身がひとつも実行されていないときに 式を評価し、その結果が真ならば elsif から次の elsif・else・endif までの間を実行します。
-使い方の例については、if タグの項目を参照してください。
+if tagと endif tagの間で用いられます。 それまでの if tagまたは elsif tagの中身がひとつも実行されていないときに 式をevaluationし、その結果が真ならば elsif から次の elsif・else・endif までの間を実行します。
+使い方の例については、if tagの項目を参照してください。
 :sample
 :param
-exp=評価する JS 式を指定します。
+exp=evaluationする JS 式を指定します。
 #[end]
 */
 
@@ -580,10 +576,10 @@ tyrano.plugin.kag.tag["elsif"] = {
 :group
 Macros, Variables, JavaScript Interface
 :title
-if の中身が実行されなかったときに実行
+else
 :exp
-if タグもしくは elsif タグ と endif タグの間で用いられます。 if または elsif ブロックの中身がひとつも実行されていないとき、 else から endif までの間を実行します。
-使い方の例については、if タグの項目を参照してください。
+if tagもしくは elsif tag と endif tagの間で用いられます。 if または elsif ブロックの中身がひとつも実行されていないとき、 else から endif までの間を実行します。
+使い方の例については、if tagの項目を参照してください。
 :sample
 :param
 #[end]
@@ -631,12 +627,12 @@ tyrano.plugin.kag.tag["else"] = {
 :group
 Macros, Variables, JavaScript Interface
 :title
-if文を終了します
+end if
 :exp
-if文を終了します。必ずif文の終わりに記述する必要があります
+if文をendします。必ずif文の終わりに記述する必要があります
 :sample
 :param
-exp=評価する TJS 式を指定します。
+exp=evaluationする TJS 式を指定します。
 #[end]
 */
 
@@ -657,14 +653,14 @@ tyrano.plugin.kag.tag["endif"] = {
 :group
 Macros, Variables, JavaScript Interface
 :title
-サブルーチンの呼び出し 
+call a subroutine
 :exp
-指定されたシナリオファイルの指定されたラベルで示される サブルーチンを呼び出します。
-呼び出されたサブルーチンは、 return タグで 呼び出し元や任意の場所に戻ることができます。
+指定されたScenario Fileの指定されたラベルで示される subroutineを呼び出します。
+呼び出されたsubroutineは、 return tagで 呼び出し元や任意の場所に戻ることができます。
 :sample
 :param
-storage=呼び出したいサブルーチンのあるのシナリオファイルを 指定します。省略すると、現在 のシナリオファイル内であると見なされます。,
-target=呼び出すサブルーチンのラベルを指定します。省略すると、ファイルの先頭から実行されます。
+storage=呼び出したいsubroutineのあるのScenarioFileを 指定します。省略すると、現在 のScenarioFile内であると見なされます。,
+target=呼び出すsubroutineのラベルを指定します。省略すると、Fileの先頭から実行されます。
 #[end]
 */
 
@@ -702,9 +698,9 @@ tyrano.plugin.kag.tag["call"] = {
 :group
 Macros, Variables, JavaScript Interface
 :title
-サブルーチンから戻る 
+Return from subroutine
 :exp
-サブルーチンから呼び出し元に戻ります。
+subroutineから呼び出し元に戻ります。
 KAG３の任意の場所へのリターンは廃止しました。
 （必要な場合はCallで代用してください）
 :sample
@@ -734,24 +730,24 @@ tyrano.plugin.kag.tag["return"] = {
 :group
 Macros, Variables, JavaScript Interface
 :title
-マクロの記述
+Describe Macro
 :exp
-マクロ記述を開始します。新しいタグを定義することが出来ます。
-このタグから、endmacro タグまでにある文章やタグは、 name 属性で指定されたタグとして登録され、以後使用できるようになります。
-マクロ中に書かれたタグには、特別に % を頭につけた属性の値を指定することができます。 % 以降にはマクロに渡された属性名を指定します。すると、マクロに渡された属性の値をその属性の値とすることができます。このとき、| を使って属性の省略値を指定することもできます ( 下の例参照 )。 属性名には小文字を用いてください。
-また、属性の代わりに * を書くと、マクロに渡されたすべての属性をそのタグに渡すこと ができます。
+マクロ記述を開始します。新しいtagを定義することが出来ます。
+このtagから、endmacro tagまでにある文章やtagは、 name 属性で指定されたtagとして登録され、以後使用できるようになります。
+マクロ中に書かれたtagには、特別に % を頭につけた属性の値を指定することができます。 % 以降にはマクロに渡された属性名を指定します。すると、マクロに渡された属性の値をその属性の値とすることができます。このとき、| を使って属性の省略値を指定することもできます ( 下の例参照 )。 属性名には小文字を用いてください。
+また、属性の代わりに * を書くと、マクロに渡されたすべての属性をそのtagに渡すこと ができます。
 :sample
-[macro name="newtag"][font color=0xff0000]新しいタグです[resetfont][endmacro]
+[macro name="newtag"][font color=0xff0000]新しいtagです[resetfont][endmacro]
 [newtag]
-[macro name="colortag"][font color=%iro]iro 属性付きのタグ[resetfont][endmacro]
+[macro name="colortag"][font color=%iro]iro 属性付きのtag[resetfont][endmacro]
 [colortag iro=0x332211]
-; ↑ colotag に渡された iro 属性の値が font タグの color 属性に渡される
+; ↑ colotag に渡された iro 属性の値が font tagの color 属性に渡される
 [macro name="transwait"][trans *][wt][endmacro]
-; ↑ この transwait に渡されたすべての属性が trans タグに渡される
-[macro name="colortag"][font color=%iro|0xff0000]iro 属性付きで省略値をしていしたタグ[resetfont][endmacro]
+; ↑ この transwait に渡されたすべての属性が trans tagに渡される
+[macro name="colortag"][font color=%iro|0xff0000]iro 属性付きで省略値をしていしたtag[resetfont][endmacro]
 ; ↑ % の属性の値では、 | のあとに続けて、その属性の省略値を指定することができます
 :param
-name=マクロの名前を指定してください。以後この名前で新しいタグが定義され呼び出せるようになります。
+name=マクロの名前を指定してください。以後この名前で新しいtagが定義され呼び出せるようになります。
 #[end]
 */
 
@@ -807,15 +803,15 @@ tyrano.plugin.kag.tag.macro = {
 :group
 Macros, Variables, JavaScript Interface
 :title
-マクロを終了します
+End Macro
 :exp
-マクロの終了タグです
+This ends the macro
 :sample
 :param
 #[end]
 */
 
-//マクロ終了
+//end macro
 tyrano.plugin.kag.tag.endmacro = {
     
     start:function(pm){
@@ -857,16 +853,16 @@ tyrano.plugin.kag.tag.endmacro = {
 :group
 Macros, Variables, JavaScript Interface
 :title
-マクロの削除
+Erase Macro
 :exp
-登録したマクロを削除します
+Deletes registered macro
 :sample
 :param
-name=削除するマクロ名を記述してください
+name=The name of the macro to be delted
 #[end]
 */
 
-//マクロの削除
+//Erase macro
 tyrano.plugin.kag.tag.erasemacro = {
     
     vital:["name"],
@@ -889,12 +885,12 @@ tyrano.plugin.kag.tag.erasemacro = {
 :group
 System Settings
 :title
-セーブスナップの作成
+Create a save snapshot
 :exp
-現在のプレイ状況を一時保存します。その後、tyrano.ks　拡張の[setsave]を行うことで、ここで記録したセーブデータが保存されます。
+Save the current game conditions。その後、tyrano.ks　拡張の[setsave]を行うことで、ここで記録したセーブデータが保存されます。
 :sample
 :param
-title=セーブデータのタイトルを指定します。
+title=Sets the title of the save data
 #[end]
 */
 
@@ -921,66 +917,49 @@ tyrano.plugin.kag.tag.savesnap = {
 :group
 Macros, Variables, JavaScript Interface
 :title
-条件によりシナリオを無視
+start ignore
 :exp
-式を評価し、その結果が true ( または 0 以外 ) ならば、endignore タグまでにある文章 やタグが無視されます。
+式をevaluationし、その結果が true ( または 0 以外 ) ならば、endignore tagまでにある文章 やtagが無視されます。
 :sample
 :param
-exp=評価する TJS 式を指定します。この式の結果が true ( または 0 以外 )ならば、endignore タグまでの文章やタグが無視されます。
+exp=evaluationする TJS 式を指定します。この式の結果が true ( または 0 以外 )ならば、endignore tagまでの文章やtagが無視されます。
 #[end]
 */
 
-
-
-
 tyrano.plugin.kag.tag.ignore = {
-    
     vital:["exp"],
-        
     pm:{
         exp:""
     },
-    
     start:function(pm){
-        
-        
         if(this.kag.embScript(pm.exp)){
-            
             for(var i=0;i<2000;i++){
-                
                 var r = this.kag.ftag.nextOrderWithTag({"endignore":""});
-                
                 if(r == true){
                         break;
                 }
             }
-            
             if(i>1900){
                 this.kag.error("ignoreが閉じていません");
             }
         }else{
-            
             this.kag.ftag.nextOrder();
-            
         }
     }    
-    
 };
-
 
 /*
 #[endignore]
 :group
 Macros, Variables, JavaScript Interface
 :title
-ignoreの終了
+end ignore
 :exp
-ignoreを終了します
+ignoreをendします
 :sample
 :param
 #[end]
 */
-
 
 tyrano.plugin.kag.tag.endignore ={
     
@@ -990,9 +969,6 @@ tyrano.plugin.kag.tag.endignore ={
     
 };
 
-
-
-
 /*
 #[edit]
 :group
@@ -1001,10 +977,10 @@ Forms
 Text Box
 :exp
 Show a text box.
-入力された値はcommitタグのタイミングで指定した変数名に格納されます
-フォーム表示中はシナリオは停止します。（クリックしてもストーリーが進まない）
-必ず、グラフィックボタンなどを配置してラベルへジャンプしてください。
-こまかい表示方法の変更はtyrano.css内を編集することで可能です。
+入力された値はcommit tagのtimingでthe name of the variable that was setに格納されます
+Formdisplay中はScenarioは停止します。（clickしてもストーリーが進まない）
+必ず、Graphical buttonなどを配置してラベルへジャンプしてください。
+こまかいdisplay方法の変更はtyrano.css内を編集することで可能です。
 :sample
 [edit name="f.test"]
 
@@ -1016,25 +992,25 @@ Show a text box.
 *commit
 [commit]
 [cm]
-;入力されたテキストの内容を表示する
-値が確定しました[l]
-「[emb exp=f.test]」と入力しましたね[l]
+;show the contents of entered Text
+Value is set as[l]
+「[emb exp=f.test]」Is this is what you entered?[l]
 
 :param
-name=格納する変数名を指定して下さい,
+name=格納するvariable名を指定して下さい,
 longth=横幅です,
 color=文字の色を指定して下さい　デフォルトは黒です,
-left=テキストボックスの横位置を指定します,
-top=テキストボックスの縦位置を指定します,
+left=Text Boxの横位置を指定します,
+top=Text Boxの縦位置を指定します,
 size=文字のサイズを指定します　デフォルト２０px,
-width=テキストボックスの幅サイズを指定します,
-height=テキストボックスの高さを指定します,
+width=Text Boxの幅サイズを指定します,
+height=Text Boxの高さを指定します,
 maxchars=最大入力文字数
 
 #[end]
 */
 
-//テキストボックス、ティラノスクリプト
+//Text Box、TyranoScript
 tyrano.plugin.kag.tag.edit = {
     
     vital:["name"],
@@ -1042,7 +1018,7 @@ tyrano.plugin.kag.tag.edit = {
     
     pm:{
         name:"",
-        length:"",//ピクセル　横幅
+        length:"",//pixels　width
         color:"black",
         left:"0",
         top:"0",
@@ -1088,16 +1064,16 @@ tyrano.plugin.kag.tag.edit = {
 :group
 System Settings
 :title
-画像ファイルの事前読み込み
+Preloads Image Files 
 :exp
-preloadタグを使用することで、素材ファイル（画像や音楽）を事前に読み込んでおくことができます。
-実際に素材を使用する際に表示がスムーズになります。
+Using the preload tag, you can load files (images or music) before they are needed
+The presentation will be smooth when they are needed.
 :sample
 
-;画像ファイルはフルパス（プロジェクトファイル以下）で指定してください
+;Use the full path below the project directory
 [preload storage="data/fgimage/girl.jpg"]
 
-;配列を渡すと、まとめてロードすることもできます。
+;You can also specify an array
 [iscript]
 f.preload_images = ["data/fgimage/girl.jpg","data/fgimage/haruko.png","data/fgimage/miku1.png","data/fgimage/miku2.png"];
 [endscript]
@@ -1105,13 +1081,13 @@ f.preload_images = ["data/fgimage/girl.jpg","data/fgimage/haruko.png","data/fgim
 [preload storage=&f.preload_images]
 
 :param
-storage=事前に読み込む画像ファイルをフルパスでしていしてください。配列を渡すことでまとめて指定することもできます。,
-wait=trueを指定すると、全ての読み込みが完了するまでゲームを停止します。NowLoadingの表示が必要でしょう。true or false デフォルトはfalse
+storage=事前に読み込む画像Fileをフルパスでしていしてください。配列を渡すことでまとめて指定することもできます。,
+wait=trueを指定すると、全ての読み込みが完了するまでGameを停止します。NowLoadingのdisplayが必要でしょう。true or false デフォルトはfalse
 
 #[end]
 */
 
-//画像ファイルの事前読み込み
+//画像Fileの事前読み込み
 tyrano.plugin.kag.tag.preload = {
     
     vital:["storage"],
@@ -1178,19 +1154,19 @@ tyrano.plugin.kag.tag.preload = {
 :group
 Layer
 :title
-Fixレイヤーをクリアします。
+Clears the Fix Layer
 :exp
 name属性を指定することで、該当する要素のみを削除することもできます。
 :sample
 
-;fixレイヤーへの追加
-[ptext name="sample" layer=fix page=fore text="テキストテキスト" size=30 x=200 y=100 color=red ]
+;fixLayerへの追加
+[ptext name="sample" layer=fix page=fore text="TextText" size=30 x=200 y=100 color=red ]
 
-;fixレイヤーのクリア
+;fixLayerのクリア
 [fixclear name="sample"]
 
 :param
-name=fixレイヤーへ追加した時に名前を指定した場合、適応できます。
+name=fixLayerへ追加した時に名前を指定した場合、適応できます。
 
 #[end]
 */
@@ -1225,8 +1201,8 @@ Forms
 :title
 Submit Form
 :exp
-テキストボックスの値を確定して指定したname属性で指定した変数に値を格納します。
-注意点としてcommitが実行された段階で、テキストボックスなどのフォームが表示されている必要があります。
+Text Boxの値を確定して指定したname属性で指定したvariableに値を格納します。
+注意点としてcommitが実行された段階で、Text BoxなどのFormがdisplayされている必要があります。
 :sample
 :param
 

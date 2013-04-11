@@ -1,5 +1,5 @@
 
-//tag総合管理　ゲーム全体の進捗も管理する
+//tag総合管理　Game全体の進捗も管理する
 tyrano.plugin.kag.ftag ={
     
     tyrano:null,
@@ -28,7 +28,7 @@ tyrano.plugin.kag.ftag ={
         
         //ラベル名が指定されている場合は
         if(label_name){
-            //そこへジャンプ
+            //そこへJump
             this.nextOrderWithLabel(label_name);
         }else{
             this.nextOrderWithLabel(""); //ここどうなんだろう
@@ -80,7 +80,7 @@ tyrano.plugin.kag.ftag ={
             
                 this.current_order_index++;
                 
-                //ファイルの終端に着ている場合は戻す
+                //Fileの終端に着ている場合は戻す
                 if(this.array_tag.length <= this.current_order_index){
                     this.kag.endStorage();
                     return false;
@@ -96,7 +96,7 @@ tyrano.plugin.kag.ftag ={
                 
                 
                 
-                //前に改ページ指定が入っている場合はテキスト部分をクリアする
+                //前に改ページ指定が入っている場合はtext部分をクリアする
                 
                 if(this.kag.stat.flag_ref_page == true){
                     
@@ -118,7 +118,7 @@ tyrano.plugin.kag.ftag ={
                 }
             
                 
-                //message非表示状態の場合は、表示して、テキスト表示
+                //message非表示状態の場合は、表示して、text表示
                 if(this.kag.stat.is_hide_message == true){
                 
                     this.kag.layer.showMessageLayers();
@@ -151,7 +151,7 @@ tyrano.plugin.kag.ftag ={
                     
                     tag.pm = this.convertEntity(tag.pm);
                     
-                    //マクロの場合、その位置へジャンプ
+                    //マクロの場合、その位置へJump
                     var pms = tag.pm;
                     var map_obj = this.kag.stat.map_macro[tag.name];
                     
@@ -375,7 +375,7 @@ tyrano.plugin.kag.ftag ={
     },
     
     //indexを指定して、その命令を実行
-    //scenarioファイルが異なる場合
+    //scenarioFileが異なる場合
     nextOrderWithLabel:function(label_name,scenario_file){
         
         this.kag.stat.is_strong_stop = false;
@@ -404,7 +404,7 @@ tyrano.plugin.kag.ftag ={
         
         label_name = label_name.replace("*","");
         
-        //scenarioファイルが変わる場合は、全く違う動きをする
+        //scenarioFileが変わる場合は、全く違う動きをする
         if(scenario_file != this.kag.stat.current_scenario && original_scenario !=null){
             
             this.kag.layer.hideEventLayer();
@@ -461,7 +461,7 @@ tyrano.plugin.kag.ftag ={
         
         //alert(scenario_file + ":" + this.kag.stat.current_scenario);
         
-        //scenarioファイルが変わる場合は、全く違う動きをする
+        //scenarioFileが変わる場合は、全く違う動きをする
         if(scenario_file != this.kag.stat.current_scenario || flag == true){
             
             this.kag.layer.hideEventLayer();
@@ -490,7 +490,7 @@ tyrano.plugin.kag.ftag ={
             //ストロングの場合、すすめないように
             this.kag.stat.is_strong_stop = this.kag.menu.snap.stat.is_strong_stop;
             
-            //スキップフラグが立っている場合は進めてくださいね。
+            //Skipフラグが立っている場合は進めてくださいね。
             if(this.kag.stat.is_skip == true && this.kag.stat.is_strong_stop == false){
                 this.kag.ftag.nextOrder();
             }
@@ -551,7 +551,7 @@ tyrano.plugin.kag.tag.text={
         .css("font-family",this.kag.config.userFace);
         
         
-        //現在表示中のテキストを格納
+        //現在表示中のtextを格納
         this.kag.stat.current_message_str = pm.val;
         
         //縦書き指定の場合
@@ -560,7 +560,7 @@ tyrano.plugin.kag.tag.text={
             //自動改ページ無効の場合
             if(this.kag.config.defaultAutoReturn != "false"){
             
-                //テキストエリアの横幅が、一定以上いっていたばあい、テキストをクリアします
+                //textエリアの横幅が、一定以上いっていたばあい、textをクリアします
                 var j_outer_message = this.kag.getMessageOuterLayer();
                 
                 var limit_width = parseInt(j_outer_message.css("width"))*0.8;
@@ -581,7 +581,7 @@ tyrano.plugin.kag.tag.text={
         
             if(this.kag.config.defaultAutoReturn != "false"){
                 
-                //テキストエリアの高さが、一定以上いっていたばあい、テキストをクリアします
+                //textエリアの高さが、一定以上いっていたばあい、textをクリアします
                 var j_outer_message = this.kag.getMessageOuterLayer();
                 
                 var limit_height = parseInt(j_outer_message.css("height"))*0.8;
@@ -610,7 +610,7 @@ tyrano.plugin.kag.tag.text={
     showMessage:function(message_str){
         var that = this;
         
-        //テキスト表示時に、まず、画面上の次へbuttonアイコンを抹消
+        //text表示時に、まず、画面上の次へbuttonアイコンを抹消
        that.kag.ftag.hideNextImg();
         
         
@@ -719,7 +719,7 @@ tyrano.plugin.kag.tag.text={
     showMessageVertical:function(message_str){
         var that = this;
         
-        //テキスト表示時に、まず、画面上の次へbuttonアイコンを抹消
+        //text表示時に、まず、画面上の次へbuttonアイコンを抹消
          that.kag.ftag.hideNextImg();
                        
         (function(jtext){
@@ -788,7 +788,7 @@ tyrano.plugin.kag.tag.text={
                     //すべて表示完了
                     that.kag.ftag.nextOrder();
                     
-                    //テキスト表示時に、まず、画面上の次へbuttonアイコンを抹消
+                    //text表示時に、まず、画面上の次へbuttonアイコンを抹消
                     //グリフが指定されている場合はこちらを適用 
                     if(that.kag.stat.flag_glyph =="false"){
                     　$(".img_next").remove();
@@ -880,7 +880,7 @@ tyrano.plugin.kag.tag.l ={
     start:function(){
         //clickするまで、次へすすまないようにする
         if(this.kag.stat.is_skip == true){
-            //スキップ中の場合は、nextorder
+            //Skip中の場合は、nextorder
             this.kag.ftag.nextOrder();
         }
         
@@ -893,10 +893,10 @@ tyrano.plugin.kag.tag.l ={
 :group
 Message
 :title
-改ページclick待ち
+clear text after click
 
 :exp
-改ページをともなうclick待ちで使用できます
+This tag waits for a click (like [l]), but clears the text afterwards.
 
 :sample
 Show text[p]
@@ -918,7 +918,7 @@ tyrano.plugin.kag.tag.p ={
         this.kag.stat.flag_ref_page = true;
         
         if(this.kag.stat.is_skip == true){
-            //スキップ中の場合は、nextorder
+            //Skip中の場合は、nextorder
             this.kag.ftag.nextOrder();
         }
     }
@@ -936,7 +936,7 @@ Show pictures inline
 :exp
 任意の画像をmessage中に表示します。
 絵文字や特殊文字などに活用できます。
-表示させる画像はimageフォルダに配置して下さい
+表示させる画像はimageFolderに配置して下さい
 
 また、よく使う記号については、マクロを組んでおくと楽です。
 
@@ -974,7 +974,7 @@ tyrano.plugin.kag.tag.graph = {
         current_str = jtext.find("p").find(".current_span").html();
       }
       
-      //テキストエリアに画像を追加して、次のmessageへ晋
+      //textエリアに画像を追加して、次のmessageへ晋
       this.kag.appendMessage(jtext, current_str + "<img src='./data/image/"+pm.storage+"' >")
       
       this.kag.ftag.nextOrder();
@@ -992,18 +992,18 @@ tyrano.plugin.kag.tag.graph = {
 :group
 Links
 :title
-scenarioのジャンプ
+Jump to scenario
 :exp
-指定されたファイルの指定されたラベルに移動します
+指定されたFileの指定されたラベルに移動します
 callとの違いは、jumpはコールスタックに残りません。つまり、一方通行です。ラベルの指定は必須です。
 :sample
 
-; second.ks というscenarioファイルの　*start　ラベルへ移動する
+; second.ks というscenarioFileの　*start　ラベルへ移動する
 [jump storage=second.ks target=*start]
 
 :param
-storage=移動するscenarioファイル名をset。省略された場合は現在のscenarioファイルと見なされます,
-target=ジャンプ先のラベル名をset。省略すると先頭から実行されます
+storage=移動するscenarioFile名をset。省略された場合は現在のscenarioFileと見なされます,
+target=Jump先のラベル名をset。省略すると先頭から実行されます
 
 #[end]
 
@@ -1011,7 +1011,7 @@ target=ジャンプ先のラベル名をset。省略すると先頭から実行�
 
 
 
-//ジャンプ命令
+//Jump命令
 tyrano.plugin.kag.tag.jump ={
   
     
@@ -1188,7 +1188,7 @@ tyrano.plugin.kag.tag.ct ={
 :group
 Message
 :title
-操作対象のmessage layerの指定
+set current message layer
 :exp
 操作対象とするmessage layerをset。以後、文章や font tagでの文字属性の指定、l tag等のclick待ちなどは、このlayerに対して行われます。
 message0はdefaultで可視の状態で すが、message1 は layopt tag 等で visible=true としないと表示されないので注意してください。
@@ -1236,7 +1236,7 @@ tyrano.plugin.kag.tag.current = {
 :group
 Layer
 :title
-message layerの属性変更
+set placement of message layer
 :exp
 message layerに対する様々な属性をset。<br />
 いずれの属性も、省略すれば設定は変更されません。
@@ -1374,7 +1374,7 @@ tyrano.plugin.kag.tag.position = {
 :group
 Layer
 :title
-画像を表示
+show image
 :exp
 layerに画像を表示します。キャラクター表示や背景切り替えなどに使用できます。前景layerは初期状態では非表示なのでvisible=trueとすることで表示されます
 :sample
@@ -1386,7 +1386,7 @@ layerに画像を表示します。キャラクター表示や背景切り替え
 [wt]
 @layopt layer=message0 visible=true
 :param
-storage=画像ファイル名をset。ファイルは背景layerならプロジェクトフォルダのbgimage、背景layerならfgimageに入れてください,
+storage=画像File名をset。Fileは背景layerならプロジェクトFolderのbgimage、背景layerならfgimageに入れてください,
 layer=対象とするメlayerをset。<br/>"base"を指定すると背景layer。0以上の整数を指定すると対応する前景layerに画像を表示します,
 page=対象とするページをset。"fore"か"back"を指定して下さい。<br>この属性を省略すると"fore"であるとみなされます,
 left=画像の左端位置をset。（pixels）,
@@ -1395,7 +1395,7 @@ x=画像の左端位置をset。leftと同様。こちらが優先度高（pixel
 y=画像の上端位置をset。topと同様。こちらが優先度高（pixels）,
 width=画像の横幅をset。（pixels）,
 height=画像の高さ位置をset。（pixels）,
-folder=好きな画像フォルダから、画像を選択できます。通常前景layerはfgimage　背景layerはbgimageと決まっていますが、ここで記述したフォルダ以下の画像ファイルを使用することができるようになります。,
+folder=好きな画像Folderから、画像を選択できます。通常前景layerはfgimage　背景layerはbgimageと決まっていますが、ここで記述したFolder以下の画像Fileを使用することができるようになります。,
 name=TyranoScriptのみ。animtagなどからこの名前でアニメーションさせることができます。でまた名前を指定しておくとクラス属性としてJSから操作できます。カンマで区切ることで複数指定することもできます,
 pos=layer位置を自動的に決定します。前景layerに対して使います。横方向の位置は、この属性で指定した left ( 左端 ) 、left_center ( 左より )、center ( 中央 )、 right_center ( 右より )、right ( 右端 ) の位置に表示されます。各横方向の座標の中心 位置は Config.tjs で指定することができます。
 　<br>left 、left_center、 center、 right_center、 right の代わりに、それぞれ l、 lc、 c、 rc、 r を 指定することもできます ( 動作は同じです )。
@@ -1421,7 +1421,7 @@ tyrano.plugin.kag.tag.image={
         "height":"",
         "pos":"",
         "name":"",
-        "folder":"" //画像フォルダを明示できる
+        "folder":"" //画像Folderを明示できる
         //"visible":"true"
         
     },
@@ -1560,7 +1560,7 @@ tyrano.plugin.kag.tag.image={
 :group
 Layer
 :title
-layer画像の解放
+Free image
 :exp
 imagetagでlayerに追加した画像を解放（非表示）にします。layer指定は必須です。
 :sample
@@ -1621,26 +1621,26 @@ tyrano.plugin.kag.tag.freeimage = {
 :group
 Layer
 :title
-layerにテキストを追加
+add text to the layer
 :exp
-layerにテキストを表示します。前景layerに対してのみ実行します<br />
+layerにtextを表示します。前景layerに対してのみ実行します<br />
 前景layerの属性を全て継承します。文字を消す時はfreeimagetagをlayerに対して適応します
 また、前景layerはdefault非表示なので、transitionで表示しない場合はlayerを可視状態にしてから、追加します。
 [layopt layer=0 visible=true]が必要
 :sample
 [backlay]
-[ptext page=back text="テキストテキスト" size=30 x=200 y=300 color=red vertical=true]
+[ptext page=back text="texttext" size=30 x=200 y=300 color=red vertical=true]
 [trans time=2000]
 [wt]
 [l]
-表示したテキストを消去します
+表示したtextを消去します
 [freeimage layer = 0]
 :param
 layer=対象とするメlayerをset。以上の整数を指定すると対応する前景layerに画像を表示します,
 page=対象とするページをset。"fore"か"back"を指定して下さい。<br>この属性を省略すると"fore"であるとみなされます,
-text=表示するテキストの内容,
-x=テキストの左端位置をset。（pixels）,
-y=テキストの上端位置をset。（pixels）,
+text=表示するtextの内容,
+x=textの左端位置をset。（pixels）,
+y=textの上端位置をset。（pixels）,
 vertical=true 、false のいずれかを指定してください。trueで縦書き表示されます。defaultは横書き,
 size=フォントサイズをpixelsで指定してください,
 face=フォントの種類を指定してください。非KAG互換ですが、ウェブフォントも使用できます,
@@ -1664,7 +1664,7 @@ tyrano.plugin.kag.tag.ptext={
         "x":0,
         "y":0,
         "vertical":"false",
-        "text":"　　　　　　　　　　　　　　", //テキスト領域のdefault値を指定するためですが、、、
+        "text":"　　　　　　　　　　　　　　", //text領域のdefault値を指定するためですが、、、
         "size":"",
         "face":"",
         "color":"",
@@ -1742,7 +1742,7 @@ tyrano.plugin.kag.tag.ptext={
 :group
 Layer
 :title
-layer情報の表ページから裏ページへのコピー 
+copy information from the surface page
 :exp
 指定したlayer、あるいはすべてのlayerの情報を、表ページから裏ページに コピーします。
 利用方法としてはtrans tagで表ページのlayerの画像を裏ページの layerの画像に置き換えます。
@@ -1784,20 +1784,20 @@ tyrano.plugin.kag.tag.backlay={
 :group
 Layer
 :title
-transitionの終了待ち
+wait on transition
 :exp
-transitionが終了するまで、待ちます。
+wait until transition is finished
 :sample
 [backlay]
 [image layer=base page=back storage=rouka.jpg]
 [trans time=2000]
-;transitionが終わるまで先へ進まない
+;don't advance until transition is finished
 [wt]
 :param
 #[end]
 */
 
-//transition完了を待つ
+//wait on transition
 tyrano.plugin.kag.tag.wt={
     start:function(pm){
         this.kag.layer.hideEventLayer();
@@ -1835,7 +1835,7 @@ Links
 hyperlink（choices）
 :exp
 
-link tagと endlink tagで囲まれた部分の文章を、 マウスやキーボードで選択可能にし、そこでclickされたりキーを押されたときに、 ジャンプする先を指定できます。
+link tagと endlink tagで囲まれた部分の文章を、 マウスやキーボードで選択可能にし、そこでclickされたりキーを押されたときに、 Jumpする先を指定できます。
 また、囲まれた文章はページをまたぐことは出来ません(行をまたぐことはできます)。
 :sample
 choicesを表示します[l][r][r]
@@ -1860,8 +1860,8 @@ choicesを表示します[l][r][r]
 
 共通ルートです 
 :param
-storage=ジャンプ先のscenarioファイルをset。省略すると、現在 のscenarioファイル内であると見なされます,
-target=ャンプ先のラベルをset。省略すると、ファイルの先頭から実行されます。
+storage=Jump先のscenarioFileをset。省略すると、現在 のscenarioFile内であると見なされます,
+target=ャンプ先のラベルをset。省略すると、Fileの先頭から実行されます。
 #[end]
 */
 
@@ -1891,7 +1891,7 @@ tyrano.plugin.kag.tag.link={
          
             j_span.bind('click',function(e){
                 
-                //ここから書き始める。イベントがあった場合の処理ですね　ジャンプで飛び出す
+                //ここから書き始める。イベントがあった場合の処理ですね　Jumpで飛び出す
                 that.kag.ftag.nextOrderWithLabel(_target,_storage);
                 that.kag.layer.showEventLayer();
                 
@@ -1914,9 +1914,9 @@ tyrano.plugin.kag.tag.link={
 :group
 Links
 :title
-hyperlink（choices）の終了を示します
+hyperlink（choices）ending
 :exp
-hyperlink（choices）の終了を示します
+closing tag for hyperlinks (choices)
 :sample
 [link target=*select1]【１】choices　その１[endlink][r]
 [link target=*select2]【２】choices　その２[endlink][r]
@@ -1945,9 +1945,9 @@ tyrano.plugin.kag.tag.endlink={
 :group
 System Settings
 :title
-ゲームを停止する
+End Game
 :exp
-scenarioファイルの実行を停止します。
+scenarioFileの実行を停止します。
 linktagでchoices表示した直後などに配置して利用する方法があります。
 :sample
 [link target=*select1]【１】choices　その１[endlink][r]
@@ -1976,9 +1976,9 @@ tyrano.plugin.kag.tag.s ={
 :group
 System Settings
 :title
-ウェイトを入れる
+Begin Wait
 :exp
-ウェイトを入れます。time属性で指定した時間、操作できなくなります。
+Begin Waiting. time属性で指定した時間、操作できなくなります。
 :sample
 ;2000miliseconds（２秒）処理を停止します
 [wait time=2000]
@@ -1987,7 +1987,7 @@ time=ウェイトをmilisecondsでset。
 #[end]
 */
 
-//ウェイト
+//Wait
 tyrano.plugin.kag.tag.wait = {
 	
 	vital:["time"],
@@ -2020,7 +2020,7 @@ tyrano.plugin.kag.tag.wait = {
 :group
 Layer
 :title
-messageを消す
+Hide message
 :exp
 message layerを一時的に隠します。メニューから「messageを消す」を選んだのと 同じ動作を行います。
 click待ちを行った後、message layerは表示され、 実行は継続します。
@@ -2035,7 +2035,7 @@ tyrano.plugin.kag.tag.hidemessage = {
   start:function(){
       
       this.kag.stat.is_hide_message = true;
-      //message layerを全て削除する //テキスト表示時に復活
+      //message layerを全て削除する //text表示時に復活
       this.kag.layer.hideMessageLayers();
       
       //clickは復活させる
@@ -2054,13 +2054,13 @@ System Settings
 :title
 Shake the screen
 :exp
-指定したmilisecondsだけ、画面を揺らします。（KAGの文字数指定は未対応）
+For a set number of miliseconds、the screen will shake.（KAGの文字数指定は未対応）
 vmax 属性を 0 に設定すると横揺れになります。hmax 属性を 0 に設定すると縦揺れになります。
 :sample
 [quake count=5 time=300 hmax=20]
 :param
 count=Set the number of times to shake the screen,
-wait  = Set as true or false. trueの場合は揺れが完了するまで、ゲームを停止します。true is the default, 
+wait  = Set as true or false. trueの場合は揺れが完了するまで、Gameを停止します。true is the default, 
 time=１回揺れるのにかかる時間をmilisecondsでset。defaultは300,
 hmax=揺れの横方向への最大振幅をset。省略すると 10(px) が指定されたと見なされます。,
 vmax=揺れの縦方向への最大振幅をset。省略すると 10(px) が指定されたと見なされます。
@@ -2122,9 +2122,9 @@ tyrano.plugin.kag.tag.quake = {
 :group
 System Settings
 :title
-フォント属性設定
+font attributes
 :exp
-文字の様々な属性をset。
+Set various attributes of text.
 これらの属性は、message layerごとに個別に設定できます。
 いずれの属性も、省略すると前の状態を引き継ぎます。また、default を指定すると Config.tjs 内で指定したdefaultの値に戻ります。
 resetfont や　ct cm er tagが実行されると、、Config.tjs 内や deffont tagで指定し たdefaultの値に戻ります。
@@ -2137,7 +2137,7 @@ resetfont や　ct cm er tagが実行されると、、Config.tjs 内や deffont
 size=文字サイズをset,
 color=文字色を文字色を 0xRRGGBB 形式でset。（吉里吉里対応）　HTML5に限るならその他指定でも大丈夫です,
 bold=太字指定。true 又は　false で指定,
-face=フォントの種類を指定。非KAG互換でウェブフォントも利用可能。プロジェクトフォルダのothersフォルダに配置してください。そして、tyrano.cssの@font-faceを指定することで利用できます。
+face=フォントの種類を指定。非KAG互換でウェブフォントも利用可能。プロジェクトFolderのothersFolderに配置してください。そして、tyrano.cssの@font-faceを指定することで利用できます。
 #[end]
 */
 
@@ -2183,7 +2183,7 @@ tyrano.plugin.kag.tag.font = {
 :group
 System Settings
 :title
-defaultの文字属性設定
+default font attributes
 :exp
 現在操作対象のmessage layerに対する、defaultの文字属性をset。
 ここで指定した属性は、resetfont tagで実際に反映されます。
@@ -2193,7 +2193,7 @@ defaultの文字属性設定
 size=文字サイズをset,
 color=文字色を文字色を 0xRRGGBB 形式でset。（吉里吉里対応）　HTML5に限るならその他指定でも大丈夫です
 bold=太字指定。true 又は　false で指定,
-face=フォントの種類を指定。非KAG互換でウェブフォントも利用可能。プロジェクトフォルダのothersフォルダに配置してください。そして、tyrano.cssの@font-faceを指定することで利用できます。
+face=フォントの種類を指定。非KAG互換でウェブフォントも利用可能。プロジェクトFolderのothersFolderに配置してください。そして、tyrano.cssの@font-faceを指定することで利用できます。
 
 #[end]
 */
@@ -2239,9 +2239,9 @@ tyrano.plugin.kag.tag.deffont = {
 :group
 System Settings
 :title
-文字の表示速度の設定 
+message speed
 :exp
-文字の表示速度をset。
+Set the message speed for text
 文字表示をノーウェイトにするには nowait tagをつかう こともできます。
 :sample
 :param
@@ -2272,9 +2272,9 @@ tyrano.plugin.kag.tag.delay = {
 :group
 System Settings
 :title
-文字表示の瞬間表示
+instant text
 :exp
-待ち時間なしに、テキストを配置します。
+Without waiting, text will appear on the screen.  (contrast with [delay])
 :sample
 :param
 #[end]
@@ -2301,9 +2301,9 @@ tyrano.plugin.kag.tag.nowait = {
 :group
 System Settings
 :title
-テキストの瞬間表示を取り消します。
+end instant text
 :exp
-テキストmessageは前回nowaittagを指定した時のスピードへ戻ります
+Text between this and the [nowait] tag will appear instantly.
 :sample
 :param
 #[end]
@@ -2332,7 +2332,7 @@ tyrano.plugin.kag.tag.endnowait = {
 :group
 System Settings
 :title
-フォント属性を元に戻す 
+Reset font
 :exp
 font tagで指定した文字の属性をdefaultに戻します。
 文字属性は、message layerごとに個別に設定できます
@@ -2362,9 +2362,9 @@ tyrano.plugin.kag.tag.resetfont = {
 :group
 Layer
 :title
-layerの属性設定 
+layer options
 :exp
-layerの属性をset。
+set layer options.
 :sample
 ;message layerを消去
 @layopt layer=message0 visible=false
@@ -2461,15 +2461,15 @@ tyrano.plugin.kag.tag.layopt = {
 :group
 Layer
 :title
-ルビを振る
+add helper text (furigana)
 :exp
-次の一文字に対するルビをset。
-ルビを表示させたい場合は毎回指定してください。
-複数の文字にルビを振る場合は、一文字毎にルビを指定する必要があります。
+Set the helper characters of the following characters.
+Set them anytime you want to show ruby characters (furigana).
+When you want to apply ruby characters to a multicharacter string, you need to set ruby characters for every character in the string.
 :sample
 [ruby text="かん"]漢[ruby text="じ"]字
 :param
-text=ルビとして表示させる文字をset
+text=sets ruby characters to show for kanji ("漢" gets "かん" and "字" gets "じ").
 #[end]
 */
 
@@ -2486,7 +2486,7 @@ tyrano.plugin.kag.tag["ruby"] ={
         
         var str = pm.text;
         
-        //ここに文字が入っている場合、ルビを設定してから、テキスト表示する
+        //ここに文字が入っている場合、ルビを設定してから、text表示する
         this.kag.stat.ruby_str = str;
         
         this.kag.ftag.nextOrder();
@@ -2501,10 +2501,10 @@ tyrano.plugin.kag.tag["ruby"] ={
 :group
 System Settings
 :title
-スキップ解除
+cancel skip
 :exp
-スキップ状態の解除を行います。
-プlayerーにスキップ状態の停止を強制させることができます
+Skip状態の解除を行います。
+playerーにSkip状態の停止を強制させることができます
 :sample
 :param
 #[end]
@@ -2525,10 +2525,10 @@ tyrano.plugin.kag.tag.cancelskip ={
 :group
 System Settings
 :title
-表示位置の指定
+display location settings
 :exp
-グラフィックbuttonの表示位置をset。
-テキストには対応しておりません。
+Graphical buttonの表示位置をset。
+textには対応しておりません。
 :sample
 [locate x=20 y=100]
 [button graphic="oda.png" target=*oda]
@@ -2542,7 +2542,7 @@ y=縦方向位置指定
 #[end]
 */
 
-//グラフィックbutton表示位置調整、テキストはできない
+//Graphical button表示位置調整、textはできない
 tyrano.plugin.kag.tag.locate ={
     
     pm:{
@@ -2575,11 +2575,11 @@ Show a graphical button.
 :exp
 Show a graphical button.
 linktagの画像版となります。
-ただし、グラフィックbutton表示中は強制的にscenario進行が停止しますので、必ずジャンプ先を指定して下さい
-また、グラフィックbuttonの表示位置は直前のlocatetagによる指定位置を参照します。
+ただし、Graphical button表示中は強制的にscenario進行が停止しますので、必ずJump先を指定して下さい
+また、Graphical buttonの表示位置は直前のlocatetagによる指定位置を参照します。
 ただし、x、y が指定されている場合は、そちらが優先されます。
 ここから、移動した場合はコールスタックに残りません。つまり、リターンできないのでご注意ください
-ジャンプ後に必ず[cm]tagでbuttonを非表示にする必要があります。
+Jump後に必ず[cm]tagでbuttonを非表示にする必要があります。
 :sample
 [locate x=20 y=100]
 [button graphic="oda.png" target=*oda]
@@ -2588,9 +2588,9 @@ linktagの画像版となります。
 [button graphic="toyo.png" target=*toyo]
 
 :param
-graphic=buttonにする画像をset。ファイルはプロジェクトフォルダのimageフォルダに入れて下さい,
-storage=ジャンプ先のscenarioファイルをset。省略すると、現在 のscenarioファイル内であると見なされます。,
-target=ジャンプ先のラベルをset。省略すると、ファイルの先頭から実行されます。,
+graphic=buttonにする画像をset。FileはプロジェクトFolderのimageFolderに入れて下さい,
+storage=Jump先のscenarioFileをset。省略すると、現在 のscenarioFile内であると見なされます。,
+target=Jump先のラベルをset。省略すると、Fileの先頭から実行されます。,
 name=TyranoScriptのみ。animtagなどからこの名前でアニメーションさせることができます。でまた名前を指定しておくとクラス属性としてJSから操作できます。カンマで区切ることで複数指定することもできます,
 x=buttonの横位置をset,
 y=buttonの縦位置をset。
@@ -2598,7 +2598,7 @@ width=buttonの横幅をpixelsで指定できます,
 width=buttonの高さをpixelsで指定できます,
 fix=true falseでset。defaultはfalse 。trueを指定すると、Fixlayerーにbuttonが配置されます。この場合、buttonを表示してもscenarioを進める事ができます。例えば、セーブbuttonといった常に表示したいbuttonを配置する時に活用できます。また、fixlayerーに追加した要素を消す場合はfixcleartag を使います,
 savesnap=true or false でset。defaultはfalse このbuttonが押された時点でのセーブスナップを確保します。セーブ画面へ移動する場合はここをtrueにして、保存してからセーブを実行します,
-folder=好きな画像フォルダから、画像を選択できます。通常前景layerはfgimage　背景layerはbgimageと決まっていますが、ここで記述したフォルダ以下の画像ファイルを使用することができるようになります。,
+folder=好きな画像Folderから、画像を選択できます。通常前景layerはfgimage　背景layerはbgimageと決まっていますが、ここで記述したFolder以下の画像Fileを使用することができるようになります。,
 exp=buttonがclickされた時に実行されるJSを指定できます。,
 preexp="tagが評価された時点で変数 preexpに値を格納します。つまり、buttonがclickされた時に、expでpreexpという変数が利用できます。"
 
@@ -2606,7 +2606,7 @@ preexp="tagが評価された時点で変数 preexpに値を格納します。�
 */
 
 
-//指定した位置にグラフィックbuttonを配置する
+//指定した位置にGraphical buttonを配置する
 tyrano.plugin.kag.tag.button = {
     
     pm:{
@@ -2748,13 +2748,13 @@ tyrano.plugin.kag.tag.button = {
 :group
 Links
 :title
-click可能な領域を設定
+Define clickable area
 :exp
 透明なclick可能領域を設定することができます。
-クリッカブルエリアの表示中は強制的にscenario進行が停止しますので、必ずジャンプ先を指定して下さい
-また、グラフィックbuttonの表示位置は直前のlocatetagによる指定位置を参照します
+クリッカブルエリアの表示中は強制的にscenario進行が停止しますので、必ずJump先を指定して下さい
+また、Graphical buttonの表示位置は直前のlocatetagによる指定位置を参照します
 ここから、移動した場合はコールスタックに残りません。つまり、リターンできないのでご注意ください
-☆重要：[s]tagに到達していない間は、クリッカブルは有効になりません。かならず、[s]tagでゲームを停止してください。
+☆重要：[s]tagに到達していない間は、クリッカブルは有効になりません。かならず、[s]tagでGameを停止してください。
 :sample
 [locate x=20 y=100]
 [clickable width=200 height=300 target=*oda]
@@ -2765,17 +2765,17 @@ click可能な領域を設定
 :param
 width=領域の横幅をset,
 height=領域に高さをset,
-borderstyle=領域に線を表示することができます。「線の太さ:線の種類（CSS準拠）:線の色」のフォーマットで記述して下さい。線の種類はsolid double groove dashed dotted などが指定できます,　
+borderstyle=領域に線を表示することができます。「線の太さ:線の種類（CSS準拠）:線の色」のFormatで記述して下さい。線の種類はsolid double groove dashed dotted などが指定できます,　
 color=表示色を 0xRRGGBB 形式で指定 します。 ,
 opacity=領域の不透明度を 0 ～ 255 の数値でset0で完全 に透明です。,
 mouseopacity=領域にマウスが乗った時透明度を変更することができます。領域の不透明度を 0 ～ 255 の数値でset0で完全 に透明です,
-storage=clickされた際のジャンプ先のscenarioファイルをset。省略すると、現在 のscenarioファイル内であると見なされます。,
-target=clickされた際のジャンプ先のラベルをset。省略すると、ファイルの先頭から実行されます。
+storage=clickされた際のJump先のscenarioFileをset。省略すると、現在 のscenarioFile内であると見なされます。,
+target=clickされた際のJump先のラベルをset。省略すると、Fileの先頭から実行されます。
 #[end]
 */
 
 
-//指定した位置にグラフィックbuttonを配置する
+//指定した位置にGraphical buttonを配置する
 tyrano.plugin.kag.tag.clickable = {
     
     vital:["width","height"],
@@ -2882,15 +2882,15 @@ tyrano.plugin.kag.tag.clickable = {
 :group
 System Settings
 :title
-click待ち記号の指定
+waiting for click setttings
 :exp
 click待ち記号を表示する位置を設定できます
-click記号はプロジェクトフォルダのtyrano/images/kag/nextpage.gifを変更することで対応します
+click記号はプロジェクトFolderのtyrano/images/kag/nextpage.gifを変更することで対応します
 :sample
 [glyph  fix=true left=200 top=100 ]
 
 :param
-line=click待ちの表示画像を指定することができます。tyrano/kag/nextpage.gifと同一のフォルダに配置してください,
+line=click待ちの表示画像を指定することができます。tyrano/kag/nextpage.gifと同一のFolderに配置してください,
 fix=trueを指定すると、left、及び、topを指定した位置に表示されます。,
 left=fix 属性を true にしたときに記号を表示する位置のうち、左端位置を set,
 top=fix 属性を true にしたときに記号を表示する位置のうち、上端位置を set
@@ -2899,7 +2899,7 @@ top=fix 属性を true にしたときに記号を表示する位置のうち、
 */
 
 
-//指定した位置にグラフィックbuttonを配置する
+//指定した位置にGraphical buttonを配置する
 tyrano.plugin.kag.tag.glyph = {
     
     pm:{

@@ -438,7 +438,7 @@ tyrano.plugin.kag.tag.stopbgm = {
 :group
 Audio
 :title
-Fadein BGM
+Fade In BGM
 :exp
 Gradually fade in BGM
 一部環境（Firefox、Sarafi等）においては対応していません。その場合、playbgmの動作となります。

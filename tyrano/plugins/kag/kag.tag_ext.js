@@ -44,9 +44,9 @@ tyrano.plugin.kag.tag.loadjs={
 :group
 Other
 :title
-ムービーの再生
+play movie
 :exp
-mp4形式の動画を再生します。
+play an mp4 video
 :sample
 [movie storage="" skip=false ]
 :param
@@ -146,9 +146,9 @@ tyrano.plugin.kag.tag.movie ={
 :group
 System Settings
 :title
-セーブ画面を表示します
+Show save screen
 :exp
-セーブ画面を表示します
+Show save screen
 :sample
 [showsave]
 :param
@@ -175,9 +175,9 @@ tyrano.plugin.kag.tag.showsave ={
 :group
 System Settings
 :title
-ロード画面を表示します
+Show load screen
 :exp
-ロード画面を表示します
+Show load screen
 :sample
 [showload]
 :param
@@ -203,9 +203,9 @@ tyrano.plugin.kag.tag.showload ={
 :group
 System Settings
 :title
-メニュー画面を表示します
+Show menu
 :exp
-メニュ＾画面を表示します
+Show menu
 :sample
 [showmenu]
 :param
@@ -232,9 +232,9 @@ tyrano.plugin.kag.tag.showmenu ={
 :group
 System Settings
 :title
-メニューボタンを表示
+Show menu button
 :exp
-メニューボタンを表示します
+Show menu button
 :sample
 [showmenubutton]
 :param
@@ -261,9 +261,9 @@ tyrano.plugin.kag.tag.showmenubutton ={
 :group
 System Settings
 :title
-メニューボタンを非表示
+Hide menu Button
 :exp
-メニューボタンを非表示します
+Hide menu Button
 :sample
 [hidemenubutton]
 :param
@@ -290,7 +290,7 @@ tyrano.plugin.kag.tag.hidemenubutton ={
 :group
 System Settings
 :title
-スキップ開始
+Skip Start
 :exp
 文字表示をスキップモードにします。
 :sample
@@ -318,7 +318,7 @@ tyrano.plugin.kag.tag.skipstart ={
 :group
 System Settings
 :title
-スキップ停止
+Skip stop
 :exp
 スキップモードを停止します。
 :sample
@@ -346,7 +346,7 @@ tyrano.plugin.kag.tag.skipstop ={
 :group
 Animation
 :title
-アニメーション
+Animation
 :exp
 画像やボタン、レイヤなどの中身をアニメーションさせることができます
 アニメーションさせる要素は[image][ptext][button]タグ作成時にname属性で指定した名前を利用できます。
@@ -530,7 +530,7 @@ tyrano.plugin.kag.tag.anim ={
 :group
 Animation
 :title
-アニメーション終了待ち
+Pause Animation
 :exp
 実行中のアニメーションすべて終了するまで処理を待ちます
 :sample
@@ -553,7 +553,7 @@ tyrano.plugin.kag.tag.wa={
 :group
 Animation
 :title
-キーフレームアニメーション定義
+Set animation keyframe
 :exp
 キーフレームアニメーションを定義します。定義したアニメーションは[kanim]タグで指定することで使用できます
 :sample
@@ -598,7 +598,7 @@ tyrano.plugin.kag.tag.keyframe ={
 :group
 Animation
 :title
-キーフレームアニメーション定義を終了します
+End Keyframe
 :exp
 キーフレームアニメーション定義を終了します
 :sample
@@ -625,7 +625,7 @@ tyrano.plugin.kag.tag.endkeyframe ={
 :group
 Animation
 :title
-キーフレームアニメーション定義
+Keyframe Animation Settings
 :exp
 キーフレームアニメーションを定義します。定義したアニメーションは[kanim]タグで指定することで使用できます
 :sample
@@ -733,7 +733,7 @@ tyrano.plugin.kag.tag.frame ={
 :group
 Animation
 :title
-キーフレームアニメーションの実行
+Execute Keyframe
 :exp
 キーフレームアニメーションを実行します。[keyframe]タグで定義した名前とアニメーションさせる画像やテキストを指定することで
 複雑なアニメーションを実現できます。
@@ -955,7 +955,7 @@ tyrano.plugin.kag.tag.chara_config ={
 :group
 Character
 :title
-キャラクターの定義
+New character
 :exp
 登場するキャラクターの情報を定義します。その後[chara_show ]で指定した名称で表示したり、画像を変更したりできます。
 また、ここで定義したname属性は[anim]タグなどからも指定可能です。
@@ -1019,7 +1019,7 @@ tyrano.plugin.kag.tag.chara_new ={
 :group
 Character
 :title
-キャラクターの登場
+Show Character
 :exp
 定義しておいたキャラクターを画面に表示します
 :sample
@@ -1198,7 +1198,7 @@ tyrano.plugin.kag.tag.chara_show ={
 :group
 Character
 :title
-キャラクターの退場
+Hide Character
 :exp
 [chara_show]タグで表示したキャラクターを退場させます。
 :sample
@@ -1329,7 +1329,7 @@ tyrano.plugin.kag.tag.chara_hide ={
 :group
 Character
 :title
-キャラクター情報の削除
+Delete Character Info
 :exp
 定義しておいたキャラクター情報を削除します。（画面から消す場合は[chara_hide]を使用してください）
 :sample
@@ -1366,7 +1366,7 @@ tyrano.plugin.kag.tag.chara_delete ={
 :group
 Character
 :title
-キャラクター画像変更
+Change character appearance
 :exp
 画面のキャラクター画像を変更します。表情を変更する場合などに便利でしょう
 :sample
