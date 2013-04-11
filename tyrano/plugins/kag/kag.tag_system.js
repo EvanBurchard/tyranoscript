@@ -998,9 +998,9 @@ tyrano.plugin.kag.tag.endignore ={
 :group
 Forms
 :title
-テキストボックス
+Text Box
 :exp
-テキストボックスを表示します。
+Show a text box.
 入力された値はcommitタグのタイミングで指定した変数名に格納されます
 フォーム表示中はシナリオは停止します。（クリックしてもストーリーが進まない）
 必ず、グラフィックボタンなどを配置してラベルへジャンプしてください。
@@ -1223,7 +1223,7 @@ tyrano.plugin.kag.tag.clearfix ={
 :group
 Forms
 :title
-フォームの確定
+Submit Form
 :exp
 テキストボックスの値を確定して指定したname属性で指定した変数に値を格納します。
 注意点としてcommitが実行された段階で、テキストボックスなどのフォームが表示されている必要があります。

@@ -234,7 +234,7 @@ tyrano.plugin.kag ={};
                          var param_name = $.trim(tmp_array[0]);
                          var param_value =$.trim(tmp_array[1]);
                          
-                         var vital = "×";
+                         var vital = "no";
                          
                          if(master_tag[key]!=null && master_tag[key]["vital"]!=null){
                             
@@ -244,7 +244,7 @@ tyrano.plugin.kag ={};
                             
                                 if(master_tag[key].vital[j]==param_name){
                              
-                                    vital ="◯";
+                                    vital ="yes";
                                     break;
                                 }
                             

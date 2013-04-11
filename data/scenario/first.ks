@@ -26,7 +26,7 @@ Click to Start[l]
 
 Thank you for trying out TyranoScript.[l][r]
 Through playing this Sample Game, you can learn about the features of TyranoScript.[l][r]
-By all means、最後までお付き合いください m(__)m[r]
+By all means、stick with it till the end.[r]
 [l][cm]
 
 まず、大きな特徴としては
@@ -38,13 +38,13 @@ By all means、最後までお付き合いください m(__)m[r]
 
 [image layer=1 page=fore visible=true top=200 left=200  storage = html5.png]
 
-つまり、TyranoScriptで作られた作品は[r]
+Using Tyranoscript, your creations can be used on[r]
 [l][cm]
 Desktop（Windows、MAC　両対応）[l][r]
 iPhone, Ipad[l][r]
 Android[l][r]
-Game devices with browsers（PSVITA, NINTENDO　DS）[l][r]
-etc.  You can deploy your work in many places.[l][cm]
+Game devices with browsers（PSVITA, NINTENDO　DS）etc. [l][r]
+You can deploy your work in many places.[l][cm]
 
 Furthermore, it is simple to make applications, and get them on the AppStore or Android Marketplace.[l][cm]
 
@@ -64,13 +64,13 @@ TyranoScript has one more important feature[l][r]
 [freeimage layer=1 ]
 
 
-ティラノスクリプトでは、KAG3/吉里吉里と高い互換性を実現しています。[l][r]
+TyranoScriptでは、KAG3/吉里吉里と高い互換性を実現しています。[l][r]
 「KAG３／吉里吉里」で作成されたウィンドウズ用のゲームを容易にスマートフォンやインターネット向けに対応させることが可能になります。[l][cm]
-もちろん、逆にティラノスクリプトで作成したゲームをそのまま、KAG３/吉里吉里上で動作させることもできます。[l][r]
-ティラノスクリプトで作成しておけば、あらゆる環境のプレイヤーに遊んでもらうことができるのが強みです。[l][cm]
+もちろん、逆にTyranoScriptで作成したゲームをそのまま、KAG３/吉里吉里上で動作させることもできます。[l][r]
+TyranoScriptで作成しておけば、あらゆる環境のプレイヤーに遊んでもらうことができるのが強みです。[l][cm]
 
-それでは、ティラノスクリプトの機能について見ていきましょう[l][r]
-ティラノスクリプトはKAG3/吉里吉里との高い互換性を持たせることを大事にしているため[l][r]
+それでは、TyranoScriptの機能について見ていきましょう[l][r]
+TyranoScriptはKAG3/吉里吉里との高い互換性を持たせることを大事にしているため[l][r]
 非常に強力で、柔軟な表現が可能です。[l][r]
 [font size=40]文字のサイズを変更したり
 [l][r]
@@ -127,7 +127,7 @@ TyranoScript has one more important feature[l][r]
 いかがですか？[l][cm]
 廊下に移動しましたね。[l][cm]
 
-ティラノスクリプトでは、トランジションという強力なレイヤ管理機能が使用できます[l][cm]
+TyranoScriptでは、トランジションという強力なレイヤ管理機能が使用できます[l][cm]
 
 【ゆうこ】[r]
 ねー、私達もう、帰っていいかな？[l][cm]
