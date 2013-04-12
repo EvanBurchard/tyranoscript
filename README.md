@@ -3,7 +3,14 @@ Ver2.60（C）ShikemokuMK
 http://tyrano.jp
 
 ## Games made with TyranoScript
+### English
 - [Jurassic Heart](http://hima.gptouch.com/games/jurassic_heart/)
+
+### Japanese
+- [basic](http://tyrano.jp/demo/play/basic)
+- [imi](http://tyrano.jp/demo/play/imi)
+- [kanojo](http://tyrano.jp/demo/play/kanojo)
+- [miku](http://tyrano.jp/demo/play/miku)
 
 ## Relationship to original Japanese Fork
 If you want the latest and greatest in Japanese, check here: [github.com/ShikemokuMK/tyranoscript](http://github.com/ShikemokuMK/tyranoscript)  
