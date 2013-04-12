@@ -8,14 +8,14 @@ Audio
 Play BGM
 :exp
 Play BGM
-mp3形式、ogg形式　等　HTML5標準をサポートします。
-再生するファイルはプロジェクトフォルダのbgmフォルダに格納してください。
+mp3 or ogg.  HTML5 standard support.
+Playback files should be stored in the project's bgm folder.
 
 :sample
 [playbgm storage="music.mp3"]
 :param
-storage=再生する音楽ファイルを指定してください,
-loop=true（デフォルト）またはfalse を指定してください。trueを指定すると繰り返し再生されます,
+storage=Set the file to be used,
+loop=set as true (default) or false. true will repeat the loop,
 click=スマートフォンのブラウザから閲覧した場合のみ動作（アプリの場合不要）true またはfalse（デフォルト）を指定してください。trueの場合、スマートフォン（ブラウザ）から閲覧した場合、再生前にクリックが必要になります。
 これは、スマートフォンの仕様上、クリックしないと音が鳴らせない縛りがあるため、例えば、背景変更後に音楽再生をしたい場合はtrueを指定しないと音はなりません。通常のテキストの中で音楽再生の場合はfalseで大丈夫です。スマートフォンから閲覧して音楽が鳴らない場合はtrueにしてみてください
 #[end]
@@ -630,9 +630,9 @@ Fade in a sound effect
 :sample
 [fadeinse storage=sound.mp3 loop=false time=2000 ]
 :param
-storage=次に再生するファイルを指定してください,
-loop=trueまたはfalse （デフォルト）を指定してください。trueを指定すると繰り返し再生されます,
-time=フェードインの時間をミリ秒で指定します
+storage=Set playback file
+loop=set as true or false(default). true will repeat the playback,
+time=set the fade in time in miliseconds
 #[end]
 */
 

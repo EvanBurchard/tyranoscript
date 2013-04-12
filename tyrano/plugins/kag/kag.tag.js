@@ -26,7 +26,7 @@ tyrano.plugin.kag.ftag ={
         
         this.array_tag = array_tag;
         
-        //ラベル名が指定されている場合は
+        //Label名が指定されている場合は
         if(label_name){
             //そこへJump
             this.nextOrderWithLabel(label_name);
@@ -182,7 +182,7 @@ tyrano.plugin.kag.ftag ={
                 that.kag.error("エラーが発生しました。スクリプトを確認して下さい");
            }
         
-        //ラベルといった、先行してオンメモリにしておく必要が有る命令に関しては、ここで精査しておく
+        //Labelといった、先行してオンメモリにしておく必要が有る命令に関しては、ここで精査しておく
         
     },
     
@@ -419,7 +419,7 @@ tyrano.plugin.kag.ftag ={
             return ;
         }
         
-        //ラベル名が指定されてない場合は最初から
+        //Label名が指定されてない場合は最初から
         if(label_name ==""){
         
             this.current_order_index = -1;
@@ -435,7 +435,7 @@ tyrano.plugin.kag.ftag ={
         }else{
             
             
-            $.error_message("ラベル名：「"+label_name+"」は存在しません");
+            $.error_message("Label名：「"+label_name+"」は存在しません");
             this.nextOrder();
        
             
@@ -827,9 +827,9 @@ tyrano.plugin.kag.tag.label = {
   pm:{},
   
   start:function(pm){
-    //ラベル通過したよ。
+    //Label通過したよ。
     
-    //ラベル記録
+    //Label記録
     if(this.kag.config.autoRecordPageShowing == "true"){
     
         var sf_str = "sf.trail_"+this.kag.stat.current_scenario.replace(".ks","").replace("/","")+"_"+pm.label_name +"";
@@ -934,18 +934,18 @@ Message
 :title
 Show pictures inline
 :exp
-任意の画像をmessage中に表示します。
-絵文字や特殊文字などに活用できます。
-表示させる画像はimageFolderに配置して下さい
+Show arbitrary images inside of a message.
+You can use pictographs or special characters, etc. 
+Put images you want to show in the image folder.
 
-また、よく使う記号については、マクロを組んでおくと楽です。
+Also, for frequently used symbols, it's easy to set up a macro.
 
 :sample
 ; put a heart picture in
 [macro name="heart"][graph storage="heart.png"][endmacro]
 
-; 以後、[heart] tagでハートマークを使用可能
-大好き[heart]
+; below, with the [heart] tag, a heart symbol can be used
+I love you![heart]
 :param
 storage=The filename where the picture is stored
 
@@ -994,16 +994,17 @@ Links
 :title
 Jump to scenario
 :exp
-指定されたFileの指定されたラベルに移動します
-callとの違いは、jumpはコールスタックに残りません。つまり、一方通行です。ラベルの指定は必須です。
+Goes to the specified label in the specified file.
+It is a mistake to use call if there is no jump on the call stack.
+In other words, it can only be used one way. Setting a label is required.
 :sample
 
-; second.ks というscenarioFileの　*start　ラベルへ移動する
+; Go to the scenario file second.ks in the place with the label: *start
 [jump storage=second.ks target=*start]
 
 :param
-storage=移動するscenarioFile名をset。省略された場合は現在のscenarioFileと見なされます,
-target=Jump先のラベル名をset。省略すると先頭から実行されます
+storage=scenario file to move to. If this is left out, the current scenario file will be used,
+target=label name to jump to. If this is left out, it will go to the beginning.
 
 #[end]
 
@@ -1011,13 +1012,13 @@ target=Jump先のラベル名をset。省略すると先頭から実行されま
 
 
 
-//Jump命令
+//Jump Command
 tyrano.plugin.kag.tag.jump ={
   
     
     pm:{
         storage:null,
-        target:null,//ラベル名
+        target:null,//Label名
         countpage:true
     },
     
@@ -1103,10 +1104,11 @@ Message
 :title
 Clear All Messages
 :exp
-すべてのmessage layerをクリアします。
-また、フォントスタイルなどもdefaultの設定に戻ります。
-ただし、positionやlayoptで指定した値は引き継がれます
-[ct]tagのように 操作対象のmessage layerが表ページの message0 に指定されるようなことはありません。 このtagを実行後も操作対象のlayerは同じです。
+Clear all messages.
+Also, font styles will return to defaults.
+Position and/or layopt settings will take effect.
+Similar to the [ct] tag, nothing is set in the target message layer. 
+Even after executing this tag, the included target layer is the same.
 
 :sample
 Show some text[l]
@@ -1146,8 +1148,9 @@ Reset the message layers
 :exp
 
 Resets the message layers
-すべてのmessage layerの文字は消去され、操作対象のmessage layerは 表ページの message0 に指定されます。
-font tagで指定した文字の属性、style tag で指定したスタイルはすべて標準状態に戻ります。ただ し、position tag や layopt tagで指定した属性は引き継が れます。
+Clears all of the characters from the message layers. Current message layer is set to message0.
+Also, font styles will return to defaults.
+Position and/or layopt settings will take effect.
 
 :sample
 Show text[l]
@@ -1190,13 +1193,13 @@ Message
 :title
 set current message layer
 :exp
-操作対象とするmessage layerをset。以後、文章や font tagでの文字属性の指定、l tag等のclick待ちなどは、このlayerに対して行われます。
-message0はdefaultで可視の状態で すが、message1 は layopt tag 等で visible=true としないと表示されないので注意してください。
+Set the current message layer. After setting this, sentences, setting attributes via font tags, using the l tag for click events, etc. will take place in this layer.
+As for message0 as defaultで可視の状態で すが、message1 は layopt tag 等で visible=true としないと表示されないので注意してください。
 :sample
 [current layer="message0"]
-message0layerに表示されています[l]
+Show message0 layer[l]
 [current layer="message1"]
-message1layerに表示されています[l]
+Show message1 layer[l]
 :param
 layer=操作対象のmessage layerをset。指定がない場合、現在のmessage layerとみなされます,
 page=表画面を対象とするか、裏画面を対象とするかをset。省略すると表ページとみなされます
@@ -1238,29 +1241,29 @@ Layer
 :title
 set placement of message layer
 :exp
-message layerに対する様々な属性をset。<br />
-いずれの属性も、省略すれば設定は変更されません。
+set various options for the message layer.<br />
+Any params that are omitted will not change their attributes.
 :sample
-;message layerの位置とサイズを変更
+;message layer position and size
 [layopt width=400 height=300 top=100 left=20]
-;message layerの色と透明度を変更
+;message layer color and opacity
 [layopt color=blue opacity=100]
 :param
-layer=対象とするmessage layerをset。<br/>省略するとcurrenttagで指定されたlayerが選択されます,
-page=対象とするページをset。"fore"か"back"を指定して下さい。<br>この属性を省略するとcurrenttagで指定された、現在のページが選択されます。,
-left=message layerの左端位置をset。（pixels）,
-top=message layerの上端位置をset。（pixels）,
-width=message layerの幅をset。（pixels）,
-height=message layerの高さをset。（pixels）,
-frame=message layerのフレーム画像として表示させる画像をset。<br>messageエリアをカスタマイズしたい場合に利用できます。<br />画像サイズはwidthとheight属性に準じて調整して下さい。<br />さらに、margin属性で実際にmessageが表示される箇所の調整も行いましょう<br />また、"none"と指定することで標準枠に戻すこともできます。違う枠画像をしていすると切り替えることもできます,
+layer=set target message layer.<br/> If this is omitted the current layer will be used.,
+page=set target page. set"fore" or "back". <br>If this is omitted the current page will be used,
+left=message layer's position from the left in pixels,
+top=message layer's position from the top in pixels,
+width=message layer's width in pixels,
+height=message layer's height in pixels,
+frame=set image for the message layer's frame image. <br>use this to customize the message area.<br />adjust image size is according to the width and height attributes. <br />さらに、margin属性で実際にmessageが表示される箇所の調整も行いましょう<br />また、"none"と指定することで標準枠に戻すこともできます。違う枠画像をしていすると切り替えることもできます,
 color=message layerの表示色を 0xRRGGBB 形式で指定 します。 ,
 opacity=message layerの不透明度を 0 ～ 255 の数値で指定しま す(文字の不透明度や、layer自体の不透明度ではありません)。0 で完全 に透明です。,
-marginl=message layerの左余白をset。,
-margint=message layerの上余白をset。,
-marginr=message layerの右余白をset。,
-marginb=message layerの下余白をset。,
-vertical=message layerを縦書きにモードにするには "true" をset。 横書きにするには "false" を指定してください。,
-visible=true に設定すると、message layerが可視(表示状態)になります。<br >false に設定すると、message layerは不可視(非表示状態)になります。
+marginl=message layer's left margin,
+margint=message layer's top margin,
+marginr=message layer's left margin,
+marginb=message layer's bottom margin,
+vertical=set message layer's vertical mode with "true". Use "false" for horizontal mode.,
+visible=if set to "true" message layer is visible<br >"false" hides the message layer.
 #[end]
 */
 tyrano.plugin.kag.tag.position = {
@@ -1565,19 +1568,19 @@ Free image
 imagetagでlayerに追加した画像を解放（非表示）にします。layer指定は必須です。
 :sample
 [backlay]
-;キャラクター表示
+;Show character
 [image layer=0 page=back visible=true top=100 left=300  storage = chara.png]
 [trans time=2000]
 @wt
 
 @backlay
-;キャラクター非表示
+;Hide character
 [freeimage layer=0 page=back]
 @trans time=2000
 [wt]
 :param
-layer=操作対象のmessage layerをset。指定がない場合、現在のmessage layerとみなされます,
-page=表画面を対象とするか、裏画面を対象とするかをset。省略すると表ページとみなされます
+layer=set message layer. If it is not set the current message layer is used,
+page=set page. If it is not set the surface page is used,
 #[end]
 */
 
@@ -1633,7 +1636,7 @@ layerにtextを表示します。前景layerに対してのみ実行します<br
 [trans time=2000]
 [wt]
 [l]
-表示したtextを消去します
+Clear the displayed text
 [freeimage layer = 0]
 :param
 layer=対象とするメlayerをset。以上の整数を指定すると対応する前景layerに画像を表示します,
@@ -1861,7 +1864,7 @@ choicesを表示します[l][r][r]
 共通ルートです 
 :param
 storage=Jump先のscenarioFileをset。省略すると、現在 のscenarioFile内であると見なされます,
-target=ャンプ先のラベルをset。省略すると、Fileの先頭から実行されます。
+target=ャンプ先のLabelをset。省略すると、Fileの先頭から実行されます。
 #[end]
 */
 
@@ -2590,7 +2593,7 @@ Jump後に必ず[cm]tagでbuttonを非表示にする必要があります。
 :param
 graphic=buttonにする画像をset。FileはプロジェクトFolderのimageFolderに入れて下さい,
 storage=Jump先のscenarioFileをset。省略すると、現在 のscenarioFile内であると見なされます。,
-target=Jump先のラベルをset。省略すると、Fileの先頭から実行されます。,
+target=Jump先のLabelをset。省略すると、Fileの先頭から実行されます。,
 name=TyranoScriptのみ。animtagなどからこの名前でアニメーションさせることができます。でまた名前を指定しておくとクラス属性としてJSから操作できます。カンマで区切ることで複数指定することもできます,
 x=buttonの横位置をset,
 y=buttonの縦位置をset。
@@ -2770,7 +2773,7 @@ color=表示色を 0xRRGGBB 形式で指定 します。 ,
 opacity=領域の不透明度を 0 ～ 255 の数値でset0で完全 に透明です。,
 mouseopacity=領域にマウスが乗った時透明度を変更することができます。領域の不透明度を 0 ～ 255 の数値でset0で完全 に透明です,
 storage=clickされた際のJump先のscenarioFileをset。省略すると、現在 のscenarioFile内であると見なされます。,
-target=clickされた際のJump先のラベルをset。省略すると、Fileの先頭から実行されます。
+target=clickされた際のJump先のLabelをset。省略すると、Fileの先頭から実行されます。
 #[end]
 */
 
