@@ -1,10 +1,12 @@
-# TyranoScript｜ティラノスクリプト　Ver2.60（C）ShikemokuMK
+# TyranoScript｜ティラノスクリプト　
+Ver2.60（C）ShikemokuMK
 http://tyrano.jp
 
 ## Relationship to original Japanese Fork
 
-If you want the latest and greatest in Japanese, check here: github.com/ShikemokuMK/tyranoscript
-This is the English fork. When new features are introduced, I will port them as fast as I can. If you want to bring a feature in or help out with translations, please let me know (@jsarcade or evan.burchard+tyranoscript@gmail.com). For now the translation status will live in this readme.
+If you want the latest and greatest in Japanese, check here: (github.com/ShikemokuMK/tyranoscript) [http://github.com/ShikemokuMK/tyranoscript]
+
+This is the English fork. When new features are introduced, I will localize as I am able. If you want to bring a feature in or help out with translations, please let me know (@jsarcade or evan.burchard+tyranoscript@gmail.com). For now the translation status will live in this readme.
 
 ## Main Features
 
@@ -43,7 +45,7 @@ http://tyrano.jp/usage/tutorial
 Chrome or Safari are recommended.
 When using Chrome, set the "-allow-file-access-from-files" property so that files in the local environment can be accessed.  Alternatively, you can serve files from a server on the web or locally.
 
-As for using KAG, Check out the url below:
+As for using KAG, Check out this url:
 http://devdoc.kikyou.info/tvp/docs/kag3doc/contents/index.html
 (sorry non-Japanese speakers.  There is not an equivalent doc.)
 
