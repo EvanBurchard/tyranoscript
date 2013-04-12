@@ -1,76 +1,69 @@
 TyranoScript｜ティラノスクリプト　Ver2.60（C）ShikemokuMK
 http://tyrano.jp
 
-pssst.  Hey people who don't know Japanese.  This is the English fork.  
+■Note on the English Fork■
 
-Download this project, and open doc.html.  Not everything is translated yet, but it should help you get started on making awesome interactive fiction. 
+If you want the latest and greatest in Japanese, check here: github.com/ShikemokuMK/tyranoscript
+This is the English fork. When new features are introduced, I will port them as fast as I can. If you want to bring a feature in or help out with translations, please let me know (@jsarcade or evan.burchard+tyranoscript@gmail.com). For now the translation status will live in this readme.
 
-pssst.  Hey people who DO know Japanese, the state of translations is at the bottom. Please get in touch with me (@jsarcade or evan.burchard+tyranoscript@gmail.com if you want to collaborate on it.)
-
-■主な特徴■
+■Main Features■
 
 ①　Runs with HTML and JavaScript
 
-iphone、ipad、アンドロイドなどの端末で動作させることが可能です。
-また、PhoneGapなどのツールを使うことでアプリ化して
-AppStoreやアンドロイドマーケットで販売することができます。
+Applications will run on iPhone, iPad, Android, etc.
+Also, using tools like PhoneGap, applications can be ported to be sold on the AppStore or Android marketplace.
 
-もちろん、ブラウザゲームとして動作させたり
-拡張パックを使用することでウィンドウズアプリケーションとしても配布できます。
+Of course, games will also run on desktop browsers.
+Using an expansion pack, you can also distribute games as Windows applications.
 
 ②　KAG３/吉里吉里(kirikiri) Compatible
 
-ティラノスクリプトはKAG3/吉里吉里と高い互換性を保つよう設計されています。
-そのため、過去のウィンドウズ用ゲームを容易にスマートフォンやWeb用へ移植することができます。
-
+TyranoScript is made with KAG3/吉里吉里 compatability in mind.
+For that reason, windows games made with KAG3 can easily be ported to the web and smartphones!
 
 ③　Smooth integration with JavaScript
 
-ティラノ・スクリプトでは、JavaScriptを自由に記述して拡張することが可能です。
-
+TyranoScript allows for using JavaScript freely throughout.
 
 ④　Free for individuals or for businesses
 
-無料でご利用下さい。商用利用も可能です。
-また、本ソフトはオープンソースとして公開しております。
-MIT License の中でご活用ください。
+Free to use as you wish, including commercially.
+Original software is open source (MIT License) and free to the public.
 
 ■How to Use■
 
-公式ページにチュートリアルとタグリファレンスがありますので参考にしてください
+Check out the home page tutorial and tag reference.
+(English users may want to stick to opening doc.html and index.html for now)
 
-【タグリファレンス】
+【Tag Reference】
 http://tyrano.jp/home/tag
+(English users open doc.html in a browser for now)
 
-【使い方＆チュートリアル】
+【Usage and Tutorial】
 http://tyrano.jp/usage/tutorial
+(English users open index.html in a browser for now for the sample game)
 
 
-ローカル環境で開発する場合、GoogleChromeかSafariで動作確認してください。
-また、Chromeの場合、-allow-file-access-from-files プロパティを追加して
-ローカル環境のファイルにアクセス出来るようにする必要があります。
+When developing locally, use Chrome or Safari.
+Also, when using Chrome, set the "-allow-file-access-from-files" property
+so that files in the local environment can be accessed.
 
-もしくは、インターネット上のサーバにアップロードして、該当ファイルに
-アクセスして下さい。
+Otherwise, you can serve files from a server on the web or locally.
 
-KAGの仕様については、以下のURLがわかりやすいです。
-
+As for using KAG, Check out the url below:
 http://devdoc.kikyou.info/tvp/docs/kag3doc/contents/index.html
+(sorry non-Japanese speakers.  There is not an equivalent doc.)
 
+■Terms of use■
 
-■利用規約■
-
-ティラノスクリプトは商用・非商用問わず、完全無料で利用することが可能です。
-また、作品制作のために、ティラノスクリプトを改修することも可能です。
+TyranoScript is free for commericial and non-commercial use.
+Modifications and improvements are permitted.
 　
-　
-■免責事項■
+■Disclaimer■
 
-本ツールを利用したことによって損害・不利益・事故等が
-発生した場合でも、一切の責任を負いません。
+Author/tool cannot be liable for damages, setbacks, accidents, etc.
 
-
-■連絡先■
+■Contact■
 
 Email:
 shikemokumk@gmail.com
@@ -78,65 +71,62 @@ shikemokumk@gmail.com
 Twitter
 http://twitter.com/shikemokuMK
 
+■Attribution■
 
-
-■謝辞■
-
-また、プログラム作成にあたり、以下のプログラム・ソースコードを参考に
-しました。
+Making TyranoScript, the following source code, references, and programs were used:
 
 ・吉里吉里２ SDK（KAG・TJSのソースおよびドキュメントなど）
+(kirikiri2 SDK(KAG・TJS source, document, etc.))
 Copyright (C) 1997-2008 W.Dee
 http://kikyou.info/
 
 
-
-■主な更新履歴■
+■Release Notes■
 
 ---------------------------------------------------------------------
 Ver2.60
-ライセンスをオープンソース。MITライセンスに変更
+Added MIT License
 
 Ver2.50
-メニュー画面のカスタマイズ対応
-ティラノスクリプトブースターパック
+Menu screen customization Interface
+TyranoScript Booster Pack
 
 Ver2.40
-キーフレームアニメーションの追加
-トランジションのエフェクト追加
-その他、修正
+Added Clear Frame Animation
+Added Transition Effect
+Other additions
 
 Ver2.30
-セーブ画面のカスタマイズ対応
-Fixレイヤーの追加
-[savesnap][clearfix]タグなどの追加
+Support for save screen customization
+Added Fix Layer
+added tags: [savesnap][clearfix], etc.
 
 Ver2.20
-glyphタグ追加。その他バグ修正など
+added glyph tag. Other fixes
 
 Ver2.10
-Windowsアプリケーションとして配布可能になりました
+Windows Application export support
 
 Ver2.01 
-FireFoxなどの音楽再生修正
-TG変数の追加
+Fixed FireFox sound Playback
+Added TG variables
 
 Ver2.00 
-アプリ変換を強化。など
+Improved application transformation
 
 Ver1.01 
-[call]時にラベルを指定しなかった場合、最初の命令が飛ばされるバグを修正
+fixed bug with [call] where label is not set and first command is skipped
 
 Ver1.00 　(2012 / 09 /24)
-クリッカブルタグを追加
-キャラクタータグの追加
-その他、バグ修正
+Added [clickable] tag
+Added character tags
+Other bug fixes
 
 Ver0.11
-すべての環境でMP3再生に対応（added FLASH playback engine）
+Made audio playback work in all environments（added FLASH fallback）
 
 Ver0.10 (2012/09/10)
-Better release
+Beta release
 
 V0.01 (2012/08/21)
 Initial release！
@@ -149,4 +139,3 @@ State of the translations so far:
 1. Docs (doc.html) - Getting there.  Titles are done.  A good deal of other things are filled in.
 2. Demo (index.html) - Done except for the menu screen.  A few quirks here and there. 
 3. This readme (readme.txt) - barely started.
-
