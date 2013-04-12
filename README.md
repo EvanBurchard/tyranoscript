@@ -64,57 +64,42 @@ http://kikyou.info/
 
 ## Release Notes
 
-- Ver2.60: 
-Added MIT License
-
-- Ver2.50:
-Menu screen customization Interface
-TyranoScript Booster Pack
-
-- Ver2.40:
-Added Clear Frame Animation
-Added Transition Effect
-Other additions
-
-- Ver2.30:
-Support for save screen customization
-Added Fix Layer
-added tags: [savesnap][clearfix], etc.
-
-- Ver2.20:
-added glyph tag. Other fixes
-
-- Ver2.10:
-Windows Application export support
-
-- Ver2.01:
-Fixed FireFox sound Playback
-Added TG variables
-
-- Ver2.00:
-Improved application transformation
-
-- Ver1.01:
-fixed bug with [call] where label is not set and first command is skipped
-
-- Ver1.00: (2012 / 09 /24)
-Added [clickable] tag
-Added character tags
-Other bug fixes
-
-- Ver0.11:
-Made audio playback work in all environments（added FLASH fallback）
-
-- Ver0.10: (2012/09/10)
-Beta release
-
-- V0.01: (2012/08/21)
-Initial release!
-
+- Ver2.60:  
+Added MIT License  
+- Ver2.50:  
+Menu screen customization Interface  
+TyranoScript Booster Pack  
+- Ver2.40:  
+Added Clear Frame Animation  
+Added Transition Effect  
+Other additions  
+- Ver2.30:  
+Support for save screen customization  
+Added Fix Layer  
+added tags: [savesnap][clearfix], etc.  
+- Ver2.20:  
+added glyph tag. Other fixes  
+- Ver2.10:  
+Windows Application export support  
+- Ver2.01:  
+Fixed FireFox sound Playback  
+Added TG variables  
+- Ver2.00:  
+Improved application transformation  
+- Ver1.01:  
+fixed bug with [call] where label is not set and first command is skipped  
+- Ver1.00: (2012 / 09 /24)  
+Added [clickable] tag  
+Added character tags  
+Other bug fixes  
+- Ver0.11:  
+Made audio playback work in all environments (added FLASH fallback)  
+- Ver0.10: (2012/09/10)  
+Beta release  
+- V0.01: (2012/08/21)  
+Initial release!  
 ## Translation Notes
-
 Contributors: Evan Burchard 
-
 ### State of the translations so far:
 1. This readme (README.md) - Done!
 2. Docs (doc.html) - Getting there.  Titles are done.  A good deal of other things are filled in.
