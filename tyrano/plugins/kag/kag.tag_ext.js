@@ -1181,8 +1181,6 @@ tyrano.plugin.kag.tag.chara_show ={
     }
 };
 
-
-
 /*
 #[chara_hide]
 :group
@@ -1197,8 +1195,8 @@ hide a character that has been displayed with [chara_show]
 name=the name defined by [chara_new]'s name attribute, 
 wait=if this is set to true the character will wait to disappear. Default is true,
 time=set in miliseconds.  this is the length of time for a character to disappear. The default is 1000 miliseconds,
-layer=削除対象のレイヤ。chara_showの時にレイヤ指定した場合は、指定します. the default is 0,
-overwrite=trueを指定した場合、nameのptextが既に画面に存在する場合、テキストのみを入れ替えることができます。デフォルトはfalse
+layer=remove the character from the layer set by [chara_show] if it is set. the default is 0,
+overwrite=if set to true and the ptext of the name already exists on the screen, you can change just the text. the defualt is false
 
 #[end]
 */

@@ -1193,16 +1193,16 @@ Message
 :title
 set current message layer
 :exp
-Set the current message layer. After setting this, sentences, setting attributes via font tags, using the l tag for click events, etc. will take place in this layer.
-As for message0 as defaultで可視の状態で すが、message1 は layopt tag 等で visible=true としないと表示されないので注意してください。
+Set the current message layer. After setting this, statements, setting attributes via font tags, using the l tag for click events, etc. will take place in this layer.
+For message0 the default is visible, but for message1, if you don't set the [layopt] tag's visible attribute to true it will not be shown.
 :sample
 [current layer="message0"]
 Show message0 layer[l]
 [current layer="message1"]
 Show message1 layer[l]
 :param
-layer=操作対象のmessage layerをset。指定がない場合、現在のmessage layerとみなされます,
-page=表画面を対象とするか、裏画面を対象とするかをset。省略すると表ページとみなされます
+layer=sets the message layer to be affected. It will affect the current message layer.,
+page=it will be set to the foreground or background.  If omitted, it will set to the foreground.
 #[end]
 */
 
@@ -1255,9 +1255,9 @@ left=message layer's position from the left in pixels,
 top=message layer's position from the top in pixels,
 width=message layer's width in pixels,
 height=message layer's height in pixels,
-frame=set image for the message layer's frame image. <br>use this to customize the message area.<br />adjust image size is according to the width and height attributes. <br />さらに、margin属性で実際にmessageが表示される箇所の調整も行いましょう<br />また、"none"と指定することで標準枠に戻すこともできます。違う枠画像をしていすると切り替えることもできます,
-color=message layerの表示色を 0xRRGGBB 形式で指定 します。 ,
-opacity=message layerの不透明度を 0 ～ 255 の数値で指定しま す(文字の不透明度や、layer自体の不透明度ではありません)。0 で完全 に透明です。,
+frame=set image for the message layer's frame image. <br>use this to customize the message area.<br />adjust image size is according to the width and height attributes. <br />futhermore you should use this to regulate the places where the message will be displayed by margin attributes.  if you set this to "none" it will return to the standard margin. You can also change it to designate a different frame image.
+color=sets the color of the message layer with a 0xRRGGBB format,
+opacity=this sets the opacity for the message layer. This does not affect the opacity of the text itself or the layer.0 is completely transparent.
 marginl=message layer's left margin,
 margint=message layer's top margin,
 marginr=message layer's left margin,
@@ -1379,9 +1379,9 @@ Layer
 :title
 show image
 :exp
-layerに画像を表示します。キャラクター表示や背景切り替えなどに使用できます。前景layerは初期状態では非表示なのでvisible=trueとすることで表示されます
+show an image for the layer. you can use this to change the image of the background or character. visible must be set to true in order to show the foreground layer
 :sample
-;背景変更をtransitionで実施
+;change the scene via a transition
 @layopt layer=message0 visible=false
 [backlay]
 [image layer=base page=back storage=rouka.jpg]
@@ -1389,21 +1389,20 @@ layerに画像を表示します。キャラクター表示や背景切り替え
 [wt]
 @layopt layer=message0 visible=true
 :param
-storage=画像File名をset。Fileは背景layerならプロジェクトFolderのbgimage、背景layerならfgimageに入れてください,
-layer=対象とするメlayerをset。<br/>"base"を指定すると背景layer。0以上の整数を指定すると対応する前景layerに画像を表示します,
-page=対象とするページをset。"fore"か"back"を指定して下さい。<br>この属性を省略すると"fore"であるとみなされます,
-left=画像の左端位置をset。（pixels）,
-top=画像の上端位置をset。（pixels）,
-x=画像の左端位置をset。leftと同様。こちらが優先度高（pixels）,
-y=画像の上端位置をset。topと同様。こちらが優先度高（pixels）,
-width=画像の横幅をset。（pixels）,
-height=画像の高さ位置をset。（pixels）,
-folder=好きな画像Folderから、画像を選択できます。通常前景layerはfgimage　背景layerはbgimageと決まっていますが、ここで記述したFolder以下の画像Fileを使用することができるようになります。,
-name=TyranoScriptのみ。animtagなどからこの名前でアニメーションさせることができます。でまた名前を指定しておくとクラス属性としてJSから操作できます。カンマで区切ることで複数指定することもできます,
-pos=layer位置を自動的に決定します。前景layerに対して使います。横方向の位置は、この属性で指定した left ( 左端 ) 、left_center ( 左より )、center ( 中央 )、 right_center ( 右より )、right ( 右端 ) の位置に表示されます。各横方向の座標の中心 位置は Config.tjs で指定することができます。
-　<br>left 、left_center、 center、 right_center、 right の代わりに、それぞれ l、 lc、 c、 rc、 r を 指定することもできます ( 動作は同じです )。
-　<br>この属性を指定した場合は left 属性や top 属性は無視されます。
-　<br>layerをbase と指定した場合にはこの属性は指定しないでください。各々の表示位置はConfit.tjsで事前に設定しておきましょう
+storage=sets the image file name. If it is a background image it should be in the bgimage folder.  Foreground images should be in the fgimage folder,
+layer=sets the target layer. if you set it as "base" it will be the background layer. if you set it as an integer above zero it will put that layer in front of lower numbers,
+page=sets the target page. Set as "fore" or "back". <br> if omitted "fore" will be set,
+left=sets pixels from the left,
+top=sets pixels from the top,
+x=sets pixels from the left. the same as left but overrides it,
+y=sets pixels from the top. the same as top but overrides it,
+width=sets the width of the picture in pixels,
+height=sets the height of the picture in pixels,
+folder=you can chose an image from this folder. By default fgimage is set for the foreground image and bgimage is set for the background image. Any image under the folder name that you write here will be available for use,
+name=TyranoScript only (not KAG3). This name is used later to reference this image by tags like [anim] tag. Basically by setting this name you can set this as a JS class. If you divide them with commas you can designate multiple names.,
+pos=set the layer position automatically. This is used for the foreground layer. This attribute can be set as left left_center center right_center right. You can change how far it is from the center in the Config.tjs file. You can also abbreviations l lc c rc and r.
+　<br>Setting these will override the top and left attributes.
+　<br>Don't set this attribute for the layer that you intend to use as base. Set these positions beforehand in Config.tjs
 #[end]
 */
 
@@ -1565,7 +1564,7 @@ Layer
 :title
 Free image
 :exp
-imagetagでlayerに追加した画像を解放（非表示）にします。layer指定は必須です。
+Frees the images of a particular layer that were added with [image] tag. The layer attribute is required.
 :sample
 [backlay]
 ;Show character
@@ -1626,10 +1625,10 @@ Layer
 :title
 add text to the layer
 :exp
-layerにtextを表示します。前景layerに対してのみ実行します<br />
-前景layerの属性を全て継承します。文字を消す時はfreeimagetagをlayerに対して適応します
-また、前景layerはdefault非表示なので、transitionで表示しない場合はlayerを可視状態にしてから、追加します。
-[layopt layer=0 visible=true]が必要
+This displays text in the layer. Only performed in the foreground layer.<br />
+This will inherit all of the attributes of the foreground layer. when text is deleted, it applies to the [freeimage] tag in the layer.
+Keep in mind that if the foreground layer is not set to visible=true this text will also not display.
+[layopt layer=0 visible=true] is required
 :sample
 [backlay]
 [ptext page=back text="texttext" size=30 x=200 y=300 color=red vertical=true]
@@ -1639,18 +1638,17 @@ layerにtextを表示します。前景layerに対してのみ実行します<br
 Clear the displayed text
 [freeimage layer = 0]
 :param
-layer=対象とするメlayerをset。以上の整数を指定すると対応する前景layerに画像を表示します,
-page=対象とするページをset。"fore"か"back"を指定して下さい。<br>この属性を省略すると"fore"であるとみなされます,
-text=表示するtextの内容,
-x=textの左端位置をset。（pixels）,
-y=textの上端位置をset。（pixels）,
-vertical=true 、false のいずれかを指定してください。trueで縦書き表示されます。defaultは横書き,
-size=フォントサイズをpixelsで指定してください,
-face=フォントの種類を指定してください。非KAG互換ですが、ウェブフォントも使用できます,
-color=フォントの色をset,
-name=ティラノスクリプトのみ。animtagなどからこの名前でアニメーションさせることができます。でまた名前を指定しておくとクラス属性としてJSから操作できます。カンマで区切ることで複数指定することもできます,
-bold=太字指定 boldと指定してください　HTML５互換ならfont-style指定に変換できます 
-
+layer=this sets the target layer. you can reference it by number.,
+page=sets the target page. can be set as set as "fore" or "back". <br>defaults to "fore",
+text=text contents to show,
+x=horizonal position from left border in pixels,
+y=vertical position from top border in pixels,
+vertical=set to true or false (this is the default). If set to true the text reads vertically.  If false the text is horizontal.,
+size=set the font size in pixels,
+face=set the font type. This is not KAG compatibe but you can use web fonts,
+color=set the font color,
+name=TyranoScript only (not KAG3).  This name is used later to reference this by tags like [anim] tag. Basically by setting this name you can set this as a JS class. If you divide them with commas you can designate multiple names.,
+bold=this sets the text as bold. You can use font-style for the HTML5 compatible method.
 
 #[end]
 */
@@ -1747,26 +1745,26 @@ Layer
 :title
 copy information from the surface page
 :exp
-指定したlayer、あるいはすべてのlayerの情報を、表ページから裏ページに コピーします。
-利用方法としてはtrans tagで表ページのlayerの画像を裏ページの layerの画像に置き換えます。
-そのため、transition前にこの backlay タ グで画像を裏ページに転送し、裏ページでlayerを操作してから、transitionを 行うという方法に用います。
+The layer that you designate or all of the layer information is copied from the front page to the back page.
+The image of the front page layer marked with the [trans] tag moves to the back page's image layer.
+In order to do that, before the transition, the image is moved to the back with the [backlay] tag.  On the back page, after the layer is manipulated, the transition is performed.
 :sample
-;背景変更をtransitionで実施
+;The background change is executed via a transition
 @layopt layer=message0 visible=false
 [backlay]
 [image layer=base page=back storage=rouka.jpg]
 [trans time=2000]
 [wt]
 :param
-layer=対象となるlayerをset。<br>
-　base を指定すると 背景layer になります。<br>
-　0 以上の整数を指定すると前景layerになります。<br>
-　message0 または message1 を指定するとmessage layerにな ります。<br>
-単に message とのみ指定した場合は、 current tagで指定した現在の操作対象のmessage layerが 対象になります ( 裏ページのmessage layerが操作対象であっても そのmessage layerの表ページ→裏ページへのコピーが行われます )。<br>
-省略すると、すべてのlayerの情報が裏ページにコピーされます。<br>
+layer=set the layer target<br>
+　if set as base then it becomes the background layer<br>
+　if set as an integer above zero then it becomes the foreground<br>
+　if you set as message0 or message1 then it will become that message layer.<br>
+if you set is as message it will become the message layer of whatever the [current] tag is set to
+Even if the message layer is the back page it will copy that message layer from the front to the back.<br>
+if this is omitted the information of every layer is copied to the back page<br>
 #[end]
 */
-
 
 //前景layerを背景layerにコピー
 tyrano.plugin.kag.tag.backlay={
@@ -1974,12 +1972,12 @@ System Settings
 :title
 Begin Wait
 :exp
-Begin Waiting. time属性で指定した時間、操作できなくなります。
+For the time specified by the time attribute, the script will not execute.
 :sample
-;2000miliseconds（２秒）処理を停止します
+;pause execution for 2000 miliseconds (２seconds) 
 [wait time=2000]
 :param
-time=ウェイトをmilisecondsでset。
+time=set the time to wait in miliseconds
 #[end]
 */
 
@@ -2018,8 +2016,8 @@ Layer
 :title
 Hide message
 :exp
-message layerを一時的に隠します。メニューから「messageを消す」を選んだのと 同じ動作を行います。
-click待ちを行った後、message layerは表示され、 実行は継続します。
+temporarily hides the message layer. This will peform the same action as if you were to chose clear message from the menu. 
+after waiting for a click, the message layer is shown, and the script execution continues.
 :sample
 :param
 #[end]
@@ -2050,16 +2048,16 @@ System Settings
 :title
 Shake the screen
 :exp
-For a set number of miliseconds、the screen will shake.（KAGの文字数指定は未対応）
-vmax 属性を 0 に設定すると横揺れになります。hmax 属性を 0 に設定すると縦揺れになります。
+For a set number of miliseconds、the screen will shake. (KAG3 does not support setting the number of characters)
+if you set the vmax attribute to 0 it will only shake horizontally.  if you set the hmax attribute to 0 it will only shake vertically.
 :sample
 [quake count=5 time=300 hmax=20]
 :param
 count=Set the number of times to shake the screen,
-wait  = Set as true or false. trueの場合は揺れが完了するまで、Gameを停止します。true is the default, 
-time=１回揺れるのにかかる時間をmilisecondsでset。defaultは300,
-hmax=揺れの横方向への最大振幅をset。省略すると 10(px) が指定されたと見なされます。,
-vmax=揺れの縦方向への最大振幅をset。省略すると 10(px) が指定されたと見なされます。
+wait= Set as true or false. if set to true the game will pause during the shaking. true is the default, 
+time=Set the number of miliseconds to shake the screen per count. default is 300ms,
+hmax=The maximum number of pixels to shake the screen horizontally. The default is 10(px).,
+vmax=The maximum number of pixels to shake the screen vertically. The default is 10(px).
 #[end]
 */
 
@@ -2121,19 +2119,19 @@ System Settings
 font attributes
 :exp
 Set various attributes of text.
-これらの属性は、message layerごとに個別に設定できます。
-いずれの属性も、省略すると前の状態を引き継ぎます。また、default を指定すると Config.tjs 内で指定したdefaultの値に戻ります。
-resetfont や　ct cm er tagが実行されると、、Config.tjs 内や deffont tagで指定し たdefaultの値に戻ります。
+These attributes are set for each message layer.
+If any of the attributes are omitted, the default set in Config.tjs is used.
+When these tags are used: [resetfont] [ct] [cm] [er]、the defaults set in Config.tjs or in the [deffont] are used.
 :sample
 [font size=40 bold=true]
-この文字は大きく、そして太字で表示されます。
+This message is big and bold.
 [resetfont]
-もとの大きさに戻りました。
+This message goes back to normal.
 :param
-size=文字サイズをset,
-color=文字色を文字色を 0xRRGGBB 形式でset。（吉里吉里対応）　HTML5に限るならその他指定でも大丈夫です,
-bold=太字指定。true 又は　false で指定,
-face=フォントの種類を指定。非KAG互換でウェブフォントも利用可能。プロジェクトFolderのothersFolderに配置してください。そして、tyrano.cssの@font-faceを指定することで利用できます。
+size=set the character size,
+color=set a color with the 0xRRGGBB form.（吉里吉里対応）HTML5に限るならその他指定でも大丈夫です,
+bold=sets characters to be bold. can be true or false,
+face=set the font type.非KAG互換でウェブフォントも利用可能。Put them in the project's other folder.そして、tyrano.cssの@font-faceを指定することで利用できます。
 #[end]
 */
 
@@ -2181,14 +2179,14 @@ System Settings
 :title
 default font attributes
 :exp
-現在操作対象のmessage layerに対する、defaultの文字属性をset。
-ここで指定した属性は、resetfont tagで実際に反映されます。
+Sets the default font attributes for the current message layer.
+If the [resetfont] tag is used, these attributes will take effect.
 つまり、このtagを実行しただけではすぐにはフォントの属性は反映されません。resetfont tag を実行する必要があります。
 :sample
 :param
-size=文字サイズをset,
-color=文字色を文字色を 0xRRGGBB 形式でset。（吉里吉里対応）　HTML5に限るならその他指定でも大丈夫です
-bold=太字指定。true 又は　false で指定,
+size=set the character size,
+color=set a color with the 0xRRGGBB form.（吉里吉里対応）HTML5に限るならその他指定でも大丈夫です,
+bold=sets characters to be bold. can be true or false,
 face=フォントの種類を指定。非KAG互換でウェブフォントも利用可能。プロジェクトFolderのothersFolderに配置してください。そして、tyrano.cssの@font-faceを指定することで利用できます。
 
 #[end]
@@ -2238,10 +2236,10 @@ System Settings
 message speed
 :exp
 Set the message speed for text
-文字表示をノーウェイトにするには nowait tagをつかう こともできます。
+If you want the characters to appear instantly, you can use the [nowait] tag.
 :sample
 :param
-speed=文字の表示速度をset
+speed=how fast the characters appear
 #[end]
 */
 
@@ -2330,8 +2328,8 @@ System Settings
 :title
 Reset font
 :exp
-font tagで指定した文字の属性をdefaultに戻します。
-文字属性は、message layerごとに個別に設定できます
+Return to the default font attributes set by the [font] tag
+Each message layer can have different font settings.
 :sample
 :param
 #[end]
