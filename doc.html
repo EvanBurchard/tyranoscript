@@ -25,90 +25,23 @@
 
 <body>
 
-<textarea id="src_html">
-</textarea>
-
 <article>
 
-<!-- div.sectionArea -->
-<div class="sectionArea">
-  <h2>Reference</h2>
-  <p>Library Parameter Demo</p>
-  <!-- div.howtoArea -->
-  <div class="howtoArea">
-    <!-- div.howtoMain -->
-
-    <div class="howtoMain">
-      <h2>Basics</h2>
-      <p>
-        Tags are surroned by brackets: [ ] <br/ >
-        Statements beginning with an at symbol (@) will be recognizable by tags.  A description is required.<br/ >
-        Statements beginning with a semicolon (;) are treated as comments.<br />
-        There are conditional properties. Described in JS style, the result is that tags are executed only in the true case.<br/ >
-      </p>
-      <div>
-        <a name="タグ名"></a>
-        <h3>【l】wait for click</h3>
-        <p>click wait command</p>
-        <table>
-          <tr>
-            <th>
-              Parameter Name
-            </th>
-            <th>
-              Required?
-            </th>
-            <th>
-              Explanation
-            </th>
-            <tr>
-
-              <tr>
-                <td>param</td>
-                <td>yes</td>
-                <td>this param blah blah...</td>
-
-              </tr>
-              <tr>
-                <td>param</td>
-                <td>no</td>
-                <td>this option blah blah...</td>
-
-              </tr>
-
-            </table>
-
-            <h5>Sample code</h5>
-            <p>
-              <code>
-                Sample code
-              </code>
-
-            </p>
-
-          </div>
-
-        </div>
-        <!-- /div.howtoMain -->
-        <!-- div.howtoNav -->
-
-        <div class="howtoNav">
-
-        </div>                    
-
-        <!-- /div.howtoNav -->
+  <div class="sectionArea">
+    <h2>Reference</h2>
+    <p>Library Parameter Demo</p>
+    <div class="howtoArea">
+      <div class="howtoMain">
       </div>
-      <!-- /div.howtoArea -->
+      <div class="howtoNav">
+      </div>                    
     </div>
-    <!-- /div.sectionArea -->
-
-    </article>        
+  </div>
+</article>        
     <script type="text/javascript">
       $(function(){
         //masterタグの作成
-        $("body").click(function(){
-          $.generateHtml();
-        });
+        $.generateHtml();
       }); 
     </script>
 </body>

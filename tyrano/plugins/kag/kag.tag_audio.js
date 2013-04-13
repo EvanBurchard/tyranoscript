@@ -1,4 +1,6 @@
-
+//still untranslated:
+//一部環境（Firefox、Sarafi等）においては対応していません。その場合、playbgmの動作となります。
+//これは、スマートフォンの仕様上、クリックしないと音が鳴らせない縛りがあるため、例えば、背景変更後に音楽再生をしたい場合はtrueを指定しないと音はなりません。通常のテキストの中で音楽再生の場合はfalseで大丈夫です。スマートフォンから閲覧して音楽が鳴らない場合はtrueにしてみてください
 
 /*
 #[playbgm]
@@ -16,13 +18,13 @@ Playback files should be stored in the project's bgm folder.
 :param
 storage=Set the file to be used,
 loop=set as true (default) or false. true will repeat the loop,
-click=スマートフォンのブラウザから閲覧した場合のみ動作（アプリの場合不要）true またはfalse（デフォルト）を指定してください。trueの場合、スマートフォン（ブラウザ）から閲覧した場合、再生前にクリックが必要になります。
+click=Set to true or false (default) when used for smart phone browsers. If set to true a click is needed before playback will start in smart phone browsers.
 これは、スマートフォンの仕様上、クリックしないと音が鳴らせない縛りがあるため、例えば、背景変更後に音楽再生をしたい場合はtrueを指定しないと音はなりません。通常のテキストの中で音楽再生の場合はfalseで大丈夫です。スマートフォンから閲覧して音楽が鳴らない場合はtrueにしてみてください
 #[end]
 */
 
 
-//音楽再生
+//music playback
 tyrano.plugin.kag.tag.playbgm = {
     
     vital:["storage"],
@@ -445,11 +447,11 @@ Gradually fade in BGM
 :sample
 [fadeinbgm storage=sample.mp3 loop=false time=3000]
 :param
-storage=再生する音楽ファイルを指定してください,
-loop=true（デフォルト）またはfalse を指定してください。trueを指定すると繰り返し再生されます,
-click=スマートフォンのブラウザから閲覧した場合のみ動作（アプリの場合不要）true またはfalse（デフォルト）を指定してください。trueの場合、スマートフォン（ブラウザ）から閲覧した場合、再生前にクリックが必要になります。
+storage=set the file for music playback,
+loop=set as true (default) or false. true will repeat the loop,
+click=Set to true or false (default) when used for smart phone browsers. If set to true a click is needed before playback will start in smart phone browsers.
 これは、スマートフォンの仕様上、クリックしないと音が鳴らせない縛りがあるため、例えば、背景変更後に音楽再生をしたい場合はtrueを指定しないと音はなりません。通常のテキストの中で音楽再生の場合はfalseで大丈夫です。スマートフォンから閲覧して音楽が鳴らない場合はtrueにしてみてください,
-time=フェードインを行なっている時間をミリ秒で指定します。
+time=number of miliseconds for the fade in to occur
 #[end]
 */
 
@@ -469,8 +471,6 @@ tyrano.plugin.kag.tag.fadeinbgm = {
     }
     
 };
-
-
 
 /*
 #[fadeoutbgm]
@@ -501,7 +501,6 @@ tyrano.plugin.kag.tag.fadeoutbgm = {
     start:function(pm){
         this.kag.ftag.startTag("stopbgm",pm);
     }
-    
 };
 
 
@@ -513,16 +512,16 @@ Audio
 Crossfade BGM
 :exp
 Crossfade BGM
-音楽が交差して切り替わる演出に使用できます。
+Mix one music in as another fades out.
 一部環境（Firefox、Safari等）において対応していません。その場合、playbgmの動作となります。
 :sample
 [xchgbgm storage=new.mp3 loop=true time=3000]
 :param
-storage=次に再生するファイルを指定してください,
-loop=true（デフォルト）またはfalse を指定してください。trueを指定すると繰り返し再生されます,
-click=スマートフォンのブラウザから閲覧した場合のみ動作（アプリの場合不要）true またはfalse（デフォルト）を指定してください。trueの場合、スマートフォン（ブラウザ）から閲覧した場合、再生前にクリックが必要になります。
+storage=set the next file for playback,
+loop=set true (default) or false. true will repeat the sound when it is done,
+click=Set to true or false (default) when used for smart phone browsers. If set to true a click is needed before playback will start in smart phone browsers.
 これは、スマートフォンの仕様上、クリックしないと音が鳴らせない縛りがあるため、例えば、背景変更後に音楽再生をしたい場合はtrueを指定しないと音はなりません。通常のテキストの中で音楽再生の場合はfalseで大丈夫です。スマートフォンから閲覧して音楽が鳴らない場合はtrueにしてみてください,
-time=クロスフェードを行なっている時間をミリ秒で指定します。
+time=number of miliseconds for the cross fade to occur
 #[end]
 */
 
@@ -542,12 +541,8 @@ tyrano.plugin.kag.tag.xchgbgm = {
         
         this.kag.ftag.startTag("stopbgm",pm);
         this.kag.ftag.startTag("playbgm",pm);
-        
     }
-    
 };
-
-
 
 /*
 #[playse]
@@ -557,13 +552,13 @@ Audio
 Play a sound effect
 :exp
 Play a sound effect
-効果音ファイルはプロジェクトフォルダのsoundフォルダに入れてください
+Sound Effect files are stored in the project's sound folder
 :sample
 [playse storage=sound.mp3 loop=false ]
 :param
-storage=再生するファイルを指定してください,
-loop=trueまたはfalse （デフォルト）を指定してください。trueを指定すると繰り返し再生されます,
-clear=trueまたはfalse(デフォルト) 他のSEが鳴っている場合、trueだと他のSEを停止した後、再生します。音声などはtrueが便利でしょう
+storage=Set the playback file,
+loop=set true or false (default). true will repeat the sound when it is done,
+clear=true or false (default). When another sound effect is playing, interrupt it and start playing this. true could be useful for voice
 #[end]
 */
 
@@ -630,7 +625,7 @@ Fade in a sound effect
 :sample
 [fadeinse storage=sound.mp3 loop=false time=2000 ]
 :param
-storage=Set playback file
+storage=Set the file to be used,
 loop=set as true or false(default). true will repeat the playback,
 time=set the fade in time in miliseconds
 #[end]
@@ -673,7 +668,6 @@ time=fadeout in miliseconds
 */
 
 tyrano.plugin.kag.tag.fadeoutse = {
-    
     pm:{
         storage:"",
         target:"se",
@@ -686,7 +680,6 @@ tyrano.plugin.kag.tag.fadeoutse = {
         this.kag.ftag.startTag("stopbgm",pm);
         
     }
-    
 };
 
 /*
@@ -704,7 +697,6 @@ Pause BGM Playback
 
 //BGMのフェード完了を待ちます
 tyrano.plugin.kag.tag.wb = {
-    
     pm:{
     },
     start:function(){
@@ -713,10 +705,8 @@ tyrano.plugin.kag.tag.wb = {
     }
 };
 
-
 //未実装　seの再生終了を待ちます 
 tyrano.plugin.kag.tag.wc = {
-    
     pm:{
     },
     start:function(){
@@ -724,14 +714,8 @@ tyrano.plugin.kag.tag.wc = {
     }
 };
 
-
-
-
-
 /*
 [fadeinbgm storage="e:3" time=5000]
 再生中・・・停止するにはクリックしてください。[l]
 [fadeoutbgm time=5000]
 */
-
-

@@ -1835,36 +1835,29 @@ tyrano.plugin.kag.tag.wq = {
 :group
 Links
 :title
-hyperlink（choices）
+hyperlink (choices)
 :exp
-
-link tagと endlink tagで囲まれた部分の文章を、 マウスやキーボードで選択可能にし、そこでclickされたりキーを押されたときに、 Jumpする先を指定できます。
-また、囲まれた文章はページをまたぐことは出来ません(行をまたぐことはできます)。
+the text inside the [link] and [endlink] tags can be selected with the mouse or keyboard. on a click or key event a jump event can be fired.
+This tag cannot be used to visit a different page.
 :sample
-choicesを表示します[l][r][r]
-
-[link target=*select1]【１】choices　その１[endlink][r]
-[link target=*select2]【２】choices　その２[endlink][r]
-
+pick what you like[l][r][r]
+[link target=*select1] 1- first choice[endlink][r]
+[link target=*select2] 2- second choice[endlink][r]
 [s]
-
 *select1 
 [cm]
-「choices１」がclickされました[l]
+you clicked the first choice
 @jump target=*common
-
 *select2 
 [cm]
-「choices２」がclickされました[l]
+you clicked the second choice
 @jump target=*common
-
 *common 
 [cm] 
-
-共通ルートです 
+Common Route
 :param
-storage=Jump先のscenarioFileをset。省略すると、現在 のscenarioFile内であると見なされます,
-target=ャンプ先のLabelをset。省略すると、Fileの先頭から実行されます。
+storage=set the scenario file to jump to. if omitted the current scenario file,
+target=set the label to jump to. If omitted the script will be executed from the beginning of the file
 #[end]
 */
 
@@ -1921,8 +1914,8 @@ hyperlink（choices）ending
 :exp
 closing tag for hyperlinks (choices)
 :sample
-[link target=*select1]【１】choices　その１[endlink][r]
-[link target=*select2]【２】choices　その２[endlink][r]
+[link target=*select1]1- first choice[endlink][r]
+[link target=*select2]2- second choice[endlink][r]
 :param
 #[end]
 */
@@ -1950,11 +1943,11 @@ System Settings
 :title
 End Game
 :exp
-scenarioFileの実行を停止します。
-linktagでchoices表示した直後などに配置して利用する方法があります。
+stop executing the script in the scenario file
+choices shown in [link] tags etc. will have no way to execute them.
 :sample
-[link target=*select1]【１】choices　その１[endlink][r]
-[link target=*select2]【２】choices　その２[endlink][r]
+[link target=*select1] This won't work after the [s] tag executes [endlink][r]
+[link target=*select2] This won't work after the [s] tag executes [endlink][r]
 [s]
 :param
 #[end]
@@ -2462,7 +2455,7 @@ tyrano.plugin.kag.tag.layopt = {
 /*
 #[ruby]
 :group
-Layer
+Message
 :title
 add helper text (furigana)
 :exp
@@ -2506,8 +2499,8 @@ System Settings
 :title
 cancel skip
 :exp
-Skip状態の解除を行います。
-playerーにSkip状態の停止を強制させることができます
+Cancel skipping through dialog.
+Able to override player initiated skips.
 :sample
 :param
 #[end]
@@ -2530,8 +2523,8 @@ System Settings
 :title
 display location settings
 :exp
-Graphical buttonの表示位置をset。
-textには対応しておりません。
+Set placement of graphical buttons.
+There is no support for writing text.
 :sample
 [locate x=20 y=100]
 [button graphic="oda.png" target=*oda]
@@ -2540,8 +2533,8 @@ textには対応しておりません。
 [button graphic="toyo.png" target=*toyo]
 
 :param
-x=横方向位置指定,
-y=縦方向位置指定
+x=Set horizontal position,
+x=Set vertical position
 #[end]
 */
 
@@ -2885,18 +2878,18 @@ tyrano.plugin.kag.tag.clickable = {
 :group
 System Settings
 :title
-waiting for click setttings
+image when waiting for click
 :exp
-click待ち記号を表示する位置を設定できます
-click記号はプロジェクトFolderのtyrano/images/kag/nextpage.gifを変更することで対応します
+The image that is used when waiting for a click.
+This goes in same directory as tyrano/images/kag/nextpage.gif
 :sample
 [glyph  fix=true left=200 top=100 ]
 
 :param
-line=click待ちの表示画像を指定することができます。tyrano/kag/nextpage.gifと同一のFolderに配置してください,
-fix=trueを指定すると、left、及び、topを指定した位置に表示されます。,
-left=fix 属性を true にしたときに記号を表示する位置のうち、左端位置を set,
-top=fix 属性を true にしたときに記号を表示する位置のうち、上端位置を set
+line=specify the image to use. It goes somewhere in the same directory as tyrano/kag/nextpage.gif.,
+fix=if set to true you can place this with the top and left params,
+left=if the fix property is true, set the left margin to this number,
+left=if the fix property is true, set the top margin to this number
 
 #[end]
 */

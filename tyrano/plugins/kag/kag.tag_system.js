@@ -139,7 +139,7 @@ console output
 :exp
 outputs values to the console
 【In the case of KAG3 or 吉里吉里(kirikiri)】
-consoleは Shift+F4 でdisplayされるほか、Config.tjs 内で logMode を設定することに より、Fileに記録することもできます。
+in the console with Shift+F4 activate the display or in Config.tjs turn logMode on and it will record
 【In the case of TyranoScript in a browser】
 Check in the web inspector console of the browser
 :sample
@@ -178,11 +178,11 @@ System Settings
 Set Title
 :exp
 Sets the title for the game
-For example、章ごとにTitleを変えるとPlayerからわかりやすくなります。
-吉里吉里の場合、Applicationのウィンドウタイトル。
-TyranoScriptの場合、browserTitleが変わります
+You can also change each chapter title for the player.
+In kirikiri the application window title will change.
+In TyranoScript the title attribute of the browser is changed.
 :sample
-[title name="変更後のTitle"]
+[title name="Title after change"]
 :param
 name=The name you want for your title
 #[end]
@@ -222,8 +222,8 @@ TJS can also be used, but TyranoScript variables are unavailable.
 
 var test = 22;
 f.name = test;
-alert("javascriptの関数にもアクセス可能");
-//jqueryも利用可能 コメントもJS方式利用可能
+alert("javascript functions are available");
+//jquery commands and javascript methods can also be used.
 $("body").html();
 
 [endscript]
@@ -278,18 +278,18 @@ Other
 :title
 add an HTML layer
 :exp
-[html]と[endhtml]の間に記述したHTMLをdisplayすることができます。
-この機能は非常に強力です。もちろんJavaScripttag。Canvasなど次世代Web表現を全てサポートします。
-For example、YoutubeのビデオPlayerを挿入したり、無数に公開されているWebAPIとの連携なども可能です。
-このtagで挿入した場合は最前面にHTML要素が挿入されます
-cmtagなどで画面をクリアしない限り、clickしてもGameが進みません。
-必ずグラフィックボタンなども配置して、ジャンプでGameを進める状態にしておくことが必要です。
-tagの中に、TyranoScriptのvariableを挿入することもできます。
+In between [html] and [endhtml] HTML can be entered.
+This feature is very powerful.  Of course JavaScript, Canvas, and next generation web expressions are supported.
+For example a Youtube video player can be inserted and any number of public APIs can be accessed.
+By using this tag, any HTML elements can be added.
+If you use the [cm] tag and do not clear everything, even if you click the game cannot continue.
+By all means use graphic buttons, etc. to ensue that you can jump to a game state where you can still continue.
+Inside of this tag, variables of TyranoScript can be used.
 従来通りHTMLの中で[emb]tagを使用してください
 :sample
 
-;youtubeのPlayerを指定した位置に挿入します
-;youtubeから埋め込み用tagを取得してきています
+;place the youtube player in a designated spot
+;use the embed tag for youtube 
 [html top=100 left=300]
 
 <object width="200" height="113">
@@ -302,8 +302,8 @@ tagの中に、TyranoScriptのvariableを挿入することもできます。
 
 [endhtml]
 :param
-left=HTMLtagの左端位置を指定します。（pixels）,
-top=HTMLの上端位置を指定します。（pixels）,
+left=HTMLtagの左端位置を指定します。(pixels),
+top=HTMLの上端位置を指定します。(pixels),
 name=HTML領域に名前を指定することができます。この名前を使って、HTML領域に対してAnimationなども実行できます。
 #[end]
 */
@@ -397,10 +397,10 @@ Embed expression
 exp で示された式をevaluation(実行)し、その結果を埋め込みます。
 variableをScenario中にdisplayさせたい場合に使います。
 :sample
-[eval exp="f.value1='variableの値だよ～ん'"]
+[eval exp="f.value1='variable level'"]
 とどこかで書いておいて、
 [emb exp="f.value1"]
-と書くと、この emb tagが variableの値だよ～ん という内容に置き換わります。
+と書くと、この [emb] tagが variableの値だよ～ん という内容に置き換わります。
 :param
 exp=evaluationするTJS（JS）式を指定します。ここでevaluationされた式がembtagと置き換わります
 #[end]
@@ -432,39 +432,39 @@ Macros, Variables, JavaScript Interface
 :title
 if
 :exp
-式をevaluationし、その結果が true ( または 0 以外 ) ならば、 elsif・else・endif のいずれかまでにある文章やtagを実行し、 そうでない場合は無視します。
+if the evaluation of the expression is true (or a non-zero number), the statements and tags up until elsif, else and endif tag are executed, otherwise those statements and tags are ignored and the statements and tags inside of elsif or else would be executed instead.
 :sample
-; 例1 [if exp="false"]
-ここはdisplayされない
+; example 1 [if exp="false"]
+This will not be displayed
 [else]
-ここはdisplayされる
+This will be displayed
 [endif]
 
-; 例2 [if exp="false"]
-ここはdisplayされない
+; example 2 [if exp="false"]
+This will not be displayed
 [elsif exp="false"]
-ここはdisplayされない
+This will not be displayed
 [else]
-ここはdisplayされる
+This will be displayed
 [endif]
 
-; 例3 [if exp="false"]
-ここはdisplayされない
+; example 3 [if exp="false"]
+This will not be displayed
 [elsif exp="true"]
-ここはdisplayされる
+This will be displayed
 [else]
-ここはdisplayされない
+This will not be displayed
 [endif]
 
-; 例4 [if exp="true"]
-ここはdisplayされる
+; example 4 [if exp="true"]
+This will be displayed
 [elsif exp="true"]
-ここはdisplayされない
+This will not be displayed
 [else]
-ここはdisplayされない
+This will not be displayed
 [endif]
 :param
-exp=evaluationする TJS 式を指定します。この式の結果が false ( または 0 な らば、elsif・else・endif tagまでの文章やtagが無視されます。
+exp=a TJS expression to be evaluated. if the expression is false (or 0)- the statements and tags will be ignored until an elsif else  or endif tag.
 #[end]
 */
 
@@ -477,45 +477,30 @@ tyrano.plugin.kag.tag["if"] = {
     pm:{"exp":""},
     
     start:function(pm){
-        
         //条件合格
         if(this.kag.embScript(pm.exp)){
-            
             //実行済み、次にels elsif が出てきても、無視する
             this.kag.pushStack("if",true);
-            
             //普通に次の処理を実行
             this.kag.ftag.nextOrder();
-            
         //条件ミス
         }else{
             //まだ、if文をぬけられない
             this.kag.pushStack("if",false);
-            
             for(var i=0;i<2000;i++){
-            
                 var r = this.kag.ftag.nextOrderWithTag({"else":"","elsif":"","endif":""});
-                
                 if(r == true){
                     //alert("処理が見つかった!")
                     break;
                     //指定の命令へ処理が写っていることでしょう
                 }
-                
             }
-            
             if(i>1900){
                 this.kag.error("If文に誤りがあります");
             }
-            
         }
     }
-    
 };
-
-
-
-
 
 /*
 #[elsif]
@@ -524,11 +509,11 @@ Macros, Variables, JavaScript Interface
 :title
 else if
 :exp
-if tagと endif tagの間で用いられます。 それまでの if tagまたは elsif tagの中身がひとつも実行されていないときに 式をevaluationし、その結果が真ならば elsif から次の elsif・else・endif までの間を実行します。
-使い方の例については、if tagの項目を参照してください。
+between the [if] and [endif] tags, this can be used. If statements in a previous [if] or [elsif] tag have not been executed yet, the statemetns in this tag will be evaluated if the expression in the exp parameter evaluates to true until the point where an elsif, else, or endif  tag is reached.
+For usage examples, see the entry for the [if] tag.
 :sample
 :param
-exp=evaluationする JS 式を指定します。
+exp=Sets the js expression to be evaluated.
 #[end]
 */
 
@@ -578,8 +563,8 @@ Macros, Variables, JavaScript Interface
 :title
 else
 :exp
-if tagもしくは elsif tag と endif tagの間で用いられます。 if または elsif ブロックの中身がひとつも実行されていないとき、 else から endif までの間を実行します。
-使い方の例については、if tagの項目を参照してください。
+if an [if] tag or [elsif] tag have not been executed, statements between [else] and [endif] are executed.
+For usage examples, see the entry for the [if] tag.
 :sample
 :param
 #[end]
@@ -629,10 +614,9 @@ Macros, Variables, JavaScript Interface
 :title
 end if
 :exp
-if文をendします。必ずif文の終わりに記述する必要があります
+end an if statment. when you use an [if] tag, you must have an [endif]
 :sample
 :param
-exp=evaluationする TJS 式を指定します。
 #[end]
 */
 
@@ -655,12 +639,12 @@ Macros, Variables, JavaScript Interface
 :title
 call a subroutine
 :exp
-指定されたScenario Fileの指定されたラベルで示される subroutineを呼び出します。
-呼び出されたsubroutineは、 return tagで 呼び出し元や任意の場所に戻ることができます。
+call a subrouting by label and scenario file.
+if a subroutine contains a [return] tag, execution will pick up after where the subroutine was called
 :sample
 :param
-storage=呼び出したいsubroutineのあるのScenarioFileを 指定します。省略すると、現在 のScenarioFile内であると見なされます。,
-target=呼び出すsubroutineのラベルを指定します。省略すると、Fileの先頭から実行されます。
+storage= set the scenario file containing the subroutine you wish to call. If param is missing, the current scenario file is used.,
+target=The label of the subroutine you wish to call. The first label found in the file is used.
 #[end]
 */
 
@@ -700,9 +684,9 @@ Macros, Variables, JavaScript Interface
 :title
 Return from subroutine
 :exp
-subroutineから呼び出し元に戻ります。
-KAG３の任意の場所へのリターンは廃止しました。
-（必要な場合はCallで代用してください）
+Return to where the subroutine was called from.
+This is deprecated in KAG3.
+(when you need this, use call instead)
 :sample
 :param
 #[end]
@@ -919,10 +903,10 @@ Macros, Variables, JavaScript Interface
 :title
 start ignore
 :exp
-式をevaluationし、その結果が true ( または 0 以外 ) ならば、endignore tagまでにある文章 やtagが無視されます。
+when the expression evaluates to true (or is a non-zero number) do not execute any tags or statements until after the [endignore] tag
 :sample
 :param
-exp=evaluationする TJS 式を指定します。この式の結果が true ( または 0 以外 )ならば、endignore tagまでの文章やtagが無視されます。
+exp=this is the expression (in TJS) that is evaluated.
 #[end]
 */
 
@@ -955,7 +939,7 @@ Macros, Variables, JavaScript Interface
 :title
 end ignore
 :exp
-ignoreをendします
+end ignore
 :sample
 :param
 #[end]

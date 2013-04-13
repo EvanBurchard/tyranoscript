@@ -32,10 +32,7 @@ tyrano.plugin.kag.tag.loadjs={
         $.getScript("./data/others/"+pm.storage, function(){
             that.kag.ftag.nextOrder();
         });
-
-        
     }
-    
 };
 
 
@@ -50,8 +47,8 @@ play an mp4 video
 :sample
 [movie storage="" skip=false ]
 :param
-storage=再生するmp4ファイルを指定してください
-skip=動画再生中に途中でスキップ可能か否かを指定します true か false を指定してください
+storage=the file where an mp4 is stored,
+skip=set whether or not this is skipable.
 #[end]
 */
 
@@ -292,7 +289,7 @@ System Settings
 :title
 Skip Start
 :exp
-文字表示をスキップモードにします。
+start "skip mode" where the characters move faster
 :sample
 :param
 #[end]
@@ -320,7 +317,7 @@ System Settings
 :title
 Skip stop
 :exp
-スキップモードを停止します。
+stop "skip mode" where the characters move faster
 :sample
 :param
 #[end]
@@ -532,7 +529,7 @@ Animation
 :title
 Pause Animation
 :exp
-実行中のアニメーションすべて終了するまで処理を待ちます
+Pause the currently playing animation
 :sample
 :param
 #[end]
@@ -555,21 +552,14 @@ Animation
 :title
 Set animation keyframe
 :exp
-キーフレームアニメーションを定義します。定義したアニメーションは[kanim]タグで指定することで使用できます
+Set animation keyframe.  定義したアニメーションは[kanim]タグで指定することで使用できます
 :sample
-
 ;----keyframeの定義
 [keyframe name="fuwafuwa"]
-
 [frame p=40%  x="100" ]
 [frame p=100% y="-200" opacity=0 ]
-
 [endkeyframe]
-
 ;-----定義したアニメーションを実行
-
-
-
 :param
 name=キーブレームの名前を指定します。後に[kanim]タグを使用する際に指定する名前になります
 #[end]
@@ -600,7 +590,7 @@ Animation
 :title
 End Keyframe
 :exp
-キーフレームアニメーション定義を終了します
+Stop the definition of keyframe animations
 :sample
 :param
 #[end]
@@ -888,9 +878,9 @@ Character Settings
 Change Character Settings
 :sample
 :param
-pos_mode=true か false　を指定します。デフォルトはtrueです。trueの場合は、[chara_show]タグなどで追加した時の立ち位置を自動的に計算し、配置します。,
-ptext=発言者の名前領域のptextを指定できます。例えば[ptext name="name_space"] のように定義されていた場合、その後 #yuko のように指定するだけで、ptext領域キャラクターの名前を表示することができます。,
-effect=キャラクターが位置を入れ替わる際のエフェクト（動き方）を指定できます。
+pos_mode=set as true or false. default is true. when true the [chara_show] tag (etc) will automatically place the character,
+ptext=set the name text to show when the character is speaking. for example when defined like this [ptext name="name_space"] after that when a character is set as #yuko will show in the ptext area.,
+effect=The way that a character moves in or out.
 jswing
 ｜def
 ｜easeInQuad
@@ -957,17 +947,17 @@ Character
 :title
 New character
 :exp
-登場するキャラクターの情報を定義します。その後[chara_show ]で指定した名称で表示したり、画像を変更したりできます。
-また、ここで定義したname属性は[anim]タグなどからも指定可能です。
-つまり、キャラクターを追加したあとアニメーションすることも自由にできます。
+Set the info for a new character. after that, it can be further manipulated with the [chara_show] tag and others.
+Also you can set the name here which is referenced by the [anim] tag later.
+In other words, after you add a character, you can freely animate it.
 :sample
 [chara_new name="yuko" storage="yuko.png"  jname="ゆうこ"]
 :param
-name=キャラクターを以後操作するための名前を半角英数で指定します。このnameは他のタグを含めて必ずユニークでなければなりません,
-storage=キャラクター画像を指定してください。画像ファイルはプロジェクトフォルダのfgimageフォルダに配置してください,
-width=画像の横幅を指定できます,
-height=画像の高さを指定できます。,
-jname=このキャラクターをネームスペースに表示する場合、適用する名称を指定できます。例えば、#yuko と指定すると　メッセージエリアに　ゆうこ　と表示できます
+name=The name that this character will be referenced by (written in ascii characters). This name must be unique.,
+storage=set the character picture. this should be in the project's fgimage directory,
+width=Set the width of the picture,
+height=Set the height of the picture,
+jname=when this character's name is shown, this is the display version. For example when yuko is used "ゆうこ" can appear in the message area
 #[end]
 */
 
@@ -1021,17 +1011,17 @@ Character
 :title
 Show Character
 :exp
-定義しておいたキャラクターを画面に表示します
+Show a previously defined character
 :sample
 [chara_show name="yuko" ]
 :param
-name=[chara_new]で定義したname属性を指定してください。,
-time="ミリ秒で指定します。指定した時間をかけて登場します。デフォルトは1000ミリ秒です",
-layer="キャラクターを配置するレイヤーを指定できます。デフォルトは前景レイヤ layer=0 です",
-page="foreかbackを指定します。デフォルトはforeです",
-wait="trueを指定すると、キャラクターの登場完了を待ちます。デフォルトはtrue です。",
-left="キャラクターの横位置を指定できます。指定した場合、自動配置が有効であっても無効になります。",
-left="キャラクターの縦位置を指定できます。指定した場合、自動配置が有効であっても無効になります。"
+name=reference the character to show with the name previously defined by [chara_new],
+time="Set the time it takes for the character to appear。The default is 1000 miliseconds,
+layer="The layer to place the character in. The default is the foreground (layer=0)",
+page="set fore or back. The default is fore.",
+wait="if true is set the character's appearance will be delayed.  The default is true",
+left="sets the horizonal position. If this is set automatic movement will not be affected",
+top="sets the vertical position. If this is set automatic movement will not be affected",
 
 #[end]
 */
@@ -1200,14 +1190,14 @@ Character
 :title
 Hide Character
 :exp
-[chara_show]タグで表示したキャラクターを退場させます。
+hide a character that has been displayed with [chara_show]
 :sample
 [chara_hide name="yuko" ]
 :param
-name=[chara_new]で定義したname属性を指定してください。,
-wait=trueを指定すると、キャラクターの退場を待ちます。デフォルトはtrueです。,
-time=ミリ秒で指定します。指定した時間をかけて退場します。デフォルトは1000ミリ秒です,
-layer=削除対象のレイヤ。chara_showの時にレイヤ指定した場合は、指定します。デフォルトは０,
+name=the name defined by [chara_new]'s name attribute, 
+wait=if this is set to true the character will wait to disappear. Default is true,
+time=set in miliseconds.  this is the length of time for a character to disappear. The default is 1000 miliseconds,
+layer=削除対象のレイヤ。chara_showの時にレイヤ指定した場合は、指定します. the default is 0,
 overwrite=trueを指定した場合、nameのptextが既に画面に存在する場合、テキストのみを入れ替えることができます。デフォルトはfalse
 
 #[end]
@@ -1329,14 +1319,14 @@ tyrano.plugin.kag.tag.chara_hide ={
 :group
 Character
 :title
-Delete Character Info
+Delete Character
 :exp
-定義しておいたキャラクター情報を削除します。（画面から消す場合は[chara_hide]を使用してください）
+Delete character and character info.  
+If you want to just remove the character from the screen, use [chara_hide] instead.
 :sample
-[chara_delete="yuko" ]
+[chara_delete name="yuko" ]
 :param
-name=[chara_new]で定義したname属性を指定してください。
-
+name=the name set by [chara_new]
 #[end]
 */
 
@@ -1368,12 +1358,12 @@ Character
 :title
 Change character appearance
 :exp
-画面のキャラクター画像を変更します。表情を変更する場合などに便利でしょう
+Change the sprite of a character on the screen. Likely useful for changing facial expressions.
 :sample
 [chara_mod name="yuko" storage="newface.png"]
 :param
-name=[chara_new]で定義したname属性を指定してください。,
-storage=変更する画像ファイルを指定してください。ファイルはプロジェクトフォルダのfgimageフォルダに配置します。
+name=define name of [chara_new],
+storage=new charater sprite file. should be in the fgimage folder of the project
 
 #[end]
 */
