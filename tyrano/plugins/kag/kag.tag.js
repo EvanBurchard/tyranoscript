@@ -2129,9 +2129,9 @@ This message is big and bold.
 This message goes back to normal.
 :param
 size=set the character size,
-color=set a color with the 0xRRGGBB form.（吉里吉里対応）HTML5に限るならその他指定でも大丈夫です,
+color=set a color with the 0xRRGGBB form with 吉里吉里. If you're using HTML5 you should be able to set this in other ways,
 bold=sets characters to be bold. can be true or false,
-face=set the font type.非KAG互換でウェブフォントも利用可能。Put them in the project's other folder.そして、tyrano.cssの@font-faceを指定することで利用できます。
+face=set the font type. This is not compatible with KAG. Put them in the project's "other" folder. Then designate this with tyrano.css's @font-face
 #[end]
 */
 
@@ -2181,13 +2181,13 @@ default font attributes
 :exp
 Sets the default font attributes for the current message layer.
 If the [resetfont] tag is used, these attributes will take effect.
-つまり、このtagを実行しただけではすぐにはフォントの属性は反映されません。resetfont tag を実行する必要があります。
+In other words, by only using this tag, the font attribute will not be reflected.
 :sample
 :param
 size=set the character size,
-color=set a color with the 0xRRGGBB form.（吉里吉里対応）HTML5に限るならその他指定でも大丈夫です,
+color=set a color with the 0xRRGGBB form with 吉里吉里. If you're using HTML5 you should be able to set this in other ways,
 bold=sets characters to be bold. can be true or false,
-face=フォントの種類を指定。非KAG互換でウェブフォントも利用可能。プロジェクトFolderのothersFolderに配置してください。そして、tyrano.cssの@font-faceを指定することで利用できます。
+face=set the font type. This is not compatible with KAG. Put them in the project's "other" folder. Then designate this with tyrano.css's @font-face
 
 #[end]
 */
@@ -2360,21 +2360,21 @@ layer options
 :exp
 set layer options.
 :sample
-;message layerを消去
+;delete message layer
 @layopt layer=message0 visible=false
 [backlay]
 [image layer=0 page=back visible=true top=100 left=50  storage = miku1.png]
 [trans time=2000]
 @wt
-;そしてlayer表示
+;then show the layer
 @layopt layer=message0 visible=true
 :param
-layer=対象となる前景layerまたはmessage layerをset。 　message とのみ指定した場合は、current tagで指定した、現在の操作対象のmessage layerが対象となります。,
-page=表(fore)画面のlayerを対象とするか、裏(back)画面のlayerを対象と するかをset。省略すると表ページであると見なされます。ただし、layer=message とのみ指定した場合でこの属性を省略した場合は 現在操作対象のページのmessage layerが選択されます。,
-visible=ayer 属性で指定したlayerを表示するか、しないかを指定 します。visible=true と 指定すれば、layerは表示状態になります。visible=false と指定すれば、 非表示状態になります。省略すると表示状態は変わりませ ん。,
-left=layer 属性で指定したlayerの左端位置をset。 省略すると位置は変更しません。　layer 属性に message0 や message1 を指定した場合は、position tagで位置等を指定してください。,
-top=　layer 属性で指定したlayerの上端位置をset。 省略すると位置は変更しません。　layer 属性に message0 や message1 を指定した場合は、むしろ position tagで位置等を指定してください。,
-opacity=layerの不透明度をset。０～２５５の範囲で指定してください（２５５で全くの不透明）
+layer=This sets the target layer or message layer. if you only set the message it will be set with the [current] tag and the current layer that you're working with will become the message layer,
+page=sets as "fore" (default) or "back". But if layer=message and this attribute is omitted the message layer will become the current layer,
+visible=sets whether or not the layer is visible. The visibility will not change if this attribute is omitted,
+left=sets the layer position from the left. If this omitted there is no position change. If you want to change the position of message0 or message1, use the [position] tag instead,
+top=sets the layer position from the top. If this omitted there is no position change. If you want to change the position of message0 or message1, use the [position] tag instead,
+opacity=sets the opacity of the layer from 0-255. 255 is totally transparent.
 #[end]
 */
 
@@ -2568,12 +2568,12 @@ Links
 Show a graphical button.
 :exp
 Show a graphical button.
-linktagの画像版となります。
-ただし、Graphical button表示中は強制的にscenario進行が停止しますので、必ずJump先を指定して下さい
-また、Graphical buttonの表示位置は直前のlocatetagによる指定位置を参照します。
-ただし、x、y が指定されている場合は、そちらが優先されます。
-ここから、移動した場合はコールスタックに残りません。つまり、リターンできないのでご注意ください
-Jump後に必ず[cm]tagでbuttonを非表示にする必要があります。
+This is the image version of a [link] tag.
+By implementing this button, it forces the scenario to stop, so you need to include a jump target. 
+The location of the graphical button is determined by most recent [locate] tag.
+However, if x and y are set, it will use those attributes to determine the location.
+If it is moved from here, it will not remain on the call stack.  In other words, you cannot return to here.
+After the jump you have to use the [cm] tag to stop displaying the button.
 :sample
 [locate x=20 y=100]
 [button graphic="oda.png" target=*oda]
@@ -2582,19 +2582,20 @@ Jump後に必ず[cm]tagでbuttonを非表示にする必要があります。
 [button graphic="toyo.png" target=*toyo]
 
 :param
-graphic=buttonにする画像をset。FileはプロジェクトFolderのimageFolderに入れて下さい,
-storage=Jump先のscenarioFileをset。省略すると、現在 のscenarioFile内であると見なされます。,
-target=Jump先のLabelをset。省略すると、Fileの先頭から実行されます。,
-name=TyranoScriptのみ。animtagなどからこの名前でアニメーションさせることができます。でまた名前を指定しておくとクラス属性としてJSから操作できます。カンマで区切ることで複数指定することもできます,
-x=buttonの横位置をset,
-y=buttonの縦位置をset。
-width=buttonの横幅をpixelsで指定できます,
-width=buttonの高さをpixelsで指定できます,
-fix=true falseでset。defaultはfalse 。trueを指定すると、Fixlayerーにbuttonが配置されます。この場合、buttonを表示してもscenarioを進める事ができます。例えば、セーブbuttonといった常に表示したいbuttonを配置する時に活用できます。また、fixlayerーに追加した要素を消す場合はfixcleartag を使います,
-savesnap=true or false でset。defaultはfalse このbuttonが押された時点でのセーブスナップを確保します。セーブ画面へ移動する場合はここをtrueにして、保存してからセーブを実行します,
-folder=好きな画像Folderから、画像を選択できます。通常前景layerはfgimage　背景layerはbgimageと決まっていますが、ここで記述したFolder以下の画像Fileを使用することができるようになります。,
-exp=buttonがclickされた時に実行されるJSを指定できます。,
-preexp="tagが評価された時点で変数 preexpに値を格納します。つまり、buttonがclickされた時に、expでpreexpという変数が利用できます。"
+graphic=sets the image for the button. Put this file in the image folder,
+storage=set the scenario file to jump to. If this is omitted the current scenario file is used.,
+target=sets the label to jump to. If this is omitted the beginning of the file is used,
+name=TyranoScript only (not KAG3).  This name is used later to reference this by tags like [anim] tag. Basically by setting this name you can set this as a JS class. If you divide them with commas you can designate multiple names.,
+x=sets the button's horizontal position,
+y=sets the button's vertical position,
+width=sets the button's horizontal position,
+width=sets the button's width,
+height=sets the button's height,
+fix=set to true or false. The default is false. If set to true it moves the button to a fixed layer and this scenario file can be continued even though the button is being shown. For example, if you always wanted to show a save button you would use this. And if you wanted to remove a component from a fixed layer you would user the [fixclear] tag,
+savesnap=set as true or false. default is false. When the button is pressed a save state (savesnap) is created., 
+folder=set the folder. The foreground image defaults to fgimage and the background image defaults to bgimage, but folder can be set and used. ,
+exp=Set JavaScript to be performed when you set this button,
+preexp=this can put the value of something into memory. When the button is clicked any variables can declared in this can be used.
 
 #[end]
 */
