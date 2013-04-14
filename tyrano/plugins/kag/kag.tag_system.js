@@ -837,7 +837,7 @@ Erase Macro
 Deletes registered macro
 :sample
 :param
-name=The name of the macro to be delted
+name=The name of the macro to be deleted
 #[end]
 */
 
@@ -981,7 +981,6 @@ size=sets the text size. The default is 20 pixels,
 width=The width of the text box,
 height=The height of the text box,
 maxchars=The maximum number of characters that can be entered.
-
 #[end]
 */
 
@@ -1056,7 +1055,6 @@ f.preload_images = ["data/fgimage/girl.jpg","data/fgimage/haruko.png","data/fgim
 :param
 storage=enter the full path for previously entered images. They are set in the order that they are passed in.,
 wait=this can be set to true or false. The default is false. When this is set to true all the game is paused until the images are loaded. You will need a loading screen.
-
 #[end]
 */
 
@@ -1132,7 +1130,6 @@ by setting the name property, only the corresponding element can be deleted
 
 :param
 name=the name used when the fix layer was declared
-
 #[end]
 */
 
@@ -1170,7 +1167,6 @@ The value of the text box is saved as a variable from the [edit] tag's name prop
 Keep in mind that while [commit] is executed, the text Box of the form are displayed.
 :sample
 :param
-
 #[end]
 */
 

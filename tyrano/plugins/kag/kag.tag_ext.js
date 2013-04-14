@@ -378,7 +378,6 @@ opacity=set the value from 0-255.  It will animate to the given opacity.,
 color=set the color,
 time=time taken by the animation. Default is 2000 milliseconds,
 effect=define the effect of the animation. examples are defined as follows <br />
-
 jswing ｜def ｜easeInQuad ｜easeOutQuad ｜easeInOutQuad ｜easeInCubic ｜easeOutCubic ｜easeInOutCubic ｜easeInQuart ｜easeOutQuart ｜easeInOutQuart ｜easeInQuint ｜easeOutQuint ｜easeInOutQuint ｜easeInSine ｜easeOutSine ｜easeInOutSine ｜easeInExpo ｜easeOutExpo ｜easeInOutExpo ｜easeInCirc ｜easeOutCirc ｜easeInOutCirc ｜easeInElastic ｜easeOutElastic ｜easeInOutElastic ｜easeInBack ｜easeOutBack ｜easeInOutBack ｜easeInBounce ｜easeOutBounce ｜easeInOutBounce 
 #[end]
 */
@@ -953,8 +952,7 @@ layer=The layer to place the character in. The default is the foreground (layer=
 page=set fore or back. The default is fore.,
 wait=if true is set the character's appearance will be delayed.  The default is true,
 left=sets the horizonal position. If this is set automatic movement will not be affected,
-top=sets the vertical position. If this is set automatic movement will not be affected,
-
+top=sets the vertical position. If this is set automatic movement will not be affected
 #[end]
 */
 
@@ -1129,7 +1127,6 @@ wait=if this is set to true the character will wait to disappear. Default is tru
 time=set in miliseconds.  this is the length of time for a character to disappear. The default is 1000 miliseconds,
 layer=remove the character from the layer set by [chara_show] if it is set. the default is 0,
 overwrite=if set to true and the ptext of the name already exists on the screen you can change just the text. the defualt is false
-
 #[end]
 */
 
@@ -1294,7 +1291,6 @@ Change the sprite of a character on the screen. Likely useful for changing facia
 :param
 name=define name of [chara_new],
 storage=new charater sprite file. should be in the fgimage folder of the project
-
 #[end]
 */
 

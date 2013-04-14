@@ -901,7 +901,6 @@ This tag waits for a click (like [l]), but clears the text afterwards.
 Show text[p]
 Show text[p][r]
 :param
-
 #[end]
 
 */
@@ -947,7 +946,6 @@ Also, for frequently used symbols, it's easy to set up a macro.
 I love you![heart]
 :param
 storage=The filename where the picture is stored
-
 #[end]
 
 */
@@ -1004,7 +1002,6 @@ In other words, it can only be used one way. Setting a label is required.
 :param
 storage=scenario file to move to. If this is left out the current scenario file will be used,
 target=label name to jump to. If this is left out it will go to the beginning.
-
 #[end]
 
 */
@@ -1044,7 +1041,6 @@ Show text[l]
 Put text on a new line[l][r]
 Put text on a new line[l][r]
 :param
-
 #[end]
 */
 
@@ -1075,7 +1071,6 @@ Show some text[l]
 Clear the message[l][er]
 Put a new line[l][r]
 :param
-
 #[end]
 */
 
@@ -1114,7 +1109,6 @@ Show some text[l]
 Clear screen[l][cm]
 Clear screen again[l][cm]
 :param
-
 #[end]
 */
 
@@ -1156,7 +1150,6 @@ Show text[l]
 Clear screen[l][ct]
 Clear screen again[l][ct]
 :param
-
 #[end]
 */
 
@@ -1254,9 +1247,9 @@ left=message layer's position from the left in pixels,
 top=message layer's position from the top in pixels,
 width=message layer's width in pixels,
 height=message layer's height in pixels,
-frame=set image for the message layer's frame image. <br>use this to customize the message area.<br />adjust image size is according to the width and height attributes. <br />futhermore you should use this to regulate the places where the message will be displayed by margin attributes.  if you set this to "none" it will return to the standard margin. You can also change it to designate a different frame image.
+frame=set image for the message layer's frame image. <br>use this to customize the message area.<br />adjust image size is according to the width and height attributes. <br />futhermore you should use this to regulate the places where the message will be displayed by margin attributes.  if you set this to "none" it will return to the standard margin. You can also change it to designate a different frame image.,
 color=sets the color of the message layer with a 0xRRGGBB format,
-opacity=this sets the opacity for the message layer. This does not affect the opacity of the text itself or the layer.0 is completely transparent.
+opacity=this sets the opacity for the message layer. This does not affect the opacity of the text itself or the layer.0 is completely transparent.,
 marginl=message layer's left margin,
 margint=message layer's top margin,
 marginr=message layer's left margin,
@@ -1648,7 +1641,6 @@ face=set the font type. This is not KAG compatibe but you can use web fonts,
 color=set the font color,
 name=TyranoScript only (not KAG3).  This name is used later to reference this by tags like [anim] tag. Basically by setting this name you can set this as a JS class. If you divide them with commas you can designate multiple names.,
 bold=this sets the text as bold. You can use font-style for the HTML5 compatible method.
-
 #[end]
 */
 
@@ -2187,7 +2179,6 @@ size=set the character size,
 color=set a color with the 0xRRGGBB form with 吉里吉里. If you're using HTML5 you should be able to set this in other ways,
 bold=sets characters to be bold. can be true or false,
 face=set the font type. This is not compatible with KAG. Put them in the project's "other" folder. Then designate this with tyrano.css's @font-face
-
 #[end]
 */
 
@@ -2595,7 +2586,6 @@ savesnap=set as true or false. default is false. When the button is pressed a sa
 folder=set the folder. The foreground image defaults to fgimage and the background image defaults to bgimage but folder can be set and used. ,
 exp=Set JavaScript to be performed when you set this button,
 preexp=this can put the value of something into memory. When the button is clicked any variables can declared in this can be used.
-
 #[end]
 */
 
@@ -2885,7 +2875,6 @@ line=specify the image to use. It goes somewhere in the same directory as tyrano
 fix=if set to true you can place this with the top and left params,
 left=if the fix property is true set the left margin to this number,
 top=if the fix property is true set the top margin to this number
-
 #[end]
 */
 
