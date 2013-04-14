@@ -1,7 +1,3 @@
-//still untranslated:
-//一部環境（Firefox、Sarafi等）においては対応していません。その場合、playbgmの動作となります。
-//これは、スマートフォンの仕様上、クリックしないと音が鳴らせない縛りがあるため、例えば、背景変更後に音楽再生をしたい場合はtrueを指定しないと音はなりません。通常のテキストの中で音楽再生の場合はfalseで大丈夫です。スマートフォンから閲覧して音楽が鳴らない場合はtrueにしてみてください
-
 /*
 #[playbgm]
 :group
@@ -19,7 +15,7 @@ Playback files should be stored in the project's bgm folder.
 storage=Set the file to be used,
 loop=set as true (default) or false. true will repeat the loop,
 click=Set to true or false (default) when used for smart phone browsers. If set to true a click is needed before playback will start in smart phone browsers.
-これは、スマートフォンの仕様上、クリックしないと音が鳴らせない縛りがあるため、例えば、背景変更後に音楽再生をしたい場合はtrueを指定しないと音はなりません。通常のテキストの中で音楽再生の場合はfalseで大丈夫です。スマートフォンから閲覧して音楽が鳴らない場合はtrueにしてみてください
+With smart phones without a click no sound is assigned to play. For example after a scene change when you want music playback if you do not set this to true no music will play. In the middle of most text false is ok for playback. Check if music is playing on smartphones and set this to true if necessary.
 #[end]
 */
 
@@ -443,14 +439,14 @@ Audio
 Fade In BGM
 :exp
 Gradually fade in BGM
-一部環境（Firefox、Sarafi等）においては対応していません。その場合、playbgmの動作となります。
+One note here is that firefox and safari versions will not react to this. In these cases, they will fall back to playbgm
 :sample
 [fadeinbgm storage=sample.mp3 loop=false time=3000]
 :param
 storage=set the file for music playback,
 loop=set as true (default) or false. true will repeat the loop,
 click=Set to true or false (default) when used for smart phone browsers. If set to true a click is needed before playback will start in smart phone browsers.
-これは、スマートフォンの仕様上、クリックしないと音が鳴らせない縛りがあるため、例えば、背景変更後に音楽再生をしたい場合はtrueを指定しないと音はなりません。通常のテキストの中で音楽再生の場合はfalseで大丈夫です。スマートフォンから閲覧して音楽が鳴らない場合はtrueにしてみてください,
+With smart phones without a click no sound is assigned to play. For example after a scene change when you want music playback if you do not set this to true no music will play. In the middle of most text false is ok for playback. Check if music is playing on smartphones and set this to true if necessary.
 time=number of miliseconds for the fade in to occur
 #[end]
 */
@@ -480,7 +476,7 @@ Audio
 Fade Out BGM
 :exp
 Fade Out BGM
-一部環境（Firefox、Sarafi等）においては対応していません。その場合、playbgmの動作となります。
+One note here is that firefox and safari versions will not react to this. In these cases, they will fall back to playbgm
 :sample
 [fadeoutbgm  time=3000]
 :param
@@ -513,14 +509,14 @@ Crossfade BGM
 :exp
 Crossfade BGM
 Mix one music in as another fades out.
-一部環境（Firefox、Safari等）において対応していません。その場合、playbgmの動作となります。
+One note here is that firefox and safari versions will not react to this. In these cases, they will fall back to playbgm
 :sample
 [xchgbgm storage=new.mp3 loop=true time=3000]
 :param
 storage=set the next file for playback,
 loop=set true (default) or false. true will repeat the sound when it is done,
 click=Set to true or false (default) when used for smart phone browsers. If set to true a click is needed before playback will start in smart phone browsers.
-これは、スマートフォンの仕様上、クリックしないと音が鳴らせない縛りがあるため、例えば、背景変更後に音楽再生をしたい場合はtrueを指定しないと音はなりません。通常のテキストの中で音楽再生の場合はfalseで大丈夫です。スマートフォンから閲覧して音楽が鳴らない場合はtrueにしてみてください,
+With smart phones without a click no sound is assigned to play. For example after a scene change when you want music playback if you do not set this to true no music will play. In the middle of most text false is ok for playback. Check if music is playing on smartphones and set this to true if necessary.
 time=number of miliseconds for the cross fade to occur
 #[end]
 */

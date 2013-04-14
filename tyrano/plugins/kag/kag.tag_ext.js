@@ -9,12 +9,12 @@ Macros, Variables, JavaScript Interface
 Load JavaScript File
 :exp
 Read in external JavaScript File
-無制限な機能拡張が可能です
-JSファイルは/data/others フォルダ以下に格納してください
+There are no restrictions on how the js will work.
+The JS file should be in data/others folder 
 :sample
 [loadjs storage="sample.js"  ]
 :param
-storage=ロードするJSファイルを指定します
+storage=the name of the JavaScript file to load.
 #[end]
 */
 tyrano.plugin.kag.tag.loadjs={

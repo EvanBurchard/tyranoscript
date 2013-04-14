@@ -1,4 +1,3 @@
-
 //tag総合管理　Game全体の進捗も管理する
 tyrano.plugin.kag.ftag ={
     
@@ -2745,27 +2744,24 @@ Links
 :title
 Define clickable area
 :exp
-透明なclick可能領域を設定することができます。
-クリッカブルエリアの表示中は強制的にscenario進行が停止しますので、必ずJump先を指定して下さい
-また、Graphical buttonの表示位置は直前のlocatetagによる指定位置を参照します
-ここから、移動した場合はコールスタックに残りません。つまり、リターンできないのでご注意ください
-☆重要：[s]tagに到達していない間は、クリッカブルは有効になりません。かならず、[s]tagでGameを停止してください。
+Defines a clickable area.
+Because showing clickable areas pause the execution of the scenario script, a jump target must be set. Also as with graphical button's [locate] tag must be set for reference.
+Keep in mind that this movement does not exist on the call stack so a return is not possible.
+Important：if an [s]tag is reached, the clickable area will not be valid. Only use the [s] tag to stop the game.
 :sample
 [locate x=20 y=100]
 [clickable width=200 height=300 target=*oda]
-
 [locate x=300 y=100]
 [clickable width=100 height=100 border="solid:1px:gray" target=*oda]
-
 :param
-width=領域の横幅をset,
-height=領域に高さをset,
-borderstyle=領域に線を表示することができます。「線の太さ:線の種類（CSS準拠）:線の色」のFormatで記述して下さい。線の種類はsolid double groove dashed dotted などが指定できます,　
-color=表示色を 0xRRGGBB 形式で指定 します。 ,
-opacity=領域の不透明度を 0 ～ 255 の数値でset0で完全 に透明です。,
-mouseopacity=領域にマウスが乗った時透明度を変更することができます。領域の不透明度を 0 ～ 255 の数値でset0で完全 に透明です,
-storage=clickされた際のJump先のscenarioFileをset。省略すると、現在 のscenarioFile内であると見なされます。,
-target=clickされた際のJump先のLabelをset。省略すると、Fileの先頭から実行されます。
+width=set width of area,
+height=set height of area,
+borderstyle=You can show a border of the area with a line. The style of the line looks like this: "thickness:style:color". Possible line types are solid double groove dashed dotted etc,
+color=specify the box like this: 0xRRGGBB,
+opacity=this sets the opacity from 0-255. 0 is completely transparent.,
+mouseopacity=when the mouse is over the clickable area you can change the transparency. Values can range from 0-255. 0 is completely transparent,
+storage=set the scenario file to jump to. If this is omitted the current file will be used.,
+target=when the clickable area is clicked jump to that location. If omitted it will jump to the top.
 #[end]
 */
 

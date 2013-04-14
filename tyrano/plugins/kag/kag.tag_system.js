@@ -146,27 +146,22 @@ Check in the web inspector console of the browser
 [trace exp="f.test"]
 ; ↑ game variable test's details are output to the console 
 :param
-exp=evaluationするTJS（JS）expressionを指定します
+exp=A TJS(JS) espression to be evaluated
 #[end]
 */
 
 //output a variable to console
 tyrano.plugin.kag.tag["trace"] = {
-    
      pm:{
         exp:""
     },
-    
     start:function(pm){
-    
         var val = this.kag.embScript(pm.exp);
         //evaluationされた値をsubstitute
         //this.kag.ftag.startTag("text",{"val":val});
         
         this.kag.log("trace出力："+val);
-        
     }
-
 };
 
 
@@ -285,7 +280,7 @@ By using this tag, any HTML elements can be added.
 If you use the [cm] tag and do not clear everything, even if you click the game cannot continue.
 By all means use graphic buttons, etc. to ensue that you can jump to a game state where you can still continue.
 Inside of this tag, variables of TyranoScript can be used.
-従来通りHTMLの中で[emb]tagを使用してください
+[emb] tags inside of previously set HTML can be used.
 :sample
 
 ;place the youtube player in a designated spot
@@ -302,9 +297,9 @@ Inside of this tag, variables of TyranoScript can be used.
 
 [endhtml]
 :param
-left=HTMLtagの左端位置を指定します。(pixels),
-top=HTMLの上端位置を指定します。(pixels),
-name=HTML領域に名前を指定することができます。この名前を使って、HTML領域に対してAnimationなども実行できます。
+left=sets the horizontal postion of the [HTML] tag in pixels,
+top=sets the vertical postion of the [HTML] tag in pixels,
+name=you can set the name of the HTML area. Using this name animations can be performed with the HTML.
 #[end]
 */
 //htmlのdisplay、そして、格納だわな。
@@ -394,15 +389,15 @@ Macros, Variables, JavaScript Interface
 :title
 Embed expression
 :exp
-exp で示された式をevaluation(実行)し、その結果を埋め込みます。
-variableをScenario中にdisplayさせたい場合に使います。
+The the result of an evaluated expression can be embedded.
+When you want to display a variable in a scenario use this.
 :sample
 [eval exp="f.value1='variable level'"]
-とどこかで書いておいて、
+The variable f.value1 is now stored.
 [emb exp="f.value1"]
-と書くと、この [emb] tagが variableの値だよ～ん という内容に置き換わります。
+The variable is shown above here.
 :param
-exp=evaluationするTJS（JS）式を指定します。ここでevaluationされた式がembtagと置き換わります
+exp=An TJS (JS) expression that can be displayed with the [emb] tag
 #[end]
 */
 
@@ -716,22 +711,22 @@ Macros, Variables, JavaScript Interface
 :title
 Describe Macro
 :exp
-マクロ記述を開始します。新しいtagを定義することが出来ます。
-このtagから、endmacro tagまでにある文章やtagは、 name 属性で指定されたtagとして登録され、以後使用できるようになります。
-マクロ中に書かれたtagには、特別に % を頭につけた属性の値を指定することができます。 % 以降にはマクロに渡された属性名を指定します。すると、マクロに渡された属性の値をその属性の値とすることができます。このとき、| を使って属性の省略値を指定することもできます ( 下の例参照 )。 属性名には小文字を用いてください。
-また、属性の代わりに * を書くと、マクロに渡されたすべての属性をそのtagに渡すこと ができます。
+Start macro definition. 
+The statements between this tag and the [endmacro]tag will register a new tag named after the name attribute. Then you can use this new tag.
+When an inner tag's attribute value is prefixed with the % symbol, that parameter is passed through when defined by the macro.  If a | is used in conjuntion with the %, a default parameter can be defined.
+Also, all parameters are passed through when the "*" is used.
 :sample
-[macro name="newtag"][font color=0xff0000]新しいtagです[resetfont][endmacro]
+[macro name="newtag"][font color=0xff0000]new tag[resetfont][endmacro]
 [newtag]
-[macro name="colortag"][font color=%iro]iro 属性付きのtag[resetfont][endmacro]
+[macro name="colortag"][font color=%iro]color tag[resetfont][endmacro]
 [colortag iro=0x332211]
-; ↑ colotag に渡された iro 属性の値が font tagの color 属性に渡される
+; ↑ iro is passed through colortag to the [font] tag within the macro by using a "%"
 [macro name="transwait"][trans *][wt][endmacro]
-; ↑ この transwait に渡されたすべての属性が trans tagに渡される
-[macro name="colortag"][font color=%iro|0xff0000]iro 属性付きで省略値をしていしたtag[resetfont][endmacro]
-; ↑ % の属性の値では、 | のあとに続けて、その属性の省略値を指定することができます
+; ↑ transwait all of the properties passed to the [transwait] tag are passed to the [trans] tag with a "*"
+[macro name="colortag"][font color=%iro|0xff0000]the iro property is supplied if not set[resetfont][endmacro]
+; ↑ in conjunction with the "%" syntax the "|" is used to supply default parameters
 :param
-name=マクロの名前を指定してください。以後この名前で新しいtagが定義され呼び出せるようになります。
+name=The name of the new tag to register as a macro. Afterwards this name can be used as a normal tag.
 #[end]
 */
 
@@ -862,8 +857,6 @@ tyrano.plugin.kag.tag.erasemacro = {
     
 }
 
-
-
 /*
 #[savesnap]
 :group
@@ -871,7 +864,7 @@ System Settings
 :title
 Create a save snapshot
 :exp
-Save the current game conditions。その後、tyrano.ks　拡張の[setsave]を行うことで、ここで記録したセーブデータが保存されます。
+Save the current game conditions. After that, tyrano.ks's expansion [setsave] is peformed. This records the save data.
 :sample
 :param
 title=Sets the title of the save data
@@ -961,16 +954,14 @@ Forms
 Text Box
 :exp
 Show a text box.
-入力された値はcommit tagのtimingでthe name of the variable that was setに格納されます
-Formdisplay中はScenarioは停止します。（clickしてもストーリーが進まない）
-必ず、Graphical buttonなどを配置してラベルへジャンプしてください。
-こまかいdisplay方法の変更はtyrano.css内を編集することで可能です。
+The value entered via the commit tag is stored as a variable that was set by this tag's name attribute.
+Inside of form display the scenario is paused. (even if you click the story cannot continue)
+So when you display a graphical button, you must provide a target label to jump to.
+To make a small change to the display, you can edit tyrano.css.
 :sample
 [edit name="f.test"]
-
 [locate x=200 y=300 ]
 [button graphic="start.png" target=*commit]
-
 [s]
 
 *commit
@@ -978,18 +969,18 @@ Formdisplay中はScenarioは停止します。（clickしてもストーリー�
 [cm]
 ;show the contents of entered Text
 Value is set as[l]
-「[emb exp=f.test]」Is this is what you entered?[l]
+「[emb exp=f.test]」This is what you entered.[l]
 
 :param
-name=格納するvariable名を指定して下さい,
-longth=横幅です,
-color=文字の色を指定して下さい　デフォルトは黒です,
-left=Text Boxの横位置を指定します,
-top=Text Boxの縦位置を指定します,
-size=文字のサイズを指定します　デフォルト２０px,
-width=Text Boxの幅サイズを指定します,
-height=Text Boxの高さを指定します,
-maxchars=最大入力文字数
+name=the name of the variable to store on commit,
+length=width,
+color=The color of the text.  The default is black,
+left=The horizontal position of the text box,
+top=The vertical position of the text box,
+size=sets the text size. The default is 20 pixels,
+width=The width of the text box,
+height=The height of the text box,
+maxchars=The maximum number of characters that can be entered.
 
 #[end]
 */
@@ -1053,10 +1044,8 @@ Preloads Image Files
 Using the preload tag, you can load files (images or music) before they are needed
 The presentation will be smooth when they are needed.
 :sample
-
 ;Use the full path below the project directory
 [preload storage="data/fgimage/girl.jpg"]
-
 ;You can also specify an array
 [iscript]
 f.preload_images = ["data/fgimage/girl.jpg","data/fgimage/haruko.png","data/fgimage/miku1.png","data/fgimage/miku2.png"];
@@ -1065,8 +1054,8 @@ f.preload_images = ["data/fgimage/girl.jpg","data/fgimage/haruko.png","data/fgim
 [preload storage=&f.preload_images]
 
 :param
-storage=事前に読み込む画像Fileをフルパスでしていしてください。配列を渡すことでまとめて指定することもできます。,
-wait=trueを指定すると、全ての読み込みが完了するまでGameを停止します。NowLoadingのdisplayが必要でしょう。true or false デフォルトはfalse
+storage=enter the full path for previously entered images. They are set in the order that they are passed in.,
+wait=this can be set to true or false. The default is false. When this is set to true all the game is paused until the images are loaded. You will need a loading screen.
 
 #[end]
 */
@@ -1120,17 +1109,9 @@ tyrano.plugin.kag.tag.preload = {
                     that.kag.layer.showEventLayer();
                 }
                 that.kag.ftag.nextOrder();
-                
-                
             });
         }
-        
-        
-        
-        
-        
     }
-
 };
 
 /*
@@ -1140,17 +1121,17 @@ Layer
 :title
 Clears the Fix Layer
 :exp
-name属性を指定することで、該当する要素のみを削除することもできます。
+by setting the name property, only the corresponding element can be deleted
 :sample
 
-;fixLayerへの追加
+;add a fix Layer
 [ptext name="sample" layer=fix page=fore text="TextText" size=30 x=200 y=100 color=red ]
 
-;fixLayerのクリア
+;clear fix Layer
 [fixclear name="sample"]
 
 :param
-name=fixLayerへ追加した時に名前を指定した場合、適応できます。
+name=the name used when the fix layer was declared
 
 #[end]
 */
@@ -1185,8 +1166,8 @@ Forms
 :title
 Submit Form
 :exp
-Text Boxの値を確定して指定したname属性で指定したvariableに値を格納します。
-注意点としてcommitが実行された段階で、Text BoxなどのFormがdisplayされている必要があります。
+The value of the text box is saved as a variable from the [edit] tag's name property.
+Keep in mind that while [commit] is executed, the text Box of the form are displayed.
 :sample
 :param
 
