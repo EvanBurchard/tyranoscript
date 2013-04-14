@@ -15,7 +15,7 @@ http://tyrano.jp
 ## Relationship to original Japanese Fork
 If you want the latest and greatest in Japanese, check here: [github.com/ShikemokuMK/tyranoscript](http://github.com/ShikemokuMK/tyranoscript)  
 
-This is the English fork. When new features are introduced, I will localize as I am able. If you want to bring a feature in or help out with translations, please let me know (@jsarcade or evan.burchard+tyranoscript@gmail.com). For now the translation status will live at the bottom of this readme.  
+This is the English fork. If new features are introduced, I will localize as possible. If you want to bring a feature in, have a translation request in a particular file, or want to help out with translations, please let me know (@jsarcade or evan.burchard+tyranoscript@gmail.com). Translation status is at the bottom of this readme.  
 
 ## Main Features
 
@@ -120,10 +120,10 @@ Beta release
 Initial release!  
 
 ## Translation Notes
-Contributors: Evan Burchard 
+Contributors: Evan Burchard (@jsarcade), Cory Potwin (@cpotwin)
 
 ### State of the translations so far:
 1. This readme (README.md) - Done!
-2. Docs (doc.html) - Getting there.  Titles are done.  A good deal of other things are filled in.
-3. Demo (index.html) - Done except for the menu screen.  A few quirks here and there. 
-4. Comments throughout source code - barely started
+2. Docs (doc.html) - Done!
+3. Source code comments - Done!
+4. Demo (index.html) - Done except for the menu screen.
