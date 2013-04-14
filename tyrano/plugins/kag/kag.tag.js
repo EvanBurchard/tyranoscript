@@ -2961,24 +2961,26 @@ Layer
 transition layer
 :exp
 transition to the set layer.
-transitionは、常に裏ページの対象のlayerが、表ページの対象のlayerに 入れ替わる方向で行われます。
-transition後は、表ページの対象のlayerの画像、位置、サイズ、可視・不可視 の状態は裏ページの対象のlayerと同じになります。
-また、transition中はlayerの属性変更などは行わないで下さい
+transition is a way to move the back layer to the front.
+after transition, the surface page's status of the target layer image's placement, size, visibility, invisibility are made to be the same as the back page. 
+Also, during a transition do not change the properties of the layers
 :sample
 [backlay]
 [image storage=fg0 layer=0 page=back]
 [trans time=1500 ]
 [wt]
 :param
-layer=対象となるlayerをset。<br>
-base を指定すると 背景layer になります。<br>
-　0 以上の整数を指定すると前景layerになります。<br>
-　message0 または message1 を指定するとmessage layerにな ります。<br>
-単に message とのみ指定した場合は、 current tagで指定した現在の操作対象のmessage layerが 対象になります <br>
+layer=set the target layer<br>
+if "base" is set it will become the scene layer<br>
+if a number greater than 0 is used it will become a foreground layer<br>
+if you set as message0 or message1 then it will become that message layer.<br>
+if you set is as message it will become the message layer of whatever the [current] tag is set to
+Even if the message layer is the back page it will copy that message layer from the front to the back.<br>
+if this is omitted the information of every layer is copied to the back page<br>
 <br>
-通常は背景の変更などに使用されます。,
-method=transitionのタイプをset。defaultは"crossfade"です。指定できる効果は「crossfade」「explode」「slide」「blind」「bounce」「clip」「drop」「fold」「puff」「scale」「shake」「size」,
-time=transitionを行っている時間をmilisecondsでset。
+Normally the background changes are used.,
+method=set the transition type. The default is "crossfade".  Other possibilities are「crossfade」「explode」「slide」「blind」「bounce」「clip」「drop」「fold」「puff」「scale」「shake」「size」,
+time=the time for the transition is set in milliseconds
 #[end]
 */
 
