@@ -1002,8 +1002,8 @@ In other words, it can only be used one way. Setting a label is required.
 [jump storage=second.ks target=*start]
 
 :param
-storage=scenario file to move to. If this is left out, the current scenario file will be used,
-target=label name to jump to. If this is left out, it will go to the beginning.
+storage=scenario file to move to. If this is left out the current scenario file will be used,
+target=label name to jump to. If this is left out it will go to the beginning.
 
 #[end]
 
@@ -1201,7 +1201,7 @@ Show message0 layer[l]
 Show message1 layer[l]
 :param
 layer=sets the message layer to be affected. It will affect the current message layer.,
-page=it will be set to the foreground or background.  If omitted, it will set to the foreground.
+page=it will be set to the foreground or background.  If omitted it will set to the foreground.
 #[end]
 */
 
@@ -1578,7 +1578,7 @@ Frees the images of a particular layer that were added with [image] tag. The lay
 [wt]
 :param
 layer=set message layer. If it is not set the current message layer is used,
-page=set page. If it is not set the surface page is used,
+page=set page. If it is not set the surface page is used
 #[end]
 */
 
@@ -1756,7 +1756,7 @@ In order to do that, before the transition, the image is moved to the back with 
 [wt]
 :param
 layer=set the layer target<br>
-　if set as base then it becomes the background layer<br>
+　if set as "base" then it becomes the background layer<br>
 　if set as an integer above zero then it becomes the foreground<br>
 　if you set as message0 or message1 then it will become that message layer.<br>
 if you set is as message it will become the message layer of whatever the [current] tag is set to
@@ -2371,8 +2371,8 @@ set layer options.
 layer=This sets the target layer or message layer. if you only set the message it will be set with the [current] tag and the current layer that you're working with will become the message layer,
 page=sets as "fore" (default) or "back". But if layer=message and this attribute is omitted the message layer will become the current layer,
 visible=sets whether or not the layer is visible. The visibility will not change if this attribute is omitted,
-left=sets the layer position from the left. If this omitted there is no position change. If you want to change the position of message0 or message1, use the [position] tag instead,
-top=sets the layer position from the top. If this omitted there is no position change. If you want to change the position of message0 or message1, use the [position] tag instead,
+left=sets the layer position from the left. If this omitted there is no position change. If you want to change the position of message0 or message1 use the [position] tag instead,
+top=sets the layer position from the top. If this omitted there is no position change. If you want to change the position of message0 or message1 use the [position] tag instead,
 opacity=sets the opacity of the layer from 0-255. 255 is totally transparent.
 #[end]
 */
@@ -2531,7 +2531,7 @@ There is no support for writing text.
 
 :param
 x=Set horizontal position,
-x=Set vertical position
+y=Set vertical position
 #[end]
 */
 
@@ -2590,9 +2590,9 @@ y=sets the button's vertical position,
 width=sets the button's horizontal position,
 width=sets the button's width,
 height=sets the button's height,
-fix=set to true or false. The default is false. If set to true it moves the button to a fixed layer and this scenario file can be continued even though the button is being shown. For example, if you always wanted to show a save button you would use this. And if you wanted to remove a component from a fixed layer you would user the [fixclear] tag,
+fix=set to true or false. The default is false. If set to true it moves the button to a fixed layer and this scenario file can be continued even though the button is being shown. For example if you always wanted to show a save button you would use this. And if you wanted to remove a component from a fixed layer you would user the [fixclear] tag,
 savesnap=set as true or false. default is false. When the button is pressed a save state (savesnap) is created., 
-folder=set the folder. The foreground image defaults to fgimage and the background image defaults to bgimage, but folder can be set and used. ,
+folder=set the folder. The foreground image defaults to fgimage and the background image defaults to bgimage but folder can be set and used. ,
 exp=Set JavaScript to be performed when you set this button,
 preexp=this can put the value of something into memory. When the button is clicked any variables can declared in this can be used.
 
@@ -2883,8 +2883,8 @@ This goes in same directory as tyrano/images/kag/nextpage.gif
 :param
 line=specify the image to use. It goes somewhere in the same directory as tyrano/kag/nextpage.gif.,
 fix=if set to true you can place this with the top and left params,
-left=if the fix property is true, set the left margin to this number,
-left=if the fix property is true, set the top margin to this number
+left=if the fix property is true set the left margin to this number,
+top=if the fix property is true set the top margin to this number
 
 #[end]
 */

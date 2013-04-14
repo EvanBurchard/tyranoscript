@@ -638,7 +638,7 @@ call a subrouting by label and scenario file.
 if a subroutine contains a [return] tag, execution will pick up after where the subroutine was called
 :sample
 :param
-storage= set the scenario file containing the subroutine you wish to call. If param is missing, the current scenario file is used.,
+storage= set the scenario file containing the subroutine you wish to call. If param is missing the current scenario file is used.,
 target=The label of the subroutine you wish to call. The first label found in the file is used.
 #[end]
 */

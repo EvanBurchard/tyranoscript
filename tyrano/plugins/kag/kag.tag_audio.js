@@ -446,7 +446,7 @@ One note here is that firefox and safari versions will not react to this. In the
 storage=set the file for music playback,
 loop=set as true (default) or false. true will repeat the loop,
 click=Set to true or false (default) when used for smart phone browsers. If set to true a click is needed before playback will start in smart phone browsers.
-With smart phones without a click no sound is assigned to play. For example after a scene change when you want music playback if you do not set this to true no music will play. In the middle of most text false is ok for playback. Check if music is playing on smartphones and set this to true if necessary.
+With smart phones without a click no sound is assigned to play. For example after a scene change when you want music playback if you do not set this to true no music will play. In the middle of most text false is ok for playback. Check if music is playing on smartphones and set this to true if necessary.,
 time=number of miliseconds for the fade in to occur
 #[end]
 */
@@ -554,7 +554,7 @@ Sound Effect files are stored in the project's sound folder
 :param
 storage=Set the playback file,
 loop=set true or false (default). true will repeat the sound when it is done,
-clear=true or false (default). When another sound effect is playing, interrupt it and start playing this. true could be useful for voice
+clear=true or false (default). When another sound effect is playing interrupt it and start playing this. true could be useful for voice
 #[end]
 */
 

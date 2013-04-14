@@ -379,39 +379,7 @@ color=set the color,
 time=time taken by the animation. Default is 2000 milliseconds,
 effect=define the effect of the animation. examples are defined as follows <br />
 
-jswing
-｜def
-｜easeInQuad
-｜easeOutQuad
-｜easeInOutQuad
-｜easeInCubic
-｜easeOutCubic
-｜easeInOutCubic
-｜easeInQuart
-｜easeOutQuart
-｜easeInOutQuart
-｜easeInQuint
-｜easeOutQuint
-｜easeInOutQuint
-｜easeInSine
-｜easeOutSine
-｜easeInOutSine
-｜easeInExpo
-｜easeOutExpo
-｜easeInOutExpo
-｜easeInCirc
-｜easeOutCirc
-｜easeInOutCirc
-｜easeInElastic
-｜easeOutElastic
-｜easeInOutElastic
-｜easeInBack
-｜easeOutBack
-｜easeInOutBack
-｜easeInBounce
-｜easeOutBounce
-｜easeInOutBounce
-
+jswing ｜def ｜easeInQuad ｜easeOutQuad ｜easeInOutQuad ｜easeInCubic ｜easeOutCubic ｜easeInOutCubic ｜easeInQuart ｜easeOutQuart ｜easeInOutQuart ｜easeInQuint ｜easeOutQuint ｜easeInOutQuint ｜easeInSine ｜easeOutSine ｜easeInOutSine ｜easeInExpo ｜easeOutExpo ｜easeInOutExpo ｜easeInCirc ｜easeOutCirc ｜easeInOutCirc ｜easeInElastic ｜easeOutElastic ｜easeInOutElastic ｜easeInBack ｜easeOutBack ｜easeInOutBack ｜easeInBounce ｜easeOutBounce ｜easeInOutBounce 
 #[end]
 */
 
@@ -619,7 +587,7 @@ Keyframe Animation Settings
 This defines the key frame animation. The defined animation can be used by setting the [kanim] tag.
 :sample
 :param
-p=Set the percentage. For example, an animation that takes 5 seconds you will want to set each slide at 20% (?). Set it to 0-100%. If you omit putting it to 0% you can continue from the previous animation and start a new animation.,
+p=Set the percentage. For example an animation that takes 5 seconds you will want to set each slide at 20% (?). Set it to 0-100%. If you omit putting it to 0% you can continue from the previous animation and start a new animation.,
 x=Set the pixels the amount that the animation should move on the X axis.  Or if you start it with an asterisk (*) you can set it at an absolute position.  (For example) x="100" (it will move 100px forward) x="*100" it will move from the left of the screen to the 100px position.,
 y=Set the pixels the amount that the animation should move on the Y axis.  Or if you start it with an asterisk (*), you can set it at an absolute position.  (For example) y="100" (it will move 100px forward) y="*100" it will move from the top of the screen to the 100px position.,
 z=Set the pixels the amount that the animation should move on the Z axis.  Or if you start it with an asterisk (*) you can set it at an absolute position.  (For example) z="100" (it will move 100px forward) z="*100" using this tag is able to make the animation 3D but it currently only works on select browsers (Safari iPhone etc.),
@@ -627,7 +595,7 @@ rotate=You can rotate the target. As an example using notation like rotate="360d
 rotateX=You can rotate the target on the X axis.  As an example, using notation like rotate="360deg" will turn the image 360 degrees.,
 rotateY=You can rotate the target on the Y axis.  As an example, using notation like rotate="360deg" will turn the image 360 degrees.,
 rotateZ=You can rotate the target on the Z axis.  As an example, using notation like rotate="360deg" will turn the image 360 degrees.,
-scale=You can enlarge or shrink the target. (Ex) scale="2" will double the size, scale-"0.5" will half the target.,
+scale=You can enlarge or shrink the target. (Ex) scale="2" will double the size scale-"0.5" will half the target.,
 scaleX=Enlarge or shrink the target horizontally.,
 scaleY=Enlarge or shrink the target vertically.,
 scaleZ=Enlarge or shrink the target in the 3rd dimension.,
@@ -635,7 +603,7 @@ skew=skew,
 skewX=Xskew,
 skewY=Yskew,
 perspective=You can change perspective.  Only select browsers.,
-opacity=By setting this to 0-1, you can set the opacity of every element.  It is possible to make an element disappear this way.  At 0, it is completely transparent.,
+opacity=By setting this to 0-1 you can set the opacity of every element.  It is possible to make an element disappear this way.  At 0 it is completely transparent.,
 Others=You can also use CSS to set other properties.
 #[end]
 */
@@ -877,39 +845,7 @@ Change Character Settings
 pos_mode=set as true or false. default is true. when true the [chara_show] tag (etc) will automatically place the character,
 ptext=set the name text to show when the character is speaking. for example when defined like this [ptext name="name_space"] after that when a character is set as #yuko will show in the ptext area.,
 effect=The way that a character moves in or out.
-jswing
-｜def
-｜easeInQuad
-｜easeOutQuad
-｜easeInOutQuad
-｜easeInCubic
-｜easeOutCubic
-｜easeInOutCubic
-｜easeInQuart
-｜easeOutQuart
-｜easeInOutQuart
-｜easeInQuint
-｜easeOutQuint
-｜easeInOutQuint
-｜easeInSine
-｜easeOutSine
-｜easeInOutSine
-｜easeInExpo
-｜easeOutExpo
-｜easeInOutExpo
-｜easeInCirc
-｜easeOutCirc
-｜easeInOutCirc
-｜easeInElastic
-｜easeOutElastic
-｜easeInOutElastic
-｜easeInBack
-｜easeOutBack
-｜easeInOutBack
-｜easeInBounce
-｜easeOutBounce
-｜easeInOutBounce
-,
+jswing ｜def ｜easeInQuad ｜easeOutQuad ｜easeInOutQuad ｜easeInCubic ｜easeOutCubic ｜easeInOutCubic ｜easeInQuart ｜easeOutQuart ｜easeInOutQuart ｜easeInQuint ｜easeOutQuint ｜easeInOutQuint ｜easeInSine ｜easeOutSine ｜easeInOutSine ｜easeInExpo ｜easeOutExpo ｜easeInOutExpo ｜easeInCirc ｜easeOutCirc ｜easeInOutCirc ｜easeInElastic ｜easeOutElastic ｜easeInOutElastic ｜easeInBack ｜easeOutBack ｜easeInOutBack ｜easeInBounce ｜easeOutBounce ｜easeInOutBounce,
 #[end]
 */
 
@@ -953,7 +889,7 @@ name=The name that this character will be referenced by (written in ascii charac
 storage=set the character picture. this should be in the project's fgimage directory,
 width=Set the width of the picture,
 height=Set the height of the picture,
-jname=when this character's name is shown, this is the display version. For example when yuko is used "ゆうこ" can appear in the message area
+jname=when this character's name is shown this is the display version. For example when yuko is used "ゆうこ" can appear in the message area
 #[end]
 */
 
@@ -1012,12 +948,12 @@ Show a previously defined character
 [chara_show name="yuko" ]
 :param
 name=reference the character to show with the name previously defined by [chara_new],
-time="Set the time it takes for the character to appear。The default is 1000 miliseconds,
-layer="The layer to place the character in. The default is the foreground (layer=0)",
-page="set fore or back. The default is fore.",
-wait="if true is set the character's appearance will be delayed.  The default is true",
-left="sets the horizonal position. If this is set automatic movement will not be affected",
-top="sets the vertical position. If this is set automatic movement will not be affected",
+time=Set the time it takes for the character to appear。The default is 1000 miliseconds,
+layer=The layer to place the character in. The default is the foreground (layer=0),
+page=set fore or back. The default is fore.,
+wait=if true is set the character's appearance will be delayed.  The default is true,
+left=sets the horizonal position. If this is set automatic movement will not be affected,
+top=sets the vertical position. If this is set automatic movement will not be affected,
 
 #[end]
 */
@@ -1192,7 +1128,7 @@ name=the name defined by [chara_new]'s name attribute,
 wait=if this is set to true the character will wait to disappear. Default is true,
 time=set in miliseconds.  this is the length of time for a character to disappear. The default is 1000 miliseconds,
 layer=remove the character from the layer set by [chara_show] if it is set. the default is 0,
-overwrite=if set to true and the ptext of the name already exists on the screen, you can change just the text. the defualt is false
+overwrite=if set to true and the ptext of the name already exists on the screen you can change just the text. the defualt is false
 
 #[end]
 */
