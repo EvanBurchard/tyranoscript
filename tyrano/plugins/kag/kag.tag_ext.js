@@ -1,4 +1,3 @@
-
 //スクリプトの評価
 
 /*
@@ -345,40 +344,40 @@ Animation
 :title
 Animation
 :exp
-画像やボタン、レイヤなどの中身をアニメーションさせることができます
-アニメーションさせる要素は[image][ptext][button]タグ作成時にname属性で指定した名前を利用できます。
-レイヤを指定するとレイヤの中にある要素全てを同時にアニメーションできます
-このタグはアニメーションの終了を待ちません。[wa]タグを使用すると実行中のすべてのアニメーションの完了を待つことができます。
-位置のアニメーションは指定する値に+=100 -=100　と指定することで相対位置指定できます（今表示されているところから、右へ１００PX移動といった指定ができます）
-透明度を指定すれば、アニメーションしながら非表示にすることもできます。
+With this you can animate a picture, button or even the contents of a layer.
+You should call the element that you want to animate by using the name you gave it when it was created with the [image] [ptext] or [button] tags.
+When you set a layer, the animation will affect all elements in the layer.
+This tag does not wait for the animation to stop. If you use the [wa] tag, you can wait for the completion of all animations that are being performed.
+You can set the position of the animation using the values of -100 through 100. (From where it is currently, it can be moved to the left 100px)
+If you set the opacity, you can also make something disappear.
 :sample
-[ptext layer=1 page=fore text="文字列" size=30 x=0 y=0 color=red vertical=true]
+[ptext layer=1 page=fore text="example text" size=30 x=0 y=0 color=red vertical=true]
 
 [image layer=0 left=100 top=100  storage = yuko1.png page=fore visible=true name=yuko,chara ]
 [image layer=1 left=300 top=100 storage = haruko1.png page=fore visible=true name=haruko ]
 
-;name属性を指定してアニメーション
+;set the name attribute animate
 [anim name=haruko left="+=100" time=10000 effect=easeInCirc opacity=0  ]
 
-;レイヤを指定してアニメーション
+;set the layer and animate
 [anim layer=1 left="+=100" effect=easeInCirc opacity=0  ]
 
-;すべてのアニメーション完了を待ちます
+;pause all animations
 [wa]
 
-アニメーション終了
+Animations over
 
 :param
-name=ここで指定した値が設定されている要素に対してアニメーションを開始します。name属性で指定した値です。,
-layer=name属性が指定されている場合は無視されます。前景レイヤを指定します。必ずforeページに対して実施されます。,
-left=指定した横位置にアニメーションで移動します。,
-top=指定した縦位置にアニメーションで移動します。,
-width=幅を指定します,
-height=高さを指定します,
-opacity=0～255の値を指定します。指定した透明度へアニメーションします,
-color=色指定,
-time=アニメーションにかける時間をミリ秒で指定して下さい。デフォルトは2000ミリ秒です,
-effect=変化のエフェクトを指定します。指定できる文字列は以下の種類です<br />
+name=use this property to look up the button layer or picture to animate,
+layer=if a name is set this will be ignored. Otherwise this to set the foreground layer,
+left=animate it horizontally to the position you set,
+top=animate it vertically to the position you set,
+width=set the width,
+height=set the height,
+opacity=set the value from 0-255.  It will animate to the given opacity.,
+color=set the color,
+time=time taken by the animation. Default is 2000 milliseconds,
+effect=define the effect of the animation. examples are defined as follows <br />
 
 jswing
 ｜def
@@ -552,16 +551,16 @@ Animation
 :title
 Set animation keyframe
 :exp
-Set animation keyframe.  定義したアニメーションは[kanim]タグで指定することで使用できます
+Set animation keyframe.  The defined animation can be used by setting the [kanim] tag.
 :sample
-;----keyframeの定義
+;----setting the keyframe
 [keyframe name="fuwafuwa"]
 [frame p=40%  x="100" ]
 [frame p=100% y="-200" opacity=0 ]
 [endkeyframe]
-;-----定義したアニメーションを実行
+;-----run the defined animation
 :param
-name=キーブレームの名前を指定します。後に[kanim]タグを使用する際に指定する名前になります
+name=Sets the names of the key frame. This will be the name to use if you use the kanim tag later.
 #[end]
 */
 
@@ -617,28 +616,27 @@ Animation
 :title
 Keyframe Animation Settings
 :exp
-キーフレームアニメーションを定義します。定義したアニメーションは[kanim]タグで指定することで使用できます
+This defines the key frame animation. The defined animation can be used by setting the [kanim] tag.
 :sample
 :param
-p=パーセンテージを指定してください。例えば５秒かかるアニメーションに対して20%の位置という指定になります。0〜100%の間で指定してください。0%を省略することで前回のアニメーション状態を継承して新しいアニメーションを開始できます。,
-x=X軸方向へのアニメーション量をpxで指定して下さい。　また、*(アスタリスク)で始めることで、絶対位置として指定することができます。（例） x="100"（前へ100px移動する） x="*100" 画面左端から100pxの位置へ移動する,
-y=Y軸方向へのアニメーション量をpxで指定して下さい。　また、*(アスタリスク)で始めることで、絶対位置として指定することができます。（例） y="100"（前へ100px移動する） y="*100" 画面上端から100pxの位置へ移動する,
-z=Z軸方向へのアニメーション量をpxで指定して下さい。　また、*(アスタリスク)で始めることで、絶対位置として指定することができます。（例） z="100"（前へ100px移動する） z="*100" こちらのタグを使用すると三次元を表現できますが、現状一部ブラウザ（safari iphone系）で動作します,
-rotate=対象を回転させることができます。例　rotate="360deg"のような形で指定して下さい（３６０度回転）,
-rotateX=対象をX軸を軸として回転させることができます。例　rotateX="360deg"のような形で指定して下さい（３６０度回転）,
-rotateY=対象をY軸を軸として回転させることができます。例　rotateY="360deg"のような形で指定して下さい（３６０度回転）,
-rotateZ=対象をZ軸を軸として回転させることができます。例　rotateZ="360deg"のような形で指定して下さい（３６０度回転）,
-scale=対象を拡大、縮小することができます。例　scale="2" (２倍に拡大します) scale="0.5" 半分に縮小します,
-scaleX=X方向に拡大、縮小できます,
-scaleY=Y方向に拡大、縮小できます,
-scaleZ=Z方向に拡大、縮小できます,
-skew=傾斜,
-skewX=X傾斜,
-skewY=Y傾斜,
-perspective=遠近効果を付与することができます。一部ブラウザのみ,
-opacity=0～1を指定することで、各要素の透明度を指定することができます、非表示にしたりすることができます。0で完全に透明になります。
-その他=CSSのスタイルを各種指定することができます。
-
+p=Set the percentage. For example, an animation that takes 5 seconds you will want to set each slide at 20% (?). Set it to 0-100%. If you omit putting it to 0% you can continue from the previous animation and start a new animation.,
+x=Set the pixels the amount that the animation should move on the X axis.  Or if you start it with an asterisk (*) you can set it at an absolute position.  (For example) x="100" (it will move 100px forward) x="*100" it will move from the left of the screen to the 100px position.,
+y=Set the pixels the amount that the animation should move on the Y axis.  Or if you start it with an asterisk (*), you can set it at an absolute position.  (For example) y="100" (it will move 100px forward) y="*100" it will move from the top of the screen to the 100px position.,
+z=Set the pixels the amount that the animation should move on the Z axis.  Or if you start it with an asterisk (*) you can set it at an absolute position.  (For example) z="100" (it will move 100px forward) z="*100" using this tag is able to make the animation 3D but it currently only works on select browsers (Safari iPhone etc.),
+rotate=You can rotate the target. As an example using notation like rotate="360deg" will turn the image 360 degrees.,
+rotateX=You can rotate the target on the X axis.  As an example, using notation like rotate="360deg" will turn the image 360 degrees.,
+rotateY=You can rotate the target on the Y axis.  As an example, using notation like rotate="360deg" will turn the image 360 degrees.,
+rotateZ=You can rotate the target on the Z axis.  As an example, using notation like rotate="360deg" will turn the image 360 degrees.,
+scale=You can enlarge or shrink the target. (Ex) scale="2" will double the size, scale-"0.5" will half the target.,
+scaleX=Enlarge or shrink the target horizontally.,
+scaleY=Enlarge or shrink the target vertically.,
+scaleZ=Enlarge or shrink the target in the 3rd dimension.,
+skew=skew,
+skewX=Xskew,
+skewY=Yskew,
+perspective=You can change perspective.  Only select browsers.,
+opacity=By setting this to 0-1, you can set the opacity of every element.  It is possible to make an element disappear this way.  At 0, it is completely transparent.,
+Others=You can also use CSS to set other properties.
 #[end]
 */
 
@@ -725,27 +723,25 @@ Animation
 :title
 Execute Keyframe
 :exp
-キーフレームアニメーションを実行します。[keyframe]タグで定義した名前とアニメーションさせる画像やテキストを指定することで
-複雑なアニメーションを実現できます。
+This executes a keyframe animation. You can implement a complex animation by defining the name as well as the text and pictures you want to animate with the [keyframe] tag.
 :sample
 :param
-name=アニメーションさせる画像やテキストのnameを指定してください,
-layer=nameを指定せずに、layerを指定することでそのlayerに属するエレメント全てにアニメーションを適用させることができます,
-keyframe=実行するキーフレームアニメーション名を指定してください。,
-time=アニメーションを実行する時間をミリ秒で指定してください。,
-easing=アニメーションの変化パターンを指定することができます。
-指定できる値として
-ease(開始時点と終了時点を滑らかに再生する)　linear(一定の間隔で再生する)
-ease-in(開始時点をゆっくり再生する)
-ease-out(終了時点をゆっくり再生する)
-ease-in-out(開始時点と終了時点をゆっくり再生する)
-この他に、cubic-bezier関数を使って、イージングを独自に設定することも可能です
-,
-count = 再生回数を指定できます。初期値は１。"infinite"を指定することで無限にアニメーションさせることもできます。,
-delay = 開始までの時間を指定できます。初期値は遅延なし(0)です。,
-direction = 偶数回のアニメーションを逆再生するか指定できます。 初期値は"normal" 偶数回逆再生させる場合は、"alternate"を指定します,
-mode = 再生前後の状態を指定できます。初期値は"forwards"で再生後の状態を維持します。 "none"を指定すると、再生後の状態を維持しません
-
+name=sets the name of the text or image that will be animated,
+layer=if you don't set the name and set the layer instead this will animate all elements in the layer,
+keyframe=sets the name of the keyframe animation,
+time=the time of the animation in milliseconds,
+easing=set the pattern of change for the animation.
+Some of the things you can set are:
+ease(smoothly at the beginning and end)　
+linear(plays at a set interval)
+ease-in(plays back slowly at the beginning)
+ease-out(plays back slowly at the end)
+ease-in-out(plays back slowly at the beginning and end)
+it's possible to set the easing your own way by using the cubic-bezier function,
+count = set the number of times it plays. The default is one. If you set it to "infinite" the animation will play forever.,
+delay = milliseconds before playback. default is 0,
+direction = animations can alternate betwen their reverse and normal progression. default is "normal" and "alternate" sets the animation to alternate between normal and reverse,
+mode = set the status before and after playback. Default is "forwards" and it maintains the same configuration after play. If set to "none" it will not maintain the same configuration.
 
 #[end]
 */
