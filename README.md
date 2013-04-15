@@ -35,14 +35,22 @@ TyranoScript allows for using JavaScript freely throughout.
 Free to use as you wish, including commercially.  
 Original software is open source (MIT License) and free to the public.
 ## How to Use
-Check out the home page tutorial and tag reference.  
-(English users may want to stick to opening doc.html and index.html in a browser for now)
+To start out, you should probably play through the [tutorial in English]("http://chrisrhoden.github.io/tyranoscript/tutorial.html")
+Once you've completed that, you can refer to the [translated docs]("http://chrisrhoden.github.io/tyranoscript/docs.html")
 ### Tag Reference
-http://tyrano.jp/home/tag  
-(English users open doc.html in a browser for now)
+<dl>
+  <dt>English</dt>
+  <dd>[docs.html]("http://chrisrhoden.github.io/tyranoscript/docs.html")</dd>
+  <dt>Japanse</dt>
+  <dd>[http://tyrano.jp/home/tag]("http://tyrano.jp/home/tag")</dd>
+</dl>
 ### Usage and Tutorial
-http://tyrano.jp/usage/tutorial  
-(English users open index.html in a browser for now for the sample game)
+<dl>
+  <dt>English</dt>
+  <dd>[tutorial.html]("http://chrisrhoden.github.io/tyranoscript/tutorial.html")</dd>
+  <dt>Japanse</dt>
+  <dd>[http://tyrano.jp/usage/tutorial]("http://tyrano.jp/usage/tutorial")</dd>
+</dl>
 ### Developing locally
 Chrome or Safari are recommended.  
 When using Chrome, set the "-allow-file-access-from-files" property so that files in the local environment can be accessed.  
