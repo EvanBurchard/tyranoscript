@@ -35,8 +35,8 @@ TyranoScript allows for using JavaScript freely throughout.
 Free to use as you wish, including commercially.  
 Original software is open source (MIT License) and free to the public.
 ## How to Use
-To start out, you should probably play through the [tutorial in English]("http://chrisrhoden.github.io/tyranoscript/tutorial.html").
-Once you've completed that, you can refer to the [translated docs]("http://chrisrhoden.github.io/tyranoscript/docs.html").
+To start out, you should probably play through the [tutorial in English](http://chrisrhoden.github.io/tyranoscript/tutorial.html).
+Once you've completed that, you can refer to the [translated docs](http://chrisrhoden.github.io/tyranoscript/docs.html).
 ### Tag Reference
 <dl>
   <dt>English</dt>
