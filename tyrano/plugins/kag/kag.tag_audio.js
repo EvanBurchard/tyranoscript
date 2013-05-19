@@ -176,7 +176,7 @@ tyrano.plugin.kag.tag.playbgm = {
             this.kag.stat.current_bgm = pm.storage;
         }
         
-        var audio_obj = new Media($.getBaseURL()+"data/"+target+"/"+ pm.storage,
+        var audio_obj = new Media("./data/"+target+"/"+ pm.storage, 
 
            function(){
                         

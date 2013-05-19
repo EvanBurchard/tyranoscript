@@ -2673,7 +2673,7 @@ tyrano.plugin.kag.tag.button = {
             j_button.click(function(){
                     
                   //fix指定のbuttonは、繰り返し実行できるようにする
-                  if(button_clicked == true　&& _pm.fix =="false"){
+                  if(button_clicked == true && _pm.fix =="false"){
                     
                     return false;
                     
